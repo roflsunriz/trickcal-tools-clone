@@ -12,10 +12,10 @@ Trickcal tools clone for maintaining sweep data and adding more tools over time.
 ## Commands
 
 ```sh
-npm install
-npm run dev
-npm test
-npm run build
+bun install
+bun run dev
+bun test
+bun run build
 ```
 
 Sweep data and material images are kept in the repository so the app does not depend on upstream assets at runtime.

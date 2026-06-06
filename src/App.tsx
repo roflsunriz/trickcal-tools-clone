@@ -52,7 +52,12 @@ export function App() {
             </button>
           ))}
         </nav>
-        <button className="icon-button locale-button" type="button" onClick={toggleLocale} title={t("app.locale.toggle")}>
+        <button
+          className="icon-button locale-button"
+          type="button"
+          onClick={toggleLocale}
+          title={t("app.locale.toggle")}
+        >
           <Languages size={18} />
           <span>{locale.toUpperCase()}</span>
         </button>

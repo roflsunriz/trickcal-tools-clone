@@ -3,5 +3,4 @@ dist/
 .vite/
 *.tsbuildinfo
 *.local
-npm-debug.log*
 dev-server.*.log

@@ -1,11 +1,10 @@
-import { createContext, useContext, useMemo, useState } from "react";
-import type { ReactNode } from "react";
+import { createContext, useContext } from "react";
 
 export type Locale = "ja" | "en";
 
-const localeStorageKey = "trickcal_locale";
+export const localeStorageKey = "trickcal_locale";
 
-const messages = {
+export const messages = {
   ja: {
     "app.tools": "ツール",
     "app.theme.toggle": "テーマ切替",
@@ -20,6 +19,13 @@ const messages = {
     "sweep.clear": "クリア",
     "sweep.pages": "ページ",
     "sweep.search.placeholder": "素材名で検索",
+    "sweep.quickSelect.title": "装備セット",
+    "sweep.weaponType": "武器種",
+    "sweep.physicalWeapon": "物理",
+    "sweep.magicWeapon": "魔法",
+    "sweep.requiredRanks": "必要Rank",
+    "sweep.quickRank": "Rank {rank}",
+    "sweep.quickRankTitle": "Rank {rank} の装備セットを選択",
     "sweep.rankFilter": "Rank フィルター",
     "sweep.allRanks": "全 Rank",
     "sweep.plan.aria": "周回プラン",
@@ -45,6 +51,13 @@ const messages = {
     "sweep.clear": "Clear",
     "sweep.pages": "Pages",
     "sweep.search.placeholder": "Search materials",
+    "sweep.quickSelect.title": "Equipment Set",
+    "sweep.weaponType": "Weapon",
+    "sweep.physicalWeapon": "Physical",
+    "sweep.magicWeapon": "Magic",
+    "sweep.requiredRanks": "Required Rank",
+    "sweep.quickRank": "Rank {rank}",
+    "sweep.quickRankTitle": "Select Rank {rank} equipment set",
     "sweep.rankFilter": "Rank Filter",
     "sweep.allRanks": "All Ranks",
     "sweep.plan.aria": "Sweep plan",
@@ -60,39 +73,16 @@ const messages = {
 
 export type MessageKey = keyof (typeof messages)["ja"];
 
-type I18nContextValue = {
+export type I18nContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: (key: MessageKey, values?: Record<string, string | number>) => string;
 };
 
-const I18nContext = createContext<I18nContextValue | null>(null);
+export const I18nContext = createContext<I18nContextValue | null>(null);
 
-function readLocale(): Locale {
+export function readLocale(): Locale {
   return localStorage.getItem(localeStorageKey) === "en" ? "en" : "ja";
-}
-
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(readLocale);
-
-  const value = useMemo<I18nContextValue>(() => {
-    function setLocale(nextLocale: Locale) {
-      setLocaleState(nextLocale);
-      localStorage.setItem(localeStorageKey, nextLocale);
-    }
-
-    function t(key: MessageKey, values: Record<string, string | number> = {}) {
-      let message: string = messages[locale][key];
-      for (const [name, replacement] of Object.entries(values)) {
-        message = message.replace(`{${name}}`, String(replacement));
-      }
-      return message;
-    }
-
-    return { locale, setLocale, t };
-  }, [locale]);
-
-  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
 
 export function useI18n() {

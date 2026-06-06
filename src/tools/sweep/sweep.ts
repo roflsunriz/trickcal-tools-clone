@@ -47,9 +47,7 @@ export function createSweepPlan(selectedMaterials: Iterable<MaterialId>, stageDa
     }
   }
 
-  return plan
-    .filter((stage) => stageData[stage].some((material) => selected.includes(material)))
-    .sort(compareStages);
+  return plan.filter((stage) => stageData[stage].some((material) => selected.includes(material))).sort(compareStages);
 }
 
 export function getMissingMaterials(
@@ -66,7 +64,12 @@ export function isBlueprintMaterial(material: MaterialId, data: SweepData) {
   return (data[material]?.rank ?? 0) >= 2;
 }
 
-export function getAlternativeStages(plan: StageName[], selected: Set<MaterialId>, data: SweepData, stageData: Record<StageName, MaterialId[]>) {
+export function getAlternativeStages(
+  plan: StageName[],
+  selected: Set<MaterialId>,
+  data: SweepData,
+  stageData: Record<StageName, MaterialId[]>,
+) {
   const alternatives = new Map<StageName, AlternativeStage[]>();
 
   for (const stage of plan) {
@@ -92,7 +95,10 @@ export function getAlternativeStages(plan: StageName[], selected: Set<MaterialId
     }
 
     if (options.length > 0) {
-      alternatives.set(stage, options.sort((a, b) => compareStages(a.stage, b.stage)));
+      alternatives.set(
+        stage,
+        options.sort((a, b) => compareStages(a.stage, b.stage)),
+      );
     }
   }
 

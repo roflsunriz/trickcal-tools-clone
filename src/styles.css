@@ -68,6 +68,8 @@ input {
 .pager button,
 .filter-toggle,
 .rank-option,
+.segment,
+.quick-rank-button,
 .material-card,
 .material-chip {
   border: 1px solid var(--border);
@@ -107,7 +109,9 @@ input {
 .secondary-button,
 .pager button,
 .filter-toggle,
-.rank-option {
+.rank-option,
+.segment,
+.quick-rank-button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -117,7 +121,8 @@ input {
 }
 
 .tool-tab.active,
-.rank-option.active {
+.rank-option.active,
+.segment.active {
   border-color: color-mix(in srgb, var(--accent) 65%, var(--border));
   color: white;
   background: var(--accent);
@@ -264,6 +269,56 @@ input {
   flex-wrap: wrap;
   gap: 8px;
   margin: 12px 0 0;
+}
+
+.quick-select {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--panel-strong) 72%, transparent);
+}
+
+.quick-select-header,
+.quick-select-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quick-select-header {
+  justify-content: space-between;
+}
+
+.quick-select-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.quick-select-label {
+  flex: 0 0 76px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.segmented-control,
+.quick-rank-grid {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.segment,
+.quick-rank-button {
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+.quick-rank-button:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
 }
 
 .catalog-grid {
