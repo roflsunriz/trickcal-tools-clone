@@ -1,4 +1,4 @@
-export type MaterialName = string;
+export type MaterialId = string;
 export type StageName = string;
 
 export type SweepMaterial = {
@@ -6,10 +6,10 @@ export type SweepMaterial = {
   stages: StageName[];
 };
 
-export type SweepData = Record<MaterialName, SweepMaterial>;
+export type SweepData = Record<MaterialId, SweepMaterial>;
 
 export type AlternativeStage = {
   stage: StageName;
-  materials: MaterialName[];
-  blueprints: MaterialName[];
+  materials: MaterialId[];
+  blueprints: MaterialId[];
 };

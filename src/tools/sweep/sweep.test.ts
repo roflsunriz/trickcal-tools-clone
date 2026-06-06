@@ -8,18 +8,18 @@ describe("sweep planner", () => {
   const stageData = buildStageData(sweepData);
 
   it("groups materials by stage", () => {
-    expect(stageData["1-1"]).toContain("領口鬆垮的T恤");
-    expect(stageData["1-1"]).toContain("鬆緊帶短褲");
+    expect(stageData["1-1"]).toContain("material-001");
+    expect(stageData["1-1"]).toContain("material-002");
   });
 
   it("chooses a stage that covers selected materials", () => {
-    const selected = ["領口鬆垮的T恤", "鬆緊帶短褲"];
+    const selected = ["material-001", "material-002"];
     expect(createSweepPlan(selected, stageData)).toEqual(["1-1"]);
   });
 
   it("reports materials that cannot be mapped to a stage", () => {
-    const selected = ["存在しない素材"];
+    const selected = ["missing-material"];
     const plan = createSweepPlan(selected, stageData);
-    expect(getMissingMaterials(selected, plan, stageData)).toEqual(["存在しない素材"]);
+    expect(getMissingMaterials(selected, plan, stageData)).toEqual(["missing-material"]);
   });
 });

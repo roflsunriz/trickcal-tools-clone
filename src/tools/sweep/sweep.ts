@@ -1,4 +1,4 @@
-import type { AlternativeStage, MaterialName, StageName, SweepData } from "./types";
+import type { AlternativeStage, MaterialId, StageName, SweepData } from "./types";
 
 export function compareStages(a: StageName, b: StageName) {
   const [chapterA, stageA] = a.split("-").map(Number);
@@ -7,7 +7,7 @@ export function compareStages(a: StageName, b: StageName) {
 }
 
 export function buildStageData(data: SweepData) {
-  const stages: Record<StageName, MaterialName[]> = {};
+  const stages: Record<StageName, MaterialId[]> = {};
 
   for (const [material, detail] of Object.entries(data)) {
     if (!detail?.stages?.length) continue;
@@ -21,7 +21,7 @@ export function buildStageData(data: SweepData) {
   return stages;
 }
 
-export function createSweepPlan(selectedMaterials: Iterable<MaterialName>, stageData: Record<StageName, MaterialName[]>) {
+export function createSweepPlan(selectedMaterials: Iterable<MaterialId>, stageData: Record<StageName, MaterialId[]>) {
   const selected = Array.from(selectedMaterials);
   const remaining = new Set(selected);
   const plan: StageName[] = [];
@@ -53,20 +53,20 @@ export function createSweepPlan(selectedMaterials: Iterable<MaterialName>, stage
 }
 
 export function getMissingMaterials(
-  selectedMaterials: Iterable<MaterialName>,
+  selectedMaterials: Iterable<MaterialId>,
   plan: StageName[],
-  stageData: Record<StageName, MaterialName[]>,
+  stageData: Record<StageName, MaterialId[]>,
 ) {
   return Array.from(selectedMaterials).filter(
     (material) => !plan.some((stage) => stageData[stage]?.includes(material)),
   );
 }
 
-export function isBlueprintMaterial(material: MaterialName, data: SweepData) {
+export function isBlueprintMaterial(material: MaterialId, data: SweepData) {
   return (data[material]?.rank ?? 0) >= 2;
 }
 
-export function getAlternativeStages(plan: StageName[], selected: Set<MaterialName>, data: SweepData, stageData: Record<StageName, MaterialName[]>) {
+export function getAlternativeStages(plan: StageName[], selected: Set<MaterialId>, data: SweepData, stageData: Record<StageName, MaterialId[]>) {
   const alternatives = new Map<StageName, AlternativeStage[]>();
 
   for (const stage of plan) {

@@ -1,12 +1,14 @@
-import { Moon, Sun } from "lucide-react";
+import { Languages, Moon, Sun } from "lucide-react";
 import { useMemo, useState } from "react";
 import { tools } from "./app/tools";
+import { useI18n } from "./i18n";
 
 function currentPath() {
   return window.location.pathname === "/" ? "/sweep" : window.location.pathname;
 }
 
 export function App() {
+  const { locale, setLocale, t } = useI18n();
   const [path, setPath] = useState(currentPath);
   const [theme, setTheme] = useState<"light" | "dark">(
     () => (localStorage.getItem("trickcal_theme") as "light" | "dark") || "dark",
@@ -25,6 +27,10 @@ export function App() {
     localStorage.setItem("trickcal_theme", nextTheme);
   }
 
+  function toggleLocale() {
+    setLocale(locale === "ja" ? "en" : "ja");
+  }
+
   return (
     <div className="app" data-theme={theme}>
       <header className="site-header">
@@ -32,21 +38,25 @@ export function App() {
           <span className="brand-mark">T</span>
           <span>Trickcal Tools</span>
         </button>
-        <nav className="tool-tabs" aria-label="Tools">
+        <nav className="tool-tabs" aria-label={t("app.tools")}>
           {tools.map(({ Icon, ...item }) => (
             <button
               className={item.path === tool.path ? "tool-tab active" : "tool-tab"}
               key={item.id}
               type="button"
               onClick={() => navigate(item.path)}
-              title={item.description}
+              title={t(item.descriptionKey)}
             >
               <Icon size={18} />
-              <span>{item.label}</span>
+              <span>{t(item.labelKey)}</span>
             </button>
           ))}
         </nav>
-        <button className="icon-button" type="button" onClick={toggleTheme} title="テーマ切替">
+        <button className="icon-button locale-button" type="button" onClick={toggleLocale} title={t("app.locale.toggle")}>
+          <Languages size={18} />
+          <span>{locale.toUpperCase()}</span>
+        </button>
+        <button className="icon-button" type="button" onClick={toggleTheme} title={t("app.theme.toggle")}>
           {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </header>
