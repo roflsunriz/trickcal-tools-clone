@@ -426,13 +426,32 @@ input {
 
 .alternative-item {
   display: grid;
-  gap: 2px;
+  gap: 6px;
   padding: 8px;
   border-radius: 8px;
   background: color-mix(in srgb, var(--panel) 80%, transparent);
 }
 
-.alternative-item span {
+.alternative-materials {
+  display: grid;
+  gap: 5px;
+}
+
+.alternative-material {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.alternative-material img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.alternative-material span {
   overflow: hidden;
   color: var(--muted);
   font-size: 0.82rem;

@@ -216,7 +216,14 @@ export function SweepTool() {
                               {stageAlternatives.slice(0, 8).map((alternative) => (
                                 <div className="alternative-item" key={alternative.stage}>
                                   <strong>{alternative.stage}</strong>
-                                  <span>{alternative.materials.slice(0, 3).map((material) => getMaterialName(material, locale)).join(" / ")}</span>
+                                  <div className="alternative-materials">
+                                    {alternative.materials.slice(0, 3).map((material) => (
+                                      <span className="alternative-material" key={material} title={getMaterialName(material, locale)}>
+                                        <img src={getMaterialImagePath(material, data[material].rank)} alt="" onError={(event) => (event.currentTarget.style.display = "none")} />
+                                        <span>{getMaterialName(material, locale)}</span>
+                                      </span>
+                                    ))}
+                                  </div>
                                 </div>
                               ))}
                             </div>
