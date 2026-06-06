@@ -16,7 +16,7 @@ import type { WeaponType } from "./quickEquipment";
 
 const data = rawData as SweepData;
 const materials = Object.keys(data);
-const ranks = [1, 2, 3, 4, 5, 6, 7, 8];
+const ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const pageSize = 24;
 
 export function SweepTool() {
@@ -287,7 +287,7 @@ export function SweepTool() {
                               key={material}
                               type="button"
                               onClick={() => toggleMaterial(material)}
-                              title={t("sweep.removeSelection")}
+                              title={getMaterialName(material, locale)}
                             >
                               <img
                                 src={getMaterialImagePath(material, data[material].rank)}

@@ -439,31 +439,47 @@ input {
 }
 
 .material-chip {
-  display: inline-flex;
+  position: relative;
+  display: grid;
+  grid-template-rows: 54px 1fr;
   align-items: center;
-  gap: 6px;
-  max-width: 100%;
-  min-height: 34px;
-  padding: 5px 8px;
+  justify-items: center;
+  gap: 8px;
+  flex: 0 0 104px;
+  min-height: 118px;
+  padding: 10px 8px;
   border-radius: 8px;
   color: var(--muted);
 }
 
 .material-chip img {
-  width: 24px;
-  height: 24px;
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
 }
 
 .material-chip span {
+  display: -webkit-box;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  min-height: 36px;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .material-chip .material-quantity {
-  flex: 0 0 auto;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-height: 0;
+  padding: 2px 5px;
+  border-radius: 6px;
   color: var(--accent);
+  background: color-mix(in srgb, var(--panel-strong) 88%, transparent);
   font-weight: 800;
+  line-height: 1;
 }
 
 .alternatives {
@@ -495,29 +511,41 @@ input {
 
 .alternative-materials {
   display: grid;
-  gap: 5px;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 8px;
 }
 
 .alternative-material {
+  position: relative;
   display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
-  align-items: center;
-  gap: 6px;
+  grid-template-rows: 54px 1fr;
+  align-items: start;
+  justify-items: center;
+  gap: 8px;
+  min-height: 110px;
   min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-strong);
 }
 
 .alternative-material img {
-  width: 24px;
-  height: 24px;
+  width: 54px;
+  height: 54px;
   object-fit: contain;
 }
 
 .alternative-material span {
+  display: -webkit-box;
   overflow: hidden;
   color: var(--muted);
   font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: center;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 @media (max-width: 980px) {

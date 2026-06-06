@@ -22,4 +22,11 @@ describe("sweep planner", () => {
     const plan = createSweepPlan(selected, stageData);
     expect(getMissingMaterials(selected, plan, stageData)).toEqual(["missing-material"]);
   });
+
+  it("includes high-rank side-product stage data from the wiki", () => {
+    expect(stageData["28-4"]).toContain("material-078");
+    expect(stageData["28-4"]).toContain("material-080");
+    expect(stageData["30-8"]).toContain("material-079");
+    expect(stageData["30-8"]).toContain("material-087");
+  });
 });

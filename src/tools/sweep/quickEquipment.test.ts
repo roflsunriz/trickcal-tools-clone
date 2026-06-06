@@ -52,6 +52,13 @@ describe("quick equipment selection", () => {
     expect(Object.values(requirements).reduce((total, quantity) => total + quantity, 0)).toBe(384);
   });
 
+  it("selects rank 8 and rank 9 equipment for rank 9", () => {
+    const requirements = buildEquipmentRequirements(9, "magic", sweepData);
+    expect(requirements["material-086"]).toBe(52);
+    expect(requirements["material-079"]).toBe(20);
+    expect(Object.values(requirements).reduce((total, quantity) => total + quantity, 0)).toBe(432);
+  });
+
   it("selects only rank 4 equipment for rank 4", () => {
     const selected = buildEquipmentSet(4, "magic", sweepData);
     expect(selected).toHaveLength(6);

@@ -87,6 +87,13 @@ const materialNames: Record<Locale, Record<MaterialId, string>> = {
     "material-082": "靴の欠片（8段階）",
     "material-083": "きらめく装飾品の欠片（8段階）",
     "material-084": "鮮やかな装飾品の欠片（8段階）",
+    "material-085": "物理武器の欠片（9段階）",
+    "material-086": "魔法武器の欠片（9段階）",
+    "material-087": "鎧の欠片（9段階）",
+    "material-088": "帽子の欠片（9段階）",
+    "material-089": "靴の欠片（9段階）",
+    "material-090": "きらめく装飾品の欠片（9段階）",
+    "material-091": "鮮やかな装飾品の欠片（9段階）",
   },
   en: {
     "material-001": "Loose-neck T-shirt",
@@ -173,6 +180,13 @@ const materialNames: Record<Locale, Record<MaterialId, string>> = {
     "material-082": "Boots Fragment (Tier 8)",
     "material-083": "Sparkling Accessory Fragment (Tier 8)",
     "material-084": "Brilliant Accessory Fragment (Tier 8)",
+    "material-085": "Physical Weapon Fragment (Tier 9)",
+    "material-086": "Magic Weapon Fragment (Tier 9)",
+    "material-087": "Armor Fragment (Tier 9)",
+    "material-088": "Hat Fragment (Tier 9)",
+    "material-089": "Boots Fragment (Tier 9)",
+    "material-090": "Sparkling Accessory Fragment (Tier 9)",
+    "material-091": "Brilliant Accessory Fragment (Tier 9)",
   },
 };
 
