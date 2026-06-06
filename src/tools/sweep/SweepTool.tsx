@@ -3,7 +3,12 @@ import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
 import { getMaterialImagePath, getMaterialName } from "./materialNames";
-import { buildEquipmentSet, quickRanks, requiredEquipmentRanks } from "./quickEquipment";
+import {
+  buildEquipmentRequirements,
+  getDefaultMaterialCount,
+  quickRanks,
+  requiredEquipmentRanks,
+} from "./quickEquipment";
 import { buildStageData, createSweepPlan, getAlternativeStages, getMissingMaterials } from "./sweep";
 import type { MaterialId, SweepData } from "./types";
 import type { WeaponType } from "./quickEquipment";
@@ -19,9 +24,25 @@ function readSelectedMaterials() {
   try {
     const value = localStorage.getItem(selectedStorageKey);
     const parsed = value ? JSON.parse(value) : [];
-    return new Set<string>(Array.isArray(parsed) ? parsed.filter((material) => material in data) : []);
+    if (Array.isArray(parsed)) {
+      return new Map<MaterialId, number>(
+        parsed
+          .filter((material) => material in data)
+          .map((material) => [material, getDefaultMaterialCount(data[material].rank)]),
+      );
+    }
+    if (parsed && typeof parsed === "object") {
+      const entries: Array<[MaterialId, number]> = [];
+      for (const [material, quantity] of Object.entries(parsed)) {
+        if (material in data && typeof quantity === "number" && quantity > 0) {
+          entries.push([material, quantity]);
+        }
+      }
+      return new Map<MaterialId, number>(entries);
+    }
+    return new Map<MaterialId, number>();
   } catch {
-    return new Set<string>();
+    return new Map<MaterialId, number>();
   }
 }
 
@@ -36,7 +57,7 @@ function readSelectedRanks() {
 
 export function SweepTool() {
   const { locale, t } = useI18n();
-  const [selected, setSelected] = useState<Set<MaterialId>>(readSelectedMaterials);
+  const [selectedQuantities, setSelectedQuantities] = useState<Map<MaterialId, number>>(readSelectedMaterials);
   const [selectedRanks, setSelectedRanks] = useState<Set<number>>(readSelectedRanks);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
@@ -44,6 +65,7 @@ export function SweepTool() {
   const [weaponType, setWeaponType] = useState<WeaponType>("physical");
 
   const stageData = useMemo(() => buildStageData(data), []);
+  const selected = useMemo(() => new Set(selectedQuantities.keys()), [selectedQuantities]);
   const filteredMaterials = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
     return materials.filter((material) => {
@@ -58,14 +80,19 @@ export function SweepTool() {
   const visibleMaterials = filteredMaterials.slice((page - 1) * pageSize, page * pageSize);
   const plan = useMemo(() => createSweepPlan(selected, stageData), [selected, stageData]);
   const missingMaterials = useMemo(() => getMissingMaterials(selected, plan, stageData), [selected, plan, stageData]);
+  const requiredMaterialCount = useMemo(
+    () => Array.from(selectedQuantities.values()).reduce((total, quantity) => total + quantity, 0),
+    [selectedQuantities],
+  );
+  const estimatedStamina = requiredMaterialCount * 10;
   const alternatives = useMemo(
     () => getAlternativeStages(plan, selected, data, stageData),
     [plan, selected, stageData],
   );
 
-  function persistSelected(nextSelected: Set<MaterialId>) {
-    setSelected(nextSelected);
-    localStorage.setItem(selectedStorageKey, JSON.stringify(Array.from(nextSelected)));
+  function persistSelected(nextSelectedQuantities: Map<MaterialId, number>) {
+    setSelectedQuantities(nextSelectedQuantities);
+    localStorage.setItem(selectedStorageKey, JSON.stringify(Object.fromEntries(nextSelectedQuantities)));
   }
 
   function persistRanks(nextRanks: Set<number>) {
@@ -75,17 +102,17 @@ export function SweepTool() {
   }
 
   function toggleMaterial(material: MaterialId) {
-    const nextSelected = new Set(selected);
-    if (nextSelected.has(material)) {
-      nextSelected.delete(material);
+    const nextSelectedQuantities = new Map(selectedQuantities);
+    if (nextSelectedQuantities.has(material)) {
+      nextSelectedQuantities.delete(material);
     } else {
-      nextSelected.add(material);
+      nextSelectedQuantities.set(material, getDefaultMaterialCount(data[material].rank));
     }
-    persistSelected(nextSelected);
+    persistSelected(nextSelectedQuantities);
   }
 
   function clearSelection() {
-    persistSelected(new Set());
+    persistSelected(new Map());
   }
 
   function toggleRank(rank: number) {
@@ -109,7 +136,7 @@ export function SweepTool() {
 
   function selectEquipmentSet(rank: number) {
     const requiredRanks = requiredEquipmentRanks(rank);
-    persistSelected(new Set(buildEquipmentSet(rank, weaponType, data)));
+    persistSelected(new Map(Object.entries(buildEquipmentRequirements(rank, weaponType, data))));
     persistRanks(new Set(requiredRanks));
     setQuery("");
   }
@@ -265,7 +292,7 @@ export function SweepTool() {
             <>
               <div className="plan-summary">
                 <strong>{plan.length}</strong>
-                <span>{t("sweep.planSummary", { stamina: plan.length * 10 })}</span>
+                <span>{t("sweep.planSummary", { stamina: estimatedStamina })}</span>
               </div>
 
               {missingMaterials.length > 0 ? (
@@ -298,6 +325,7 @@ export function SweepTool() {
                                 onError={(event) => (event.currentTarget.style.display = "none")}
                               />
                               <span>{getMaterialName(material, locale)}</span>
+                              <span className="material-quantity">x{selectedQuantities.get(material) ?? 1}</span>
                             </button>
                           ))}
                         </div>

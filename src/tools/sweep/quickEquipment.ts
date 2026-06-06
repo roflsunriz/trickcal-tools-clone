@@ -91,26 +91,57 @@ export const requiredEquipmentRankMap: Record<number, number[]> = {
   9: [8, 9],
 };
 
+export const requiredMaterialCountByTargetRank: Record<number, Record<number, number>> = {
+  2: { 1: 4, 2: 10 },
+  3: { 2: 8, 3: 18 },
+  4: { 4: 20 },
+  5: { 4: 12, 5: 30 },
+  6: { 5: 14, 6: 36 },
+  7: { 7: 42 },
+  8: { 7: 18, 8: 46 },
+  9: { 8: 20, 9: 52 },
+};
+
 export function requiredEquipmentRanks(rank: number) {
   return requiredEquipmentRankMap[rank] ?? [rank];
 }
 
-export function buildEquipmentSet(rank: number, weaponType: WeaponType, data: SweepData) {
-  return requiredEquipmentRanks(rank).flatMap((requiredRank) => {
+export function getRequiredMaterialCount(targetRank: number, materialRank: number) {
+  return requiredMaterialCountByTargetRank[targetRank]?.[materialRank] ?? 1;
+}
+
+export function getDefaultMaterialCount(materialRank: number) {
+  return getRequiredMaterialCount(materialRank, materialRank);
+}
+
+export function buildEquipmentRequirements(rank: number, weaponType: WeaponType, data: SweepData) {
+  return requiredEquipmentRanks(rank).reduce<Record<MaterialId, number>>((requirements, requiredRank) => {
+    const count = getRequiredMaterialCount(rank, requiredRank);
     if (requiredRank === 1) {
-      return Object.keys(data).filter((material) => data[material].rank === 1);
+      for (const material of Object.keys(data).filter((item) => data[item].rank === 1)) {
+        requirements[material] = count;
+      }
+      return requirements;
     }
 
     const equipment = equipmentByRank[requiredRank];
-    if (!equipment) return [];
+    if (!equipment) return requirements;
 
-    return [
+    for (const material of [
       equipment[weaponType],
       equipment.armor,
       equipment.hat,
       equipment.boots,
       equipment.sparkling,
       equipment.brilliant,
-    ];
-  });
+    ]) {
+      requirements[material] = count;
+    }
+
+    return requirements;
+  }, {});
+}
+
+export function buildEquipmentSet(rank: number, weaponType: WeaponType, data: SweepData) {
+  return Object.keys(buildEquipmentRequirements(rank, weaponType, data));
 }

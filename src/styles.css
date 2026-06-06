@@ -460,6 +460,12 @@ input {
   white-space: nowrap;
 }
 
+.material-chip .material-quantity {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-weight: 800;
+}
+
 .alternatives {
   margin: 0 12px 12px;
   padding-top: 10px;
