@@ -9,6 +9,7 @@ import {
   quickRanks,
   requiredEquipmentRanks,
 } from "./quickEquipment";
+import { readSweepStorageState, writeSweepStorageState } from "./storage";
 import { buildStageData, createSweepPlan, getAlternativeStages, getMissingMaterials } from "./sweep";
 import type { MaterialId, SweepData } from "./types";
 import type { WeaponType } from "./quickEquipment";
@@ -17,48 +18,14 @@ const data = rawData as SweepData;
 const materials = Object.keys(data);
 const ranks = [1, 2, 3, 4, 5, 6, 7, 8];
 const pageSize = 24;
-const selectedStorageKey = "trickcal_sweep_selected_materials";
-const rankStorageKey = "trickcal_sweep_rank_filter";
-
-function readSelectedMaterials() {
-  try {
-    const value = localStorage.getItem(selectedStorageKey);
-    const parsed = value ? JSON.parse(value) : [];
-    if (Array.isArray(parsed)) {
-      return new Map<MaterialId, number>(
-        parsed
-          .filter((material) => material in data)
-          .map((material) => [material, getDefaultMaterialCount(data[material].rank)]),
-      );
-    }
-    if (parsed && typeof parsed === "object") {
-      const entries: Array<[MaterialId, number]> = [];
-      for (const [material, quantity] of Object.entries(parsed)) {
-        if (material in data && typeof quantity === "number" && quantity > 0) {
-          entries.push([material, quantity]);
-        }
-      }
-      return new Map<MaterialId, number>(entries);
-    }
-    return new Map<MaterialId, number>();
-  } catch {
-    return new Map<MaterialId, number>();
-  }
-}
-
-function readSelectedRanks() {
-  try {
-    const value = localStorage.getItem(rankStorageKey);
-    return new Set<number>(value ? JSON.parse(value) : ranks);
-  } catch {
-    return new Set<number>(ranks);
-  }
-}
 
 export function SweepTool() {
   const { locale, t } = useI18n();
-  const [selectedQuantities, setSelectedQuantities] = useState<Map<MaterialId, number>>(readSelectedMaterials);
-  const [selectedRanks, setSelectedRanks] = useState<Set<number>>(readSelectedRanks);
+  const [initialStorageState] = useState(() => readSweepStorageState(data, ranks));
+  const [selectedQuantities, setSelectedQuantities] = useState<Map<MaterialId, number>>(
+    initialStorageState.selectedQuantities,
+  );
+  const [selectedRanks, setSelectedRanks] = useState<Set<number>>(initialStorageState.selectedRanks);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -92,12 +59,12 @@ export function SweepTool() {
 
   function persistSelected(nextSelectedQuantities: Map<MaterialId, number>) {
     setSelectedQuantities(nextSelectedQuantities);
-    localStorage.setItem(selectedStorageKey, JSON.stringify(Object.fromEntries(nextSelectedQuantities)));
+    writeSweepStorageState({ selectedQuantities: nextSelectedQuantities, selectedRanks });
   }
 
   function persistRanks(nextRanks: Set<number>) {
     setSelectedRanks(nextRanks);
-    localStorage.setItem(rankStorageKey, JSON.stringify(Array.from(nextRanks).sort((a, b) => a - b)));
+    writeSweepStorageState({ selectedQuantities, selectedRanks: nextRanks });
     setPage(1);
   }
 
@@ -135,9 +102,12 @@ export function SweepTool() {
   }
 
   function selectEquipmentSet(rank: number) {
-    const requiredRanks = requiredEquipmentRanks(rank);
-    persistSelected(new Map(Object.entries(buildEquipmentRequirements(rank, weaponType, data))));
-    persistRanks(new Set(requiredRanks));
+    const nextSelectedQuantities = new Map(Object.entries(buildEquipmentRequirements(rank, weaponType, data)));
+    const nextRanks = new Set(requiredEquipmentRanks(rank));
+    setSelectedQuantities(nextSelectedQuantities);
+    setSelectedRanks(nextRanks);
+    writeSweepStorageState({ selectedQuantities: nextSelectedQuantities, selectedRanks: nextRanks });
+    setPage(1);
     setQuery("");
   }
 
