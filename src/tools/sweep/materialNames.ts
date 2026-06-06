@@ -202,5 +202,6 @@ export function getMaterialAssetSlug(material: MaterialId) {
 }
 
 export function getMaterialImagePath(material: MaterialId, rank: number) {
-  return `/assets/gears/rank-${rank}/${getMaterialAssetSlug(material)}.webp`;
+  const basePath = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+  return `${basePath}assets/gears/rank-${rank}/${getMaterialAssetSlug(material)}.webp`;
 }

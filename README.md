@@ -2,6 +2,10 @@
 
 Trickcal tools clone for maintaining sweep data and adding more tools over time.
 
+# Website
+
+[Trickcal Tools](https://roflsunriz.github.io/trickcal-tools-clone/sweep)
+
 ## Structure
 
 - `src/app`: app shell and tool registry
@@ -27,7 +31,8 @@ Sweep data and material images are kept in the repository so the app does not de
 
 - CI runs on pushes to `main` and pull requests.
 - GitHub Pages deploys from `main` and can also be triggered manually.
-- The Pages build sets `BASE_PATH=/trickcal-tools-clone/` so Vite assets resolve under the repository Pages URL.
+- The sweep tool is deployed under `https://roflsunriz.github.io/trickcal-tools-clone/sweep/`.
+- `bun run build` always produces the GitHub Pages artifact shape, including `dist/sweep/index.html`.
 
 In GitHub repository settings, set Pages source to GitHub Actions.
 

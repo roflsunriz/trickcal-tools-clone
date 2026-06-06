@@ -45,8 +45,6 @@ jobs:
 
       - name: Build
         run: bun run build
-        env:
-          BASE_PATH: /trickcal-tools-clone/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -16,10 +16,12 @@ This project follows a lightweight Keep a Changelog style. Versions are not tied
 
 ### Changed
 
+- `bun run build` now produces the GitHub Pages artifact shape by default.
 - Material catalog now renders all filtered materials without pagination.
 - Rank filters are always visible.
 - Best-plan material cards use larger local images and localized material-name tooltips.
 
 ### Fixed
 
+- GitHub Pages asset URLs now resolve under the configured Pages base path.
 - Sweep planner storage now repairs invalid persisted state.
