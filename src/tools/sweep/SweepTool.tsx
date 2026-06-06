@@ -1,4 +1,4 @@
-import { ChevronLeft, ChevronRight, Filter, Search, Shield, Sparkles, Swords, WandSparkles, X } from "lucide-react";
+import { Search, Shield, Sparkles, Swords, WandSparkles, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
@@ -17,7 +17,6 @@ import type { WeaponType } from "./quickEquipment";
 const data = rawData as SweepData;
 const materials = Object.keys(data);
 const ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const pageSize = 24;
 
 export function SweepTool() {
   const { locale, t } = useI18n();
@@ -27,8 +26,6 @@ export function SweepTool() {
   );
   const [selectedRanks, setSelectedRanks] = useState<Set<number>>(initialStorageState.selectedRanks);
   const [query, setQuery] = useState("");
-  const [page, setPage] = useState(1);
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const [weaponType, setWeaponType] = useState<WeaponType>("physical");
 
   const stageData = useMemo(() => buildStageData(data), []);
@@ -43,8 +40,6 @@ export function SweepTool() {
     });
   }, [locale, query, selectedRanks]);
 
-  const totalPages = Math.max(1, Math.ceil(filteredMaterials.length / pageSize));
-  const visibleMaterials = filteredMaterials.slice((page - 1) * pageSize, page * pageSize);
   const plan = useMemo(() => createSweepPlan(selected, stageData), [selected, stageData]);
   const missingMaterials = useMemo(() => getMissingMaterials(selected, plan, stageData), [selected, plan, stageData]);
   const requiredMaterialCount = useMemo(
@@ -65,7 +60,6 @@ export function SweepTool() {
   function persistRanks(nextRanks: Set<number>) {
     setSelectedRanks(nextRanks);
     writeSweepStorageState({ selectedQuantities, selectedRanks: nextRanks });
-    setPage(1);
   }
 
   function toggleMaterial(material: MaterialId) {
@@ -96,18 +90,12 @@ export function SweepTool() {
     persistRanks(selectedRanks.size === ranks.length ? new Set() : new Set(ranks));
   }
 
-  function handleQuery(nextQuery: string) {
-    setQuery(nextQuery);
-    setPage(1);
-  }
-
   function selectEquipmentSet(rank: number) {
     const nextSelectedQuantities = new Map(Object.entries(buildEquipmentRequirements(rank, weaponType, data)));
     const nextRanks = new Set(requiredEquipmentRanks(rank));
     setSelectedQuantities(nextSelectedQuantities);
     setSelectedRanks(nextRanks);
     writeSweepStorageState({ selectedQuantities: nextSelectedQuantities, selectedRanks: nextRanks });
-    setPage(1);
     setQuery("");
   }
 
@@ -130,21 +118,6 @@ export function SweepTool() {
                 <X size={16} />
                 <span>{t("sweep.clear")}</span>
               </button>
-              <div className="pager" aria-label={t("sweep.pages")}>
-                <button type="button" onClick={() => setPage((value) => Math.max(1, value - 1))} disabled={page === 1}>
-                  <ChevronLeft size={18} />
-                </button>
-                <span>
-                  {page} / {totalPages}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setPage((value) => Math.min(totalPages, value + 1))}
-                  disabled={page === totalPages}
-                >
-                  <ChevronRight size={18} />
-                </button>
-              </div>
             </div>
           </div>
 
@@ -153,36 +126,30 @@ export function SweepTool() {
             <input
               type="search"
               value={query}
-              onChange={(event) => handleQuery(event.target.value)}
+              onChange={(event) => setQuery(event.target.value)}
               placeholder={t("sweep.search.placeholder")}
             />
           </label>
 
-          <button className="filter-toggle" type="button" onClick={() => setFiltersOpen((value) => !value)}>
-            <Filter size={16} />
-            <span>{t("sweep.rankFilter")}</span>
-          </button>
-          {filtersOpen ? (
-            <div className="rank-options">
+          <div className="rank-options">
+            <button
+              className={selectedRanks.size === ranks.length ? "rank-option active" : "rank-option"}
+              type="button"
+              onClick={toggleAllRanks}
+            >
+              {t("sweep.allRanks")}
+            </button>
+            {ranks.map((rank) => (
               <button
-                className={selectedRanks.size === ranks.length ? "rank-option active" : "rank-option"}
+                className={selectedRanks.has(rank) ? "rank-option active" : "rank-option"}
+                key={rank}
                 type="button"
-                onClick={toggleAllRanks}
+                onClick={() => toggleRank(rank)}
               >
-                {t("sweep.allRanks")}
+                Rank {rank}
               </button>
-              {ranks.map((rank) => (
-                <button
-                  className={selectedRanks.has(rank) ? "rank-option active" : "rank-option"}
-                  key={rank}
-                  type="button"
-                  onClick={() => toggleRank(rank)}
-                >
-                  Rank {rank}
-                </button>
-              ))}
-            </div>
-          ) : null}
+            ))}
+          </div>
 
           <section className="quick-select" aria-label={t("sweep.quickSelect.title")}>
             <div className="quick-select-header">
@@ -230,7 +197,7 @@ export function SweepTool() {
           </section>
 
           <div className="catalog-grid">
-            {visibleMaterials.map((material) => (
+            {filteredMaterials.map((material) => (
               <button
                 className={selected.has(material) ? "material-card selected" : "material-card"}
                 key={material}
