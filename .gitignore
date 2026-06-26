@@ -4,3 +4,7 @@ dist/
 *.tsbuildinfo
 *.local
 dev-server.*.log
+
+COMMON-AGENTS.md
+
+COMMON-AGENTS.md

@@ -1,4 +1,7 @@
-# Repository Instructions
+# AGENTS.md
+
+共通ルールは `COMMON-AGENTS.md` を必ず確認し、上位方針として扱う。
+このファイルでは `trickcal-tools-clone` 固有の補足だけを記載する。
 
 ## Package Manager
 
@@ -24,7 +27,7 @@ Use Bun for all package and script operations.
 
 ## Quality Checks
 
-After significant source edits, run the configured quality checks with Bun before handing off.
+Configured checks for this repository:
 
 - Format: run `bun run format:check`; run `bun run format` when formatting changes are needed.
 - Lint: run `bun run lint`.
