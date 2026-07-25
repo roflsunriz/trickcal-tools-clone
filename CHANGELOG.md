@@ -6,6 +6,10 @@ This project follows a lightweight Keep a Changelog style. Versions are not tied
 
 ## [Unreleased]
 
+### Security
+
+- push前監査で検出された既知の依存脆弱性を解消するため、安全版へ依存関係とロックファイルを更新した。
+
 ### Added
 
 - GitHub Actions CI for formatting, linting, type checking, tests, and production builds.
@@ -15,6 +19,8 @@ This project follows a lightweight Keep a Changelog style. Versions are not tied
 - Bun-based package management and quality scripts.
 
 ### Changed
+
+- 作業開始時の共通指針見落としを防ぐため、調査やコマンド実行より前に `COMMON-AGENTS.md` を先頭から末尾まで読み、EOFを確認する必須ゲートを追加した。
 
 - `bun run build` now produces the GitHub Pages artifact shape by default.
 - Material catalog now renders all filtered materials without pagination.
