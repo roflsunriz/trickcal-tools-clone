@@ -46,3 +46,9 @@ bun run build
 - 専用プロファイルのヘッドレスChromeで本番ビルドを操作。31-1・32-5の集約、ランク9一式の物理／魔法各432個、詳細開閉、副産物候補、選択解除、テーマ切り替え、再読み込み後の選択・言語復元を確認。
 - 日本語・英語の各1280×900／390×844で、横方向のはみ出し、画像失敗、JavaScript例外、HTTPエラー、実行時のwiki通信なし。デスクトップ日本語とモバイル英語のスクリーンショットも確認。長い素材名は既存仕様どおり省略表示され、ツールチップに全文がある。
 - Vitestはサンドボックス内のディレクトリアクセス制限で失敗したため、同じコマンドを必要な権限で再実行した。ビルドも同じ設定読み込みに必要な権限で実行した。CI指定のBun 1.3.8とGitHub Actions上での実行、公開サイトへの反映は今回のローカル検証には含まない。
+
+## 公開時の確認
+
+2026-09-11に `7ea0ffa` を `main` へpushし、[GitHub Pagesの実行](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/34576077427)でBun 1.3.8による整形・lint・型チェック・テスト・ビルドと公開に成功しました。この実行でNode.js 20の非推奨警告が出たため、CIとPages関連Actionsを公式のNode.js 24対応版へ更新しました。
+
+移行の根拠は [GitHubの案内](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/)、[checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1)、[configure-pages v6.0.0](https://github.com/actions/configure-pages/releases/tag/v6.0.0)、[upload-pages-artifact v5.0.0](https://github.com/actions/upload-pages-artifact/releases/tag/v5.0.0)、[deploy-pages v5.0.1](https://github.com/actions/deploy-pages/releases/tag/v5.0.1)です。移行後は対象コミットの両ワークフローの成功と警告解消を確認し、公開されたJS・CSSがローカルビルドと一致すること、新ワールドの周回候補が表示されることを確認します。

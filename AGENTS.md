@@ -45,6 +45,8 @@ Use Bun for all package and script operations.
 
 ## Quality Checks
 
+- GitHub Pagesの公開は `.github/workflows/deploy-pages.yml` が `main` のpushで実行する。対象コミットの `CI` とデプロイ結果、公開アセットへの反映を確認する。Actionsの実行環境はアプリのBunとは別であり、Node.jsの非推奨警告はAction自身と内包するActionを更新して解消する（`how-to-update.md` 参照）。
+
 Configured checks for this repository:
 
 - Format: run `bun run format:check`; run `bun run format` when formatting changes are needed.

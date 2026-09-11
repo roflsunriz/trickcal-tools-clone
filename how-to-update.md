@@ -47,6 +47,21 @@ bun run data:update --check
 
 依存関係を変更した場合やpushする前は `bun audit` も実行します。画面上の確認内容は [verification.md](verification.md) を参照してください。全体が一致したら生成データ、出典表、テスト、関連文書を同じコミットに含めます。
 
+## GitHub Pagesへの公開
+
+公開が許可された更新は `main` へpushします。
+
+```sh
+bun audit
+git push origin main
+gh run list --branch main --limit 5
+gh run watch <対象の実行ID> --exit-status
+```
+
+pushしたコミットに対する `CI` と `Deploy GitHub Pages` の両方が成功したことを確認します。その後、[公開ツール](https://roflsunriz.github.io/trickcal-tools-clone/sweep/)で新しい周回候補と画像を確認します。古い内容が配信される場合は、デプロイ対象のコミット、公開されたHTMLが参照するアセット、ローカルのビルド成果物を照合してください。
+
+Actionsの非推奨警告が出た場合は、各Actionの公式リリースと実行環境の要件を確認してワークフローを更新します。2026-09-11にはNode.js 20の警告を確認し、Node.js 24対応版へ移行しました。使用するバージョンは `.github/workflows/` を正本とします。
+
 ## 復旧
 
 取得・形式検証のエラー時はwikiの本文、表の見出し、エラーが指す行を確認します。欠落を空配列で埋めたり、不明なドロップを推測したりせず、確認できたデータから再実行します。書き込みは一時ファイルからの置き換えで行い、途中で失敗した場合は変更済みファイルの元の内容へ復元を試みます。復旧エラーが出た場合はGit差分を確認してください。
