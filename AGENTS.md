@@ -24,7 +24,7 @@ Use Bun for all package and script operations.
 ## Source Structure
 
 - `src/App.tsx`: application shell, routing between tools, theme and locale controls.
-- `src/i18n.tsx`: locale state and UI message dictionary.
+- `src/i18n.ts`: UI message dictionary; `src/I18nProvider.tsx`: locale state.
 - `src/app/tools.ts`: registry for available tools.
 - `src/tools/sweep/`: sweep planner feature.
   - `SweepTool.tsx`: sweep UI and quick equipment selection.
@@ -35,13 +35,21 @@ Use Bun for all package and script operations.
   - `sweep.test.ts`: planner tests.
 - `public/assets/gears/`: local material images organized by rank.
 
+## Wiki Data Import
+
+- 更新は `bun run data:update`、外部wikiとの差分確認は `bun run data:update --check`。取得した表は `scripts/fixtures/wiki-equipment-drops.html` に出典・wiki更新日時とともに保存される。詳細は `how-to-update.md`、検証は `verification.md` を参照する。
+- 装備ドロップの出典は [トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図) の「素材ドロップ場所一覧」。通常のページHTMLには表が含まれず、`lazy-accordion-container` の属性から公開の部分取得URLを組み立てる必要がある。行番号やハッシュは更新で変わるため固定しない。
+- wikiの装備コードは「ランク + 種別番号（鎧・帽子・煌めく装飾品・ブーツ・華麗な装飾品・物理武器・魔法武器）」を表す。`quickEquipment.ts` の `equipmentByRank` に対応させ、表示名や画像パス、保存済み選択に使う `material-NNN` を振り直さない。
+- この表の収録はワールド3以降のランク2以上。ランク1素材とワールド1・2の既存データは表から再生成しない。wiki内の他の表と食い違う場合は、根拠を照合してから変更する。
+- 2026-09-11の取得表には10-5が設計図・副産物を逆にして重複している。同じ素材集合の重複は統合し、異なる集合の重複や既存ステージの欠落はエラーにする。全表の照合は保存した実データを使うテストで行い、CIから外部wikiへは接続しない。
+
 ## Quality Checks
 
 Configured checks for this repository:
 
 - Format: run `bun run format:check`; run `bun run format` when formatting changes are needed.
 - Lint: run `bun run lint`.
-- Typecheck: run `bun run typecheck`.
+- Typecheck: run `bun run typecheck` (includes `tsconfig.scripts.json` for the wiki import scripts).
 - Build: run `bun run build`.
 - Tests: run `bun test` when planner logic, data, or user-facing behavior changes.
 

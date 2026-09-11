@@ -29,7 +29,7 @@ bun test
 ## Source Layout
 
 - `src/App.tsx`: app shell, theme, locale controls, and active tool rendering.
-- `src/i18n.ts`: UI message dictionary.
+- `src/i18n.ts`: UI message dictionary; `src/I18nProvider.tsx`: locale state.
 - `src/app/tools.ts`: tool registry.
 - `src/tools/sweep/`: sweep planner UI, data, storage, planner logic, and tests.
 - `public/assets/gears/`: local material image assets organized by rank.
@@ -40,6 +40,9 @@ bun test
 - Keep material names and asset path helpers in `src/tools/sweep/materialNames.ts`.
 - Store material images locally under `public/assets/gears/rank-N/`.
 - Prefer stable material IDs over display names in planner logic and tests.
+- Update equipment drops from the wiki with `bun run data:update`; use `bun run data:update --check` to preview changes without writing files.
+- Commit the captured table in `scripts/fixtures/wiki-equipment-drops.html` together with generated data. See [更新手順](how-to-update.md) and [検証手順](verification.md) for coverage, validation, and recovery.
+- `bun run typecheck` also checks the import scripts. The `@types/node` development dependency supplies types for their filesystem and process APIs; no runtime package is added.
 
 ## Pull Requests
 

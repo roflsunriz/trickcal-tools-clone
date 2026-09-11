@@ -7,13 +7,14 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build && bun run pages:routes",
+    "data:update": "bun scripts/update-sweep-data.ts",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint .",
     "pages:routes": "bun scripts/create-pages-routes.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b && tsc -p tsconfig.scripts.json"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.2.0",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "eslint": "^10.8.0",
@@ -35,7 +37,7 @@
     "vitest": "^4.1.10"
   },
   "overrides": {
-    "brace-expansion": "5.0.8",
+    "brace-expansion": "5.0.9",
     "esbuild": "0.28.1",
     "postcss": "8.5.23"
   }

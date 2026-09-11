@@ -1,33 +1,39 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+このプロジェクトの主な変更を記録します。
 
-This project follows a lightweight Keep a Changelog style. Versions are not tied to releases yet.
+Keep a Changelogに従い、公開前の変更はUnreleasedに集約します。バージョン単位のリリースはまだ運用していません。
 
 ## [Unreleased]
 
 ### Security
 
+- データ更新時の依存監査で見つかった7件の脆弱性を解消するため、Vitestと関連する間接依存を修正版へ更新した。
 - push前監査で検出された既知の依存脆弱性を解消するため、安全版へ依存関係とロックファイルを更新した。
 
 ### Added
 
-- GitHub Actions CI for formatting, linting, type checking, tests, and production builds.
-- GitHub Pages deployment workflow for the `main` branch and manual dispatch.
-- Local equipment image assets for the sweep planner.
-- Rank 9 equipment support and high-rank side-product stage data.
-- Bun-based package management and quality scripts.
+- wikiの更新を再現できるように、公開表を取得・検証する `bun run data:update` と差分確認用の `--check`、wiki更新日時付きの出典表を追加した。
+- 不完全なwikiデータで既存の周回候補を失わないように、欠落・未知の装備・矛盾する重複を拒否する検証と回帰テストを追加した。
+- データ更新と障害時の復旧を行えるように、更新・検証・サポート・セキュリティ・行動規範の文書を整備した。
+- コードの品質を継続して確認するため、整形・lint・型チェック・テスト・ビルドを行うGitHub Actions CIを追加した。
+- Webサイトを公開するため、`main` ブランチと手動実行に対応するGitHub Pagesワークフローを追加した。
+- 上流の画像配信に依存せず利用できるように、周回ツールの装備画像を同梱した。
+- 高ランク装備の収集に対応するため、ランク9の装備と高ランク副産物のドロップ情報を追加した。
+- 開発手順を統一するため、Bunによるパッケージ管理と品質確認スクリプトを追加した。
 
 ### Changed
 
 - 作業開始時の共通指針見落としを防ぐため、調査やコマンド実行より前に `COMMON-AGENTS.md` を先頭から末尾まで読み、EOFを確認する必須ゲートを追加した。
-
-- `bun run build` now produces the GitHub Pages artifact shape by default.
-- Material catalog now renders all filtered materials without pagination.
-- Rank filters are always visible.
-- Best-plan material cards use larger local images and localized material-name tooltips.
+- 新ワールドでランク9素材をまとめて集められるように、2026-09-11にトリッカルwikiからワールド31・32の20ステージ・40件のドロップ情報を取り込んだ。再生成手順は `how-to-update.md` に記載した。
+- 更新スクリプトの不具合も型チェックで検出できるように、スクリプト用の型チェックと開発用のNode.js型定義を追加した。
+- 通常のビルドで公開物を作れるように、`bun run build` にGitHub Pages向けの出力処理を含めた。
+- 素材一覧を続けて確認できるように、ページ切り替えを廃止し、絞り込んだ素材をすべて表示するようにした。
+- 絞り込みにすぐアクセスできるように、ランクフィルターを常時表示した。
+- 周回プランの素材を識別しやすいように、画像を拡大し、表示言語に応じた素材名のツールチップを付けた。
 
 ### Fixed
 
-- GitHub Pages asset URLs now resolve under the configured Pages base path.
-- Sweep planner storage now repairs invalid persisted state.
+- 21-1の副産物が正しく周回候補に反映されるように、wikiの一覧・逆引き表に基づきランク7の煌めく装飾品を華麗な装飾品へ修正した。
+- GitHub Pagesで画像などを読み込めるように、設定されたベースパスに合わせてアセットURLを修正した。
+- 保存データが不正でも周回ツールを利用できるように、保存状態の検証と修復を追加した。
