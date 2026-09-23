@@ -35,6 +35,7 @@ Keep a Changelogに従い、公開前の変更はUnreleasedに集約します。
 
 ### Fixed
 
+- CI と Dependabot の分類の実行順が前後しても更新を取りこぼさないよう、同じ PR 番号と head SHA を再照合する経路を追加した。
 - GitHub ActionsのNode.js 20廃止後もCIと公開を継続できるように、チェックアウトとPages関連のActionsをNode.js 24対応版へ更新した。
 - 21-1の副産物が正しく周回候補に反映されるように、wikiの一覧・逆引き表に基づきランク7の煌めく装飾品を華麗な装飾品へ修正した。
 - GitHub Pagesで画像などを読み込めるように、設定されたベースパスに合わせてアセットURLを修正した。
