@@ -52,3 +52,9 @@ bun run build
 2026-09-11に `7ea0ffa` を `main` へpushし、[GitHub Pagesの実行](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/34576077427)でBun 1.3.8による整形・lint・型チェック・テスト・ビルドと公開に成功しました。この実行でNode.js 20の非推奨警告が出たため、CIとPages関連Actionsを公式のNode.js 24対応版へ更新しました。
 
 移行の根拠は [GitHubの案内](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/)、[checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1)、[configure-pages v6.0.0](https://github.com/actions/configure-pages/releases/tag/v6.0.0)、[upload-pages-artifact v5.0.0](https://github.com/actions/upload-pages-artifact/releases/tag/v5.0.0)、[deploy-pages v5.0.1](https://github.com/actions/deploy-pages/releases/tag/v5.0.1)です。移行後は対象コミットの両ワークフローの成功と警告解消を確認し、公開されたJS・CSSがローカルビルドと一致すること、新ワールドの周回候補が表示されることを確認します。
+
+## Dependabot 自動処理（2026-09-23）
+
+`.github/workflows/dependabot-automation.yml` を actionlint で検査し、PR 用 workflow 名（CI）と一致することを確認する。Dependabot の patch／minor かつ全 PR チェック成功の場合だけ取り込み、major・古い SHA・限定修復後も失敗した PR は残す。
+
+実際の Dependabot PR がまだない場合、動作経路は未検証として扱う。実 PR 発生後に自動化ジョブ、CI の再試行、マージ結果を確認する。
