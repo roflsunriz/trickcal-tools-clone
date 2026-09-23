@@ -18,6 +18,6 @@ jobs:
     with:
       ci_workflows: '["CI"]'
       post_merge_workflows: '["deploy-pages.yml"]'
-      autofix_command: 'bun install --lockfile-only --ignore-scripts'
+      autofix_command: "bun install --lockfile-only --ignore-scripts"
       autofix_paths: '["bun.lock"]'
       autofix_workflow_files: '["ci.yml"]'
