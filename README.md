@@ -22,37 +22,6 @@
 
 [Open the sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/) and switch the language to English. Select materials or a target equipment rank to find farming stages. The catalog covers worlds 1–32 and ranks 1–9; equipment drops for worlds 3 onward come from the [Trickcal community wiki](https://wikiwiki.jp/thetrickal/装備設計図). Data and images are bundled locally.
 
-## 開発
-
-パッケージ管理とスクリプト実行にはBunを使用します。
-
-```sh
-bun install
-bun run dev
-bun run data:update --check
-bun run format:check
-bun run lint
-bun run typecheck
-bun test
-bun run build
-```
-
-`data:update --check` はwikiとの照合のみを行います。差分がある場合は終了コード1を返します。反映する場合は `bun run data:update` を実行します。
-
-- `src/app`: ツールの登録情報
-- `src/tools/sweep`: 周回UI、素材名、データ、保存処理、計算処理、テスト
-- `scripts/update-sweep-data.ts`: wikiからの更新コマンド
-- `scripts/fixtures/wiki-equipment-drops.html`: 取得元・更新日時付きの素材表
-- `public/assets/gears`: 素材画像
-
-新しいツールは `src/tools/<tool-name>` に追加し、`src/app/tools.ts` へ登録します。
-
-## CIと公開
-
-`main` へのpushとPull Requestで、整形、lint、型チェック、テスト、ビルドを実行します。GitHub Pagesは `main` からの自動公開と手動実行に対応しています。リポジトリ設定のPages公開元にはGitHub Actionsを指定します。
-
-`bun run build` は公開用の `dist/sweep/index.html` も生成します。公開先は [GitHub Pages](https://roflsunriz.github.io/trickcal-tools-clone/sweep/) です。
-
 ## 関連文書
 
 - [変更履歴](CHANGELOG.md)
@@ -63,6 +32,7 @@ bun run build
 
 MITライセンスは本リポジトリ独自のコードと文書に適用されます。ゲームのデータ・名称・画像の権利は、それぞれの権利者に帰属します。
 
-## 依存更新の自動処理
 
-Dependabot は対象の依存関係を毎週確認します。patch／minor 更新は PR のチェック（CI）が成功した後に自動で squash merge されます。CI の失敗ジョブは 1 回だけ再実行します。再失敗時は読み取り権限のジョブで `bun.lock` を再生成し、限定した修正コミットで CI を再実行します。修復できない PR は残します。major 更新は手動で確認します。マージ後はデプロイ workflow を明示起動します。
+## 開発・運用の知見
+
+開発環境、内部構成、検証コマンドと運用上の注意は [findings.md](findings.md) を参照してください。更新・復旧の手順と検証記録は、同ファイルから案内しています。
