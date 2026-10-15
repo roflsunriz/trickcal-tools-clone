@@ -53,6 +53,14 @@ bun run build
 
 移行の根拠は [GitHubの案内](https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/)、[checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1)、[configure-pages v6.0.0](https://github.com/actions/configure-pages/releases/tag/v6.0.0)、[upload-pages-artifact v5.0.0](https://github.com/actions/upload-pages-artifact/releases/tag/v5.0.0)、[deploy-pages v5.0.1](https://github.com/actions/deploy-pages/releases/tag/v5.0.1)です。移行後は対象コミットの両ワークフローの成功と警告解消を確認し、公開されたJS・CSSがローカルビルドと一致すること、新ワールドの周回候補が表示されることを確認します。
 
+## 2026-10-15: TypeScript 6と依存更新
+
+- PR #25の競合を解消し、mainに取り込み済みの依存更新を保持した。TypeScript 6.0.3は `typescript-eslint@8.71.2` の要求する `>=4.8.4 <6.1.0` の範囲内。7系は範囲外のため採用していない。
+- WindowsのBun 1.4.0で `bun install --frozen-lockfile`、整形・lint・型チェック・本番ビルド、BunとVitestの各26テストが成功した。依存監査の4件を修正し、再監査は198パッケージで指摘なし。`bun outdated` の残りは互換範囲外のTypeScript 7のみ。
+- 本番ビルドを専用プロファイルのヘッドレスChromeで確認し、31-1・32-5への集約、物理／魔法のランク9一式各432個、詳細開閉、素材解除、検索、選択クリア、テーマ・言語切り替え、再読み込み後の選択・テーマ・言語の復元に成功した。
+- 日本語・英語の1280×900／390×844でDOMとスクリーンショットを確認し、横方向のはみ出し、素材画像の失敗、JavaScript例外、wikiへの通信はなかった。既存の未設定faviconへの404は素材アセットの検査から除外した。
+- プレビューをサンドボックス内で起動した際は外側のChromeから接続できなかった。同じ実行権限でプレビューを起動して検証した。CI指定のBun 1.3.8と公開先の確認は、対象コミットのGitHub Actionsとデプロイ後の公開アセットで別途行う。
+
 ## Dependabot 自動処理（2026-09-23）
 
 `.github/workflows/dependabot-automation.yml` を actionlint で検査し、PR 用 workflow 名（CI）と一致することを確認する。Dependabot の patch／minor かつ全 PR チェック成功の場合だけ取り込み、major・古い SHA・限定修復後も失敗した PR は残す。

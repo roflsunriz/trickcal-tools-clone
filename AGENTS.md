@@ -57,6 +57,10 @@ Configured checks for this repository:
 
 Do not substitute npm commands for Bun commands.
 
+## TypeScriptの更新
+
+- 2026-10-15時点の `typescript-eslint@8.71.2` はTypeScript `>=4.8.4 <6.1.0` を要求するため、TypeScriptは6.0.3を使用する。7系へ更新する前に、採用する `typescript-eslint` の `peerDependencies` を確認し、lint・型チェック・テスト・ビルドを再検証する。
+
 ## Dependabot の限定修復（2026-09-23）
 
 - CI 再失敗後の自動修復は `bun.lock` だけをパッチとして適用する。修復後は `workflow_dispatch` で `.github/workflows/ci.yml` を再実行するため、この CI の `contents: read` と checkout の `persist-credentials: false` を維持し、PR コードを実行するジョブへ書き込み権限や秘密情報を渡さない。根拠は `.github/workflows/dependabot-automation.yml` と共通ワークフローの権限分離。
