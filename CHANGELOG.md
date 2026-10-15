@@ -25,7 +25,6 @@ Keep a Changelogに従い、公開前の変更はUnreleasedに集約します。
 
 ### Changed
 
-
 - 共通指針と固有の知見を区別して参照できるよう、AGENTS・READMEなどの実現手段、例外と調査知見を `findings.md` へ分離し、着手前の全文確認と更新先を統一した。
 - 開発時の型検査を更新するためTypeScriptを6.0.3へ移行し、React・アイコン・lint・テスト・ビルド関連の依存を互換性のある更新版へ揃えた。TypeScript 7は `typescript-eslint` の対応範囲外のため採用していない。
 - 不具合・機能提案などの受付とPRの記入形式を揃え、プロジェクト固有の確認項目を残した。
