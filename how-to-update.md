@@ -72,6 +72,9 @@ Actionsの非推奨警告が出た場合は、各Actionの公式リリースと�
 
 ## Dependabot PR の更新
 
+
+
+Dependabot version update は毎月28日00:00、検証済み PR の自動マージは同日18:00（いずれも `Asia/Tokyo`）にまとめます。28日より前に自動マージせず、現在の head SHA と全 PR チェックを月末処理で再確認します。
 手動で依存更新を取り込む場合は `bun outdated` と `bun audit` を実行し、`package.json` と `bun.lock` を一緒に確認します。メジャー更新は利用側の `peerDependencies` を照合し、互換性を保てる最大のバージョンまで更新してください。TypeScript 7への移行には、対応する `typescript-eslint` が必要です。
 
 前提は `.github/dependabot.yml` と PR 用 CI（CI）です。更新 PR の head SHA と `gh pr checks <PR番号>` の結果を確認してください。patch／minor は全チェック成功後に自動取り込みされます。初回 CI 失敗は failed jobs のみを 1 回再実行し、再失敗時は `bun.lock` の再生成を試み、修復後の CI を再実行します。変更がない場合や再度失敗した場合は PR を残します。
