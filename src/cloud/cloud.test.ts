@@ -77,18 +77,21 @@ describe("Google authorization persistence", () => {
 
   it("restores a valid token and removes expired or corrupt tokens", () => {
     const session = {
-      schemaVersion: 1 as const,
+      schemaVersion: 2 as const,
+      clientId: "123-example.apps.googleusercontent.com",
       accessToken: "token",
       expiresAt: 1_800_000,
       user: { name: "User", email: "user@example.com", photoUrl: null },
     };
     writeGoogleAuthSession(session);
-    expect(readGoogleAuthSession(1_000_000)).toEqual(session);
-    expect(readGoogleAuthSession(1_750_000)).toBeNull();
+    expect(readGoogleAuthSession(session.clientId, 1_000_000)).toEqual(session);
+    expect(readGoogleAuthSession("456-other.apps.googleusercontent.com", 1_000_000)).toBeNull();
     expect(localStorage.getItem(googleAuthStorageKey)).toBeNull();
 
+    writeGoogleAuthSession(session);
+    expect(readGoogleAuthSession(session.clientId, 1_750_000)).toBeNull();
     localStorage.setItem(googleAuthStorageKey, "not-json");
-    expect(readGoogleAuthSession()).toBeNull();
+    expect(readGoogleAuthSession(session.clientId)).toBeNull();
     clearGoogleAuthSession();
   });
 

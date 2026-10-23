@@ -17,3 +17,4 @@
 - 本番OAuthにはDrive APIを有効化したWeb Client IDと、`https://roflsunriz.github.io` の承認済みJavaScript生成元が必要。PagesはGitHub変数 `GOOGLE_CLIENT_ID` を `VITE_GOOGLE_CLIENT_ID` へ渡し、未設定時はログインを無効化して設定不足を表示する。
 - 2026-10-23にWeb Client IDのJSONをローカルで検証し、本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認した。Client IDだけをGitHub変数 `GOOGLE_CLIENT_ID` へ登録し、Client Secretは読込出力・repository・GitHub変数へ保存しない。
 - OAuth同意画面のアプリ名は個別Client ID名ではなく、Google Auth Platformの同一CloudプロジェクトにあるBranding設定から表示される。既存アプリ「Mylist Backup Service」と同じプロジェクトではその名称になるため、既存アプリを維持するなら本ツール用プロジェクトを分ける。既存プロジェクトを本ツール専用へ転用する場合だけBranding名・ホーム・プライバシーポリシー等を変更する。根拠はGoogle公式のBrand Verification資料（2026-10-23確認）。
+- OAuthクライアントを別プロジェクトへ切り替える場合、localStorageの認証形式にClient IDを保存して一致を検証する。旧Client IDのtokenと同意記録は破棄し、端末内の周回・クレヨン等のデータだけを新しい `appDataFolder` へ初回同期する。

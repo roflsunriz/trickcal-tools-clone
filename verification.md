@@ -19,6 +19,7 @@ bun run build
 - `scripts/community-data.test.ts`: 保存したボードカードと好物表から82使徒・76使徒分の好み・60料理を再生成し、追加使徒、欠落・不正形式の拒否と87画像のmanifest・SHA-256一致を確認する。
 - `src/tools/community/storage.test.ts`: 所持使徒と開放マスの保存・復元、未知の使徒・マス・保存形式の除外を確認する。
 - `src/cloud/cloud.test.ts`: 同期対象キーと復元データの検証、認証期限、Web Client ID、Driveユーザー・appDataFolderの作成／検索、401エラーを確認する。
+- OAuth認証保存はClient ID一致を必須とし、別プロジェクトへの切替時に旧tokenを復元しないことも同テストで確認する。
 
 外部wikiとの照合には `bun run data:update --check` を使用します。外部ページの編集や障害でCIが変動しないように、CIのテストは保存した出典表から実行します。
 

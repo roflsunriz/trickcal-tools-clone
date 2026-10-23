@@ -4,7 +4,8 @@ export const googleAuthStorageKey = "trickcal_google_auth";
 const consentStorageKey = "trickcal_google_consent_granted";
 
 export type GoogleAuthSession = {
-  schemaVersion: 1;
+  schemaVersion: 2;
+  clientId: string;
   accessToken: string;
   expiresAt: number;
   user: GoogleDriveUser;
@@ -47,14 +48,15 @@ export function isGoogleClientId(value: string) {
   return /^\d+-[a-z0-9_-]+\.apps\.googleusercontent\.com$/i.test(value);
 }
 
-export function readGoogleAuthSession(now = Date.now()): GoogleAuthSession | null {
+export function readGoogleAuthSession(expectedClientId: string, now = Date.now()): GoogleAuthSession | null {
   try {
     const value = localStorage.getItem(googleAuthStorageKey);
     if (!value) return null;
     const parsed: unknown = JSON.parse(value);
     if (
       !isRecord(parsed) ||
-      parsed.schemaVersion !== 1 ||
+      parsed.schemaVersion !== 2 ||
+      parsed.clientId !== expectedClientId ||
       typeof parsed.accessToken !== "string" ||
       typeof parsed.expiresAt !== "number" ||
       !isRecord(parsed.user) ||
@@ -75,7 +77,7 @@ export function readGoogleAuthSession(now = Date.now()): GoogleAuthSession | nul
 
 export function writeGoogleAuthSession(session: GoogleAuthSession) {
   localStorage.setItem(googleAuthStorageKey, JSON.stringify(session));
-  localStorage.setItem(consentStorageKey, "true");
+  localStorage.setItem(consentStorageKey, session.clientId);
 }
 
 export function clearGoogleAuthSession() {
@@ -153,7 +155,7 @@ export async function requestGoogleAccessToken(clientId: string) {
       },
       error_callback: (error) => fail(error.type || "GOOGLE_LOGIN_FAILED"),
     });
-    client.requestAccessToken({ prompt: localStorage.getItem(consentStorageKey) === "true" ? "" : "consent" });
+    client.requestAccessToken({ prompt: localStorage.getItem(consentStorageKey) === clientId ? "" : "consent" });
   });
 }
 

@@ -37,7 +37,9 @@ function toErrorCode(error: unknown): CloudErrorCode {
 
 export function CloudProvider({ children }: { children: ReactNode }) {
   const configured = isGoogleClientId(clientId);
-  const [session, setSession] = useState<GoogleAuthSession | null>(() => (configured ? readGoogleAuthSession() : null));
+  const [session, setSession] = useState<GoogleAuthSession | null>(() =>
+    configured ? readGoogleAuthSession(clientId) : null,
+  );
   const [status, setStatus] = useState<CloudStatus>(() =>
     configured ? (session ? "signedIn" : "signedOut") : "unconfigured",
   );
@@ -153,7 +155,8 @@ export function CloudProvider({ children }: { children: ReactNode }) {
           const token = await requestGoogleAccessToken(clientId);
           const user = await fetchDriveUser(token.accessToken);
           const nextSession: GoogleAuthSession = {
-            schemaVersion: 1,
+            schemaVersion: 2,
+            clientId,
             accessToken: token.accessToken,
             expiresAt: token.expiresAt,
             user,
