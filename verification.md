@@ -110,3 +110,8 @@ bun run build
 
 - `90b4b4d` を `main` へpushし、[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39951669293)と[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39951669411)の両方に成功した。Actionsの注記は `ubuntu-latest` のUbuntu 26移行案内だけで、ビルドや公開の失敗はなかった。
 - 公開HTMLがローカルビルドと同じ `index-BGl-pbQC.js` と `index-Bq529Lk1.css` を参照することを確認した。公開画面でも魔法・Rank 9の再読み込み後の復元、12素材、6ステージ、1280×900の2列・スクロールなし、390×844の1列・横方向のはみ出しなしを確認した。JavaScript例外、通信失敗、wikiへの通信はいずれも0件だった。
+
+## 2026-10-23: 最適プランの素材配色
+
+- コンパクト表示化で素材ボタンのclassを変更した際、共通のテーマ対応ボタンselectorに旧classが残り、ブラウザ既定の白背景と `--muted` の灰色文字が組み合わさっていた。新classを共通selectorへ接続し、素材名を `--text`、ウェイト600へ変更した。
+- 1280×900の専用Chromeで、ライトテーマは文字 `rgb(34, 37, 42)`・背景 `rgb(255, 255, 255)`・コントラスト比15.37:1、ダークテーマは文字 `rgb(245, 246, 248)`・背景 `rgb(45, 48, 55)`・12.22:1と実測した。両テーマで枠線、ポインター、横幅内への収まりを確認し、JavaScript例外は0件だった。

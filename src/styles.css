@@ -69,7 +69,7 @@ input {
 .segment,
 .quick-rank-button,
 .material-card,
-.material-chip {
+.plan-material {
   border: 1px solid var(--border);
   color: var(--text);
   background: var(--panel-strong);
@@ -435,8 +435,14 @@ input {
   min-height: 52px;
   padding: 7px 30px 7px 7px;
   border-radius: 8px;
-  color: var(--muted);
+  color: var(--text);
+  font-weight: 600;
   text-align: left;
+}
+
+.plan-material:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 7%, var(--panel-strong));
 }
 
 .plan-material img {
