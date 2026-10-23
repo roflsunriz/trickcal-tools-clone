@@ -1,0 +1,1526 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "board": {
+      "url": "https://trickcal-strategy.pages.dev/board/manager.html",
+      "sha256": "ad0cbb564d875942a00eeede6a06af7fd0951cbcb84c55aa135e725bd181b35e"
+    },
+    "food": {
+      "url": "https://wikiwiki.jp/thetrickal/宴会場",
+      "sha256": "5c3dcdf75094eca94ba5fb98626e52ca3a559f8c7017401f68b82b857a600a49",
+      "lastModified": "2026-10-20 (火) 11:00:00"
+    }
+  },
+  "boardConfig": {
+    "layer1": {
+      "bonusPerCell": 3,
+      "crayonsPerCell": 2
+    },
+    "layer2": {
+      "bonusPerCell": 4,
+      "crayonsPerCell": 4
+    },
+    "layer3": {
+      "bonusPerCell": 5,
+      "crayonsPerCell": 6
+    }
+  },
+  "characters": {
+    "アメリア": {
+      "name": "アメリア",
+      "personality": "冷静",
+      "race": "エルフ",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "アヤ": {
+      "name": "アヤ",
+      "personality": "冷静",
+      "race": "魔女",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "アリス": {
+      "name": "アリス",
+      "personality": "狂気",
+      "race": "幽霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "アレット": {
+      "name": "アレット",
+      "personality": "純粋",
+      "race": "エルフ",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["critResist", "crit"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "イード": {
+      "name": "イード",
+      "personality": "冷静",
+      "race": "エルフ",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["attack", "defense"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "イフリート": {
+      "name": "イフリート",
+      "personality": "狂気",
+      "race": "精霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ウイ": {
+      "name": "ウイ",
+      "personality": "活発",
+      "race": "精霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["critResist", "crit"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ヴィヴィ": {
+      "name": "ヴィヴィ",
+      "personality": "純粋",
+      "race": "竜族",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "エシュール": {
+      "name": "エシュール",
+      "personality": "憂鬱",
+      "race": "妖精",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "エスピー": {
+      "name": "エスピー",
+      "personality": "冷静",
+      "race": "幽霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "エピカ": {
+      "name": "エピカ",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "エルフィン": {
+      "name": "エルフィン",
+      "personality": "純粋",
+      "race": "妖精",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "エレナ": {
+      "name": "エレナ",
+      "personality": "冷静",
+      "race": "エルフ",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["attack", "defense"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "ガヴィア": {
+      "name": "ガヴィア",
+      "personality": "純粋",
+      "race": "精霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "カレン": {
+      "name": "カレン",
+      "personality": "活発",
+      "race": "妖精",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "カンナ": {
+      "name": "カンナ",
+      "personality": "活発",
+      "race": "エルフ",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ギデオン": {
+      "name": "ギデオン",
+      "personality": "憂鬱",
+      "race": "竜族",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "キャロット": {
+      "name": "キャロット",
+      "personality": "純粋",
+      "race": "妖精",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "キュウイ": {
+      "name": "キュウイ",
+      "personality": "純粋",
+      "race": "妖精",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["attack", "hp"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "グウィン": {
+      "name": "グウィン",
+      "personality": "冷静",
+      "race": "獣人",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "クロエ": {
+      "name": "クロエ",
+      "personality": "狂気",
+      "race": "妖精",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "コミー": {
+      "name": "コミー",
+      "personality": "憂鬱",
+      "race": "獣人",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "コミー（水着）": {
+      "name": "コミー（水着）",
+      "personality": "冷静",
+      "race": "獣人",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "サリー": {
+      "name": "サリー",
+      "personality": "純粋",
+      "race": "幽霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "シーラ": {
+      "name": "シーラ",
+      "personality": "冷静",
+      "race": "精霊",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "シェイディ": {
+      "name": "シェイディ",
+      "personality": "狂気",
+      "race": "幽霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "ジェイド": {
+      "name": "ジェイド",
+      "personality": "冷静",
+      "race": "竜族",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "シェルム": {
+      "name": "シェルム",
+      "personality": "純粋",
+      "race": "魔女",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "シオン・ザ・DB": {
+      "name": "シオン・ザ・DB",
+      "personality": "憂鬱",
+      "race": "幽霊",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "シスト": {
+      "name": "シスト",
+      "personality": "狂気",
+      "race": "竜族",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["critResist", "crit"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "シュパン": {
+      "name": "シュパン",
+      "personality": "活発",
+      "race": "妖精",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ジュビー": {
+      "name": "ジュビー",
+      "personality": "活発",
+      "race": "精霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["attack", "defense"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "ジョアン": {
+      "name": "ジョアン",
+      "personality": "裏面",
+      "race": "妖精",
+      "deployRow": "全ての列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "シルフィール": {
+      "name": "シルフィール",
+      "personality": "純粋",
+      "race": "竜族",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "スノキー": {
+      "name": "スノキー",
+      "personality": "憂鬱",
+      "race": "魔女",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "スピッキー": {
+      "name": "スピッキー",
+      "personality": "純粋",
+      "race": "幽霊",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "セリーネ": {
+      "name": "セリーネ",
+      "personality": "活発",
+      "race": "幽霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "ダーヤ": {
+      "name": "ダーヤ",
+      "personality": "純粋",
+      "race": "竜族",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "タイダー": {
+      "name": "タイダー",
+      "personality": "活発",
+      "race": "エルフ",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "チョッピー": {
+      "name": "チョッピー",
+      "personality": "憂鬱",
+      "race": "獣人",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ディアナ": {
+      "name": "ディアナ",
+      "personality": "狂気",
+      "race": "獣人",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ティグ": {
+      "name": "ティグ",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ナイア": {
+      "name": "ナイア",
+      "personality": "純粋",
+      "race": "精霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "ネル": {
+      "name": "ネル",
+      "personality": "狂気",
+      "race": "妖精",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "バター": {
+      "name": "バター",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "パトラ": {
+      "name": "パトラ",
+      "personality": "冷静",
+      "race": "妖精",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "バリエ": {
+      "name": "バリエ",
+      "personality": "憂鬱",
+      "race": "魔女",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "バロン": {
+      "name": "バロン",
+      "personality": "冷静",
+      "race": "幽霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ピコラ": {
+      "name": "ピコラ",
+      "personality": "冷静",
+      "race": "魔女",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ビッグウッド": {
+      "name": "ビッグウッド",
+      "personality": "純粋",
+      "race": "精霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "ピラ": {
+      "name": "ピラ",
+      "personality": "狂気",
+      "race": "竜族",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["critResist", "crit"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ヒルデ": {
+      "name": "ヒルデ",
+      "personality": "憂鬱",
+      "race": "エルフ",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "フェスタ": {
+      "name": "フェスタ",
+      "personality": "憂鬱",
+      "race": "エルフ",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["attack", "defense"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "ブランセ": {
+      "name": "ブランセ",
+      "personality": "憂鬱",
+      "race": "精霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "フリックル": {
+      "name": "フリックル",
+      "personality": "冷静",
+      "race": "魔女",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "ヘイリー": {
+      "name": "ヘイリー",
+      "personality": "純粋",
+      "race": "エルフ",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "ベニー": {
+      "name": "ベニー",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "ベリータ": {
+      "name": "ベリータ",
+      "personality": "狂気",
+      "race": "魔女",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "ベル": {
+      "name": "ベル",
+      "personality": "憂鬱",
+      "race": "幽霊",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "ベルベット": {
+      "name": "ベルベット",
+      "personality": "冷静",
+      "race": "魔女",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ポーシャー": {
+      "name": "ポーシャー",
+      "personality": "憂鬱",
+      "race": "魔女",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "マーゴ": {
+      "name": "マーゴ",
+      "personality": "純粋",
+      "race": "獣人",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["attack", "hp"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "マエストロMK2": {
+      "name": "マエストロMK2",
+      "personality": "狂気",
+      "race": "エルフ",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "マヨ": {
+      "name": "マヨ",
+      "personality": "狂気",
+      "race": "妖精",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "マリー": {
+      "name": "マリー",
+      "personality": "活発",
+      "race": "妖精",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["attack", "hp"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "ミンス": {
+      "name": "ミンス",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["attack", "hp"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "メゾン": {
+      "name": "メゾン",
+      "personality": "狂気",
+      "race": "幽霊",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "メロナ": {
+      "name": "メロナ",
+      "personality": "冷静",
+      "race": "精霊",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "モモ": {
+      "name": "モモ",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["attack", "hp"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "ユミミ": {
+      "name": "ユミミ",
+      "personality": "狂気",
+      "race": "獣人",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["hp", "crit"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "ヨミ": {
+      "name": "ヨミ",
+      "personality": "憂鬱",
+      "race": "ミスティック",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["defense", "attack"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "リスティ": {
+      "name": "リスティ",
+      "personality": "憂鬱",
+      "race": "エルフ",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["attack", "defense"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "リッツ": {
+      "name": "リッツ",
+      "personality": "狂気",
+      "race": "竜族",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["hp", "attack"],
+        "layer2": ["attack", "defense", "critResist"],
+        "layer3": ["attack", "crit", "defense", "critResist"]
+      }
+    },
+    "リニュア": {
+      "name": "リニュア",
+      "personality": "狂気",
+      "race": "エルフ",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["attack", "defense"],
+        "layer2": ["attack", "hp", "defense"],
+        "layer3": ["attack", "crit", "hp", "critResist"]
+      }
+    },
+    "リム": {
+      "name": "リム",
+      "personality": "憂鬱",
+      "race": "幽霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ルード": {
+      "name": "ルード",
+      "personality": "活発",
+      "race": "竜族",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "ルポ": {
+      "name": "ルポ",
+      "personality": "活発",
+      "race": "獣人",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "レイジー": {
+      "name": "レイジー",
+      "personality": "冷静",
+      "race": "エルフ",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["defense", "critResist"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    },
+    "レヴィ": {
+      "name": "レヴィ",
+      "personality": "憂鬱",
+      "race": "魔女",
+      "deployRow": "中列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "レーテー": {
+      "name": "レーテー",
+      "personality": "冷静",
+      "race": "幽霊",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "critResist"],
+        "layer2": ["crit", "hp", "critResist"],
+        "layer3": ["crit", "hp", "defense", "critResist"]
+      }
+    },
+    "ローネ": {
+      "name": "ローネ",
+      "personality": "純粋",
+      "race": "エルフ",
+      "deployRow": "前列",
+      "boardTypes": {
+        "layer1": ["crit", "hp"],
+        "layer2": ["crit", "defense", "critResist"],
+        "layer3": ["attack", "crit", "hp", "defense"]
+      }
+    },
+    "ロレット": {
+      "name": "ロレット",
+      "personality": "狂気",
+      "race": "魔女",
+      "deployRow": "後列",
+      "boardTypes": {
+        "layer1": ["critResist", "defense"],
+        "layer2": ["attack", "crit", "hp"],
+        "layer3": ["attack", "hp", "defense", "critResist"]
+      }
+    }
+  },
+  "foods": {
+    "ANSA宇宙食": {
+      "rarity": "uncommon"
+    },
+    "チョコアイス": {
+      "rarity": "rare"
+    },
+    "ディープダークチョコアイス": {
+      "rarity": "legendary"
+    },
+    "宇宙食": {
+      "rarity": "common"
+    },
+    "ココナッツ松葉粥": {
+      "rarity": "uncommon"
+    },
+    "ココナッツ万能野菜ジュース": {
+      "rarity": "rare"
+    },
+    "ご飯": {
+      "rarity": "rare"
+    },
+    "もち米ご飯": {
+      "rarity": "legendary"
+    },
+    "トリプルチョコミントアイス": {
+      "rarity": "legendary"
+    },
+    "チョコミントアイス": {
+      "rarity": "rare"
+    },
+    "ホットアイスアメリカーノ": {
+      "rarity": "uncommon"
+    },
+    "灼熱アイスアメリカーノ": {
+      "rarity": "rare"
+    },
+    "オーガニックレモンティー": {
+      "rarity": "rare"
+    },
+    "レモンティー": {
+      "rarity": "common"
+    },
+    "幽霊プリン": {
+      "rarity": "rare"
+    },
+    "悪霊プリン": {
+      "rarity": "legendary"
+    },
+    "海藻サラダ": {
+      "rarity": "uncommon"
+    },
+    "海藻ポキ": {
+      "rarity": "rare"
+    },
+    "シナモン味の飴玉": {
+      "rarity": "common"
+    },
+    "シナモン味の健康アメ玉": {
+      "rarity": "uncommon"
+    },
+    "アニマル缶": {
+      "rarity": "common"
+    },
+    "高級アニマル缶": {
+      "rarity": "uncommon"
+    },
+    "かぼちゃ粥": {
+      "rarity": "uncommon"
+    },
+    "かぼちゃシチュー": {
+      "rarity": "rare"
+    },
+    "一級品秘密のブドウジュース": {
+      "rarity": "legendary"
+    },
+    "UFCニンジンフライ": {
+      "rarity": "common"
+    },
+    "UFC野菜フライ": {
+      "rarity": "uncommon"
+    },
+    "秘密のブドウジュース": {
+      "rarity": "rare"
+    },
+    "ソフトクレームブリュレ": {
+      "rarity": "rare"
+    },
+    "竜族キャンディ": {
+      "rarity": "common"
+    },
+    "逆鱗なでなでキャンディ": {
+      "rarity": "uncommon"
+    },
+    "クレームブリュレ": {
+      "rarity": "uncommon"
+    },
+    "マンガ肉焼き": {
+      "rarity": "rare"
+    },
+    "海賊マンガ肉焼き": {
+      "rarity": "legendary"
+    },
+    "空気カツレツ": {
+      "rarity": "uncommon"
+    },
+    "水素カツレツ": {
+      "rarity": "rare"
+    },
+    "キャラメルポップコーン": {
+      "rarity": "common"
+    },
+    "エルフキャラメルポップコーン": {
+      "rarity": "uncommon"
+    },
+    "ガーネットの実": {
+      "rarity": "rare"
+    },
+    "ザクロフルーツパンチ": {
+      "rarity": "legendary"
+    },
+    "メロンボッコンチーニ": {
+      "rarity": "rare"
+    },
+    "マスクメロンボッコンチーニ": {
+      "rarity": "legendary"
+    },
+    "ハニーポット": {
+      "rarity": "common"
+    },
+    "ハチミツツボ": {
+      "rarity": "uncommon"
+    },
+    "プレッツェル": {
+      "rarity": "uncommon"
+    },
+    "ハートプレッツェル": {
+      "rarity": "rare"
+    },
+    "あーんイチゴケーキ": {
+      "rarity": "uncommon"
+    },
+    "イチゴケーキ": {
+      "rarity": "common"
+    },
+    "ハニーガーリックサーモン": {
+      "rarity": "uncommon"
+    },
+    "ロイヤルハニーガーリックサーモン": {
+      "rarity": "rare"
+    },
+    "穀物ドリンク": {
+      "rarity": "rare"
+    },
+    "927粒穀物ドリンク": {
+      "rarity": "legendary"
+    },
+    "金のフルーツ飴": {
+      "rarity": "uncommon"
+    },
+    "白銀フルーツ飴": {
+      "rarity": "rare"
+    },
+    "二口草-野菜包み": {
+      "rarity": "rare"
+    },
+    "一口草-野菜包み": {
+      "rarity": "uncommon"
+    },
+    "マシュマロマカロン": {
+      "rarity": "common"
+    },
+    "低糖マシュマロマカロン": {
+      "rarity": "uncommon"
+    },
+    "宝石タルト": {
+      "rarity": "rare"
+    },
+    "秘宝タルト": {
+      "rarity": "legendary"
+    }
+  },
+  "foodPreferences": {
+    "アメリア": {
+      "veryLike": ["ANSA宇宙食"],
+      "like": ["チョコアイス", "ディープダークチョコアイス", "宇宙食"],
+      "dislike": ["ココナッツ松葉粥", "ココナッツ万能野菜ジュース", "ご飯", "もち米ご飯"]
+    },
+    "アヤ": {
+      "veryLike": ["トリプルチョコミントアイス"],
+      "like": ["チョコアイス", "ディープダークチョコアイス", "チョコミントアイス"],
+      "dislike": ["ご飯", "もち米ご飯", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"]
+    },
+    "アリス": {
+      "veryLike": ["オーガニックレモンティー"],
+      "like": ["レモンティー", "幽霊プリン", "悪霊プリン"],
+      "dislike": ["ホットアイスアメリカーノ", "灼熱アイスアメリカーノ", "海藻サラダ", "海藻ポキ"]
+    },
+    "アレット": {
+      "veryLike": ["ANSA宇宙食"],
+      "like": ["シナモン味の飴玉", "シナモン味の健康アメ玉", "宇宙食"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "かぼちゃ粥", "かぼちゃシチュー"]
+    },
+    "イード": {
+      "veryLike": ["一級品秘密のブドウジュース"],
+      "like": ["UFCニンジンフライ", "UFC野菜フライ", "秘密のブドウジュース"],
+      "dislike": ["シナモン味の飴玉", "シナモン味の健康アメ玉", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"]
+    },
+    "イフリート": {
+      "veryLike": ["ソフトクレームブリュレ"],
+      "like": ["竜族キャンディ", "逆鱗なでなでキャンディ", "クレームブリュレ"],
+      "dislike": ["チョコアイス", "ディープダークチョコアイス", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"]
+    },
+    "ウイ": {
+      "veryLike": ["海藻ポキ"],
+      "like": ["マンガ肉焼き", "海賊マンガ肉焼き", "海藻サラダ"],
+      "dislike": ["かぼちゃ粥", "かぼちゃシチュー", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"]
+    },
+    "ヴィヴィ": {
+      "veryLike": ["灼熱アイスアメリカーノ"],
+      "like": ["シナモン味の飴玉", "シナモン味の健康アメ玉", "ホットアイスアメリカーノ"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "空気カツレツ", "水素カツレツ"]
+    },
+    "エシュール": {
+      "veryLike": ["UFC野菜フライ"],
+      "like": ["UFCニンジンフライ", "キャラメルポップコーン", "エルフキャラメルポップコーン"],
+      "dislike": ["ガーネットの実", "ザクロフルーツパンチ", "メロンボッコンチーニ", "マスクメロンボッコンチーニ"]
+    },
+    "エスピー": {
+      "veryLike": ["ディープダークチョコアイス"],
+      "like": ["UFCニンジンフライ", "UFC野菜フライ", "チョコアイス"],
+      "dislike": ["キャラメルポップコーン", "エルフキャラメルポップコーン", "ハニーポット", "ハチミツツボ"]
+    },
+    "エピカ": {
+      "veryLike": ["エルフキャラメルポップコーン"],
+      "like": ["キャラメルポップコーン", "マンガ肉焼き", "海賊マンガ肉焼き"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "プレッツェル", "ハートプレッツェル"]
+    },
+    "エルフィン": {
+      "veryLike": ["あーんイチゴケーキ"],
+      "like": ["イチゴケーキ", "チョコアイス", "ディープダークチョコアイス"],
+      "dislike": ["ココナッツ松葉粥", "ココナッツ万能野菜ジュース", "チョコミントアイス", "トリプルチョコミントアイス"]
+    },
+    "エレナ": {
+      "veryLike": ["灼熱アイスアメリカーノ"],
+      "like": ["ホットアイスアメリカーノ", "宇宙食", "ANSA宇宙食"],
+      "dislike": [
+        "ハニーガーリックサーモン",
+        "ロイヤルハニーガーリックサーモン",
+        "秘密のブドウジュース",
+        "一級品秘密のブドウジュース"
+      ]
+    },
+    "ガヴィア": {
+      "veryLike": ["シナモン味の健康アメ玉"],
+      "like": ["シナモン味の飴玉", "レモンティー", "オーガニックレモンティー"],
+      "dislike": ["クレームブリュレ", "ソフトクレームブリュレ", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "カレン": {
+      "veryLike": ["UFC野菜フライ"],
+      "like": ["イチゴケーキ", "あーんイチゴケーキ", "UFCニンジンフライ"],
+      "dislike": ["シナモン味の飴玉", "シナモン味の健康アメ玉", "チョコミントアイス", "トリプルチョコミントアイス"]
+    },
+    "カンナ": {
+      "veryLike": ["もち米ご飯"],
+      "like": ["ご飯", "マンガ肉焼き", "海賊マンガ肉焼き"],
+      "dislike": ["ココナッツ松葉粥", "ココナッツ万能野菜ジュース", "レモンティー", "オーガニックレモンティー"]
+    },
+    "ギデオン": {
+      "veryLike": ["ハートプレッツェル"],
+      "like": ["アニマル缶", "高級アニマル缶", "プレッツェル"],
+      "dislike": ["穀物ドリンク", "927粒穀物ドリンク", "金のフルーツ飴", "白銀フルーツ飴"]
+    },
+    "キャロット": {
+      "veryLike": ["二口草-野菜包み"],
+      "like": ["一口草-野菜包み", "ハニーポット", "ハチミツツボ"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"]
+    },
+    "クロエ": {
+      "veryLike": ["ハートプレッツェル"],
+      "like": ["プレッツェル", "レモンティー", "オーガニックレモンティー"],
+      "dislike": ["空気カツレツ", "水素カツレツ", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "コミー": {
+      "veryLike": ["高級アニマル缶"],
+      "like": ["アニマル缶", "キャラメルポップコーン", "エルフキャラメルポップコーン"],
+      "dislike": ["UFCニンジンフライ", "UFC野菜フライ", "マンガ肉焼き", "海賊マンガ肉焼き"]
+    },
+    "コミー（水着）": {
+      "veryLike": ["高級アニマル缶"],
+      "like": ["アニマル缶", "キャラメルポップコーン", "エルフキャラメルポップコーン"],
+      "dislike": ["UFCニンジンフライ", "UFC野菜フライ", "マンガ肉焼き", "海賊マンガ肉焼き"]
+    },
+    "サリー": {
+      "veryLike": ["ロイヤルハニーガーリックサーモン"],
+      "like": ["クレームブリュレ", "ソフトクレームブリュレ", "ハニーガーリックサーモン"],
+      "dislike": ["ハニーポット", "ハチミツツボ", "穀物ドリンク", "927粒穀物ドリンク"]
+    },
+    "シーラ": {
+      "veryLike": ["水素カツレツ"],
+      "like": ["ハニーポット", "ハチミツツボ", "空気カツレツ"],
+      "dislike": ["幽霊プリン", "悪霊プリン", "宇宙食", "ANSA宇宙食"]
+    },
+    "シェイディ": {
+      "veryLike": ["悪霊プリン"],
+      "like": ["ガーネットの実", "ザクロフルーツパンチ", "幽霊プリン"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "かぼちゃ粥", "かぼちゃシチュー"]
+    },
+    "ジェイド": {
+      "veryLike": ["トリプルチョコミントアイス"],
+      "like": ["チョコミントアイス", "竜族キャンディ", "逆鱗なでなでキャンディ"],
+      "dislike": ["マンガ肉焼き", "海賊マンガ肉焼き", "穀物ドリンク", "927粒穀物ドリンク"]
+    },
+    "シェルム": {
+      "veryLike": [],
+      "like": ["マシュマロマカロン", "低糖マシュマロマカロン", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"],
+      "dislike": [
+        "キャラメルポップコーン",
+        "エルフキャラメルポップコーン",
+        "チョコミントアイス",
+        "トリプルチョコミントアイス"
+      ]
+    },
+    "シオン・ザ・DB": {
+      "veryLike": ["ディープダークチョコアイス"],
+      "like": ["チョコアイス", "秘密のブドウジュース", "一級品秘密のブドウジュース"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "宝石タルト", "秘宝タルト"]
+    },
+    "シスト": {
+      "veryLike": ["マスクメロンボッコンチーニ"],
+      "like": ["ホットアイスアメリカーノ", "灼熱アイスアメリカーノ", "メロンボッコンチーニ"],
+      "dislike": ["シナモン味の飴玉", "シナモン味の健康アメ玉", "チョコミントアイス", "トリプルチョコミントアイス"]
+    },
+    "シュパン": {
+      "veryLike": ["ANSA宇宙食"],
+      "like": ["宇宙食", "チョコアイス", "ディープダークチョコアイス"],
+      "dislike": ["海藻サラダ", "海藻ポキ", "かぼちゃ粥", "かぼちゃシチュー"]
+    },
+    "ジュビー": {
+      "veryLike": ["ハチミツツボ"],
+      "like": ["ハニーポット", "マシュマロマカロン", "低糖マシュマロマカロン"],
+      "dislike": ["マンガ肉焼き", "海賊マンガ肉焼き", "一口草-野菜包み", "二口草-野菜包み"]
+    },
+    "ジョアン": {
+      "veryLike": ["927粒穀物ドリンク"],
+      "like": ["穀物ドリンク", "チョコミントアイス", "トリプルチョコミントアイス"],
+      "dislike": ["イチゴケーキ", "あーんイチゴケーキ", "マシュマロマカロン", "低糖マシュマロマカロン"]
+    },
+    "シルフィール": {
+      "veryLike": ["白銀フルーツ飴"],
+      "like": ["幽霊プリン", "悪霊プリン", "金のフルーツ飴"],
+      "dislike": ["ココナッツ松葉粥", "ココナッツ万能野菜ジュース", "海藻サラダ", "海藻ポキ"]
+    },
+    "スノキー": {
+      "veryLike": ["もち米ご飯"],
+      "like": ["ご飯", "穀物ドリンク", "927粒穀物ドリンク"],
+      "dislike": ["UFCニンジンフライ", "UFC野菜フライ", "秘密のブドウジュース", "一級品秘密のブドウジュース"]
+    },
+    "スピッキー": {
+      "veryLike": ["シナモン味の健康アメ玉"],
+      "like": ["ガーネットの実", "ザクロフルーツパンチ", "シナモン味の飴玉"],
+      "dislike": ["かぼちゃ粥", "かぼちゃシチュー", "プレッツェル", "ハートプレッツェル"]
+    },
+    "セリーネ": {
+      "veryLike": ["悪霊プリン"],
+      "like": ["幽霊プリン", "秘密のブドウジュース", "一級品秘密のブドウジュース"],
+      "dislike": ["マシュマロマカロン", "低糖マシュマロマカロン", "レモンティー", "オーガニックレモンティー"]
+    },
+    "タイダー": {
+      "veryLike": ["灼熱アイスアメリカーノ"],
+      "like": ["ホットアイスアメリカーノ", "金のフルーツ飴", "白銀フルーツ飴"],
+      "dislike": ["ココナッツ松葉粥", "ココナッツ万能野菜ジュース", "一口草-野菜包み", "二口草-野菜包み"]
+    },
+    "ダーヤ": {
+      "veryLike": ["秘宝タルト"],
+      "like": ["宝石タルト", "レモンティー", "オーガニックレモンティー"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "チョッピー": {
+      "veryLike": ["海賊マンガ肉焼き"],
+      "like": ["アニマル缶", "高級アニマル缶", "マンガ肉焼き"],
+      "dislike": ["メロンボッコンチーニ", "マスクメロンボッコンチーニ", "幽霊プリン", "悪霊プリン"]
+    },
+    "ティグ": {
+      "veryLike": ["海賊マンガ肉焼き"],
+      "like": ["マンガ肉焼き", "秘密のブドウジュース", "一級品秘密のブドウジュース"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "シナモン味の飴玉", "シナモン味の健康アメ玉"]
+    },
+    "ディアナ": {
+      "veryLike": ["海賊マンガ肉焼き"],
+      "like": ["プレッツェル", "ハートプレッツェル", "マンガ肉焼き"],
+      "dislike": [
+        "キャラメルポップコーン",
+        "エルフキャラメルポップコーン",
+        "メロンボッコンチーニ",
+        "マスクメロンボッコンチーニ"
+      ]
+    },
+    "ナイア": {
+      "veryLike": ["海藻ポキ"],
+      "like": ["海藻サラダ", "金のフルーツ飴", "白銀フルーツ飴"],
+      "dislike": ["宇宙食", "ANSA宇宙食", "秘密のブドウジュース", "一級品秘密のブドウジュース"]
+    },
+    "ネル": {
+      "veryLike": ["低糖マシュマロマカロン"],
+      "like": ["マシュマロマカロン", "メロンボッコンチーニ", "マスクメロンボッコンチーニ"],
+      "dislike": ["キャラメルポップコーン", "エルフキャラメルポップコーン", "海藻サラダ", "海藻ポキ"]
+    },
+    "バター": {
+      "veryLike": ["エルフキャラメルポップコーン"],
+      "like": ["アニマル缶", "高級アニマル缶", "キャラメルポップコーン"],
+      "dislike": ["チョコアイス", "ディープダークチョコアイス", "マシュマロマカロン", "低糖マシュマロマカロン"]
+    },
+    "バリエ": {
+      "veryLike": ["低糖マシュマロマカロン"],
+      "like": ["マシュマロマカロン", "UFCニンジンフライ", "UFC野菜フライ"],
+      "dislike": ["ホットアイスアメリカーノ", "灼熱アイスアメリカーノ", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "バロン": {
+      "veryLike": ["秘宝タルト"],
+      "like": ["宝石タルト", "シナモン味の飴玉", "シナモン味の健康アメ玉"],
+      "dislike": ["宇宙食", "ANSA宇宙食", "一口草-野菜包み", "二口草-野菜包み"]
+    },
+    "ビッグウッド": {
+      "veryLike": ["ココナッツ万能野菜ジュース"],
+      "like": ["ココナッツ松葉粥", "ご飯", "もち米ご飯"],
+      "dislike": ["ガーネットの実", "ザクロフルーツパンチ", "一口草-野菜包み", "二口草-野菜包み"]
+    },
+    "ピコラ": {
+      "veryLike": ["白銀フルーツ飴"],
+      "like": ["ホットアイスアメリカーノ", "灼熱アイスアメリカーノ", "金のフルーツ飴"],
+      "dislike": ["イチゴケーキ", "あーんイチゴケーキ", "チョコアイス", "ディープダークチョコアイス"]
+    },
+    "ピラ": {
+      "veryLike": [],
+      "like": ["秘密のブドウジュース", "一級品秘密のブドウジュース", "竜族キャンディ", "逆鱗なでなでキャンディ"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "宝石タルト", "秘宝タルト"]
+    },
+    "ヒルデ": {
+      "veryLike": ["ロイヤルハニーガーリックサーモン"],
+      "like": ["ハニーガーリックサーモン", "宇宙食", "ANSA宇宙食"],
+      "dislike": ["マシュマロマカロン", "低糖マシュマロマカロン", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "フェスタ": {
+      "veryLike": ["水素カツレツ"],
+      "like": ["秘密のブドウジュース", "一級品秘密のブドウジュース", "空気カツレツ"],
+      "dislike": ["アニマル缶", "高級アニマル缶", "宇宙食", "ANSA宇宙食"]
+    },
+    "ブランセ": {
+      "veryLike": ["オーガニックレモンティー"],
+      "like": ["レモンティー", "宝石タルト", "秘宝タルト"],
+      "dislike": ["宇宙食", "ANSA宇宙食", "空気カツレツ", "水素カツレツ"]
+    },
+    "フリックル": {
+      "veryLike": ["927粒穀物ドリンク"],
+      "like": ["プレッツェル", "ハートプレッツェル", "穀物ドリンク"],
+      "dislike": ["UFCニンジンフライ", "UFC野菜フライ", "キャラメルポップコーン", "エルフキャラメルポップコーン"]
+    },
+    "ヘイリー": {
+      "veryLike": ["もち米ご飯"],
+      "like": ["ご飯", "レモンティー", "オーガニックレモンティー"],
+      "dislike": [
+        "チョコミントアイス",
+        "トリプルチョコミントアイス",
+        "ホットアイスアメリカーノ",
+        "灼熱アイスアメリカーノ"
+      ]
+    },
+    "ベニー": {
+      "veryLike": ["ハチミツツボ"],
+      "like": ["ハニーガーリックサーモン", "ロイヤルハニーガーリックサーモン", "ハニーポット"],
+      "dislike": ["ホットアイスアメリカーノ", "灼熱アイスアメリカーノ", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "ベリータ": {
+      "veryLike": ["あーんイチゴケーキ"],
+      "like": ["イチゴケーキ", "チョコアイス", "ディープダークチョコアイス"],
+      "dislike": ["チョコミントアイス", "トリプルチョコミントアイス", "空気カツレツ", "水素カツレツ"]
+    },
+    "ベルベット": {
+      "veryLike": ["二口草-野菜包み"],
+      "like": ["ココナッツ松葉粥", "ココナッツ万能野菜ジュース", "一口草-野菜包み"],
+      "dislike": ["イチゴケーキ", "あーんイチゴケーキ", "マシュマロマカロン", "低糖マシュマロマカロン"]
+    },
+    "ポーシャー": {
+      "veryLike": ["ココナッツ万能野菜ジュース"],
+      "like": ["ココナッツ松葉粥", "宇宙食", "ANSA宇宙食"],
+      "dislike": ["かぼちゃ粥", "かぼちゃシチュー", "ハニーガーリックサーモン", "ロイヤルハニーガーリックサーモン"]
+    },
+    "マーゴ": {
+      "veryLike": ["ANSA宇宙食"],
+      "like": ["アニマル缶", "高級アニマル缶", "宇宙食"],
+      "dislike": ["一口草-野菜包み", "二口草-野菜包み", "マンガ肉焼き", "海賊マンガ肉焼き"]
+    },
+    "マエストロMK2": {
+      "veryLike": ["ザクロフルーツパンチ"],
+      "like": ["ガーネットの実", "秘密のブドウジュース", "一級品秘密のブドウジュース"],
+      "dislike": ["穀物ドリンク", "927粒穀物ドリンク", "幽霊プリン", "悪霊プリン"]
+    },
+    "マヨ": {
+      "veryLike": ["一級品秘密のブドウジュース"],
+      "like": ["ご飯", "もち米ご飯", "秘密のブドウジュース"],
+      "dislike": ["プレッツェル", "ハートプレッツェル", "竜族キャンディ", "逆鱗なでなでキャンディ"]
+    },
+    "マリー": {
+      "veryLike": ["UFC野菜フライ"],
+      "like": ["UFCニンジンフライ", "クレームブリュレ", "ソフトクレームブリュレ"],
+      "dislike": ["ガーネットの実", "ザクロフルーツパンチ", "シナモン味の飴玉", "シナモン味の健康アメ玉"]
+    },
+    "メロナ": {
+      "veryLike": ["マスクメロンボッコンチーニ"],
+      "like": ["メロンボッコンチーニ", "一口草-野菜包み", "二口草-野菜包み"],
+      "dislike": ["UFCニンジンフライ", "UFC野菜フライ", "マシュマロマカロン", "低糖マシュマロマカロン"]
+    },
+    "モモ": {
+      "veryLike": ["ハチミツツボ"],
+      "like": ["ハニーポット", "空気カツレツ", "水素カツレツ"],
+      "dislike": ["クレームブリュレ", "ソフトクレームブリュレ", "シナモン味の飴玉", "シナモン味の健康アメ玉"]
+    },
+    "ユミミ": {
+      "veryLike": ["二口草-野菜包み"],
+      "like": ["一口草-野菜包み", "宇宙食", "ANSA宇宙食"],
+      "dislike": ["ガーネットの実", "ザクロフルーツパンチ", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"]
+    },
+    "ヨミ": {
+      "veryLike": ["かぼちゃシチュー"],
+      "like": ["かぼちゃ粥", "一口草-野菜包み", "二口草-野菜包み"],
+      "dislike": ["イチゴケーキ", "あーんイチゴケーキ", "クレームブリュレ", "ソフトクレームブリュレ"]
+    },
+    "リスティ": {
+      "veryLike": ["ザクロフルーツパンチ"],
+      "like": ["ガーネットの実", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"],
+      "dislike": [
+        "ハニーガーリックサーモン",
+        "ロイヤルハニーガーリックサーモン",
+        "メロンボッコンチーニ",
+        "マスクメロンボッコンチーニ"
+      ]
+    },
+    "リッツ": {
+      "veryLike": ["逆鱗なでなでキャンディ"],
+      "like": ["竜族キャンディ", "空気カツレツ", "水素カツレツ"],
+      "dislike": ["ハニーポット", "ハチミツツボ", "宝石タルト", "秘宝タルト"]
+    },
+    "リニュア": {
+      "veryLike": ["オーガニックレモンティー"],
+      "like": ["レモンティー", "宇宙食", "ANSA宇宙食"],
+      "dislike": [
+        "キャラメルポップコーン",
+        "エルフキャラメルポップコーン",
+        "秘密のブドウジュース",
+        "一級品秘密のブドウジュース"
+      ]
+    },
+    "リム": {
+      "veryLike": ["かぼちゃシチュー"],
+      "like": ["かぼちゃ粥", "秘密のブドウジュース", "一級品秘密のブドウジュース"],
+      "dislike": ["クレームブリュレ", "ソフトクレームブリュレ", "マシュマロマカロン", "低糖マシュマロマカロン"]
+    },
+    "ルード": {
+      "veryLike": ["927粒穀物ドリンク"],
+      "like": ["宇宙食", "ANSA宇宙食", "穀物ドリンク"],
+      "dislike": ["ご飯", "もち米ご飯", "一口草-野菜包み", "二口草-野菜包み"]
+    },
+    "ルポ": {
+      "veryLike": ["ロイヤルハニーガーリックサーモン"],
+      "like": ["ハニーガーリックサーモン", "メロンボッコンチーニ", "マスクメロンボッコンチーニ"],
+      "dislike": ["かぼちゃ粥", "かぼちゃシチュー", "ハニーポット", "ハチミツツボ"]
+    },
+    "レイジー": {
+      "veryLike": ["高級アニマル缶"],
+      "like": ["アニマル缶", "ホットアイスアメリカーノ", "灼熱アイスアメリカーノ"],
+      "dislike": ["プレッツェル", "ハートプレッツェル", "秘密のブドウジュース", "一級品秘密のブドウジュース"]
+    },
+    "レヴィ": {
+      "veryLike": ["エルフキャラメルポップコーン"],
+      "like": ["UFCニンジンフライ", "UFC野菜フライ", "キャラメルポップコーン"],
+      "dislike": ["クレームブリュレ", "ソフトクレームブリュレ", "ココナッツ松葉粥", "ココナッツ万能野菜ジュース"]
+    },
+    "レーテー": {
+      "veryLike": ["逆鱗なでなでキャンディ"],
+      "like": ["竜族キャンディ", "空気カツレツ", "水素カツレツ"],
+      "dislike": ["海藻サラダ", "海藻ポキ", "ココナッツ松葉粥", "ココナッツ万能野菜ジュース"]
+    },
+    "ローネ": {
+      "veryLike": ["白銀フルーツ飴"],
+      "like": ["チョコアイス", "ディープダークチョコアイス", "金のフルーツ飴"],
+      "dislike": ["宇宙食", "ANSA宇宙食", "空気カツレツ", "水素カツレツ"]
+    },
+    "ロレット": {
+      "veryLike": ["ソフトクレームブリュレ"],
+      "like": ["クレームブリュレ", "メロンボッコンチーニ", "マスクメロンボッコンチーニ"],
+      "dislike": ["秘密のブドウジュース", "一級品秘密のブドウジュース", "金のフルーツ飴", "白銀フルーツ飴"]
+    }
+  }
+}

@@ -10,9 +10,9 @@ import {
 } from "./wiki-sweep-data";
 
 const snapshot = readFileSync(new URL("./fixtures/wiki-equipment-drops.html", import.meta.url), "utf8");
-// Captured from the public page on 2026-09-11; only the relevant markup is kept.
-const page = `Last-modified: 2026-09-11 (金) 01:30:16
-<div class="lazy-accordion-container" data-page="装備設計図" data-line="7" data-key="装備設計図" data-part="main" data-source-hash="5b7d4d5ca9460ed6a6a927e53e8e74d5" data-html-hash="21335fa862ff32cf5319ad5af2f14e9d">
+// Captured from the public page on 2026-10-23; only the relevant markup is kept.
+const page = `Last-modified: 2026-10-23 (金) 01:30:16
+<div class="lazy-accordion-container" data-page="装備設計図" data-line="7" data-document-stack="装備設計図" data-parent-part-path="main" data-source-hash="5b7d4d5ca9460ed6a6a927e53e8e74d5" data-html-hash="21335fa862ff32cf5319ad5af2f14e9d">
     <h2 class="accordion-header">
         <i class="fa-solid fa-plus-square hidden-on-open"></i>
         <i class="fa-solid fa-minus-square visible-on-open"></i>
@@ -28,8 +28,10 @@ describe("wiki equipment data import", () => {
     expect(url.pathname).toBe("/thetrickal/::partial_content/lazy_accordion");
     expect(url.searchParams.get("page")).toBe("装備設計図");
     expect(url.searchParams.get("line")).toBe("12");
-    expect(url.searchParams.get("src")).toBe("5b7d4d5ca9460ed6a6a927e53e8e74d5");
-    expect(url.searchParams.get("hash")).toBe("21335fa862ff32cf5319ad5af2f14e9d");
+    expect(url.searchParams.get("documentStack")).toBe("装備設計図");
+    expect(url.searchParams.get("parentPartPath")).toBe("main");
+    expect(url.searchParams.get("sourceHash")).toBe("5b7d4d5ca9460ed6a6a927e53e8e74d5");
+    expect(url.searchParams.get("htmlHash")).toBe("21335fa862ff32cf5319ad5af2f14e9d");
   });
 
   it("rejects missing table attributes and unrelated pages", () => {
@@ -121,7 +123,7 @@ describe("wiki equipment data import", () => {
     const result = await fetchWikiDropTable(fetcher);
     expect(requests).toHaveLength(2);
     expect(new URL(requests[1]).searchParams.get("line")).toBe("7");
-    expect(result.snapshot).toContain("Source last modified (JST): 2026-09-11 01:30:16");
+    expect(result.snapshot).toContain("Source last modified (JST): 2026-10-23 01:30:16");
     expect(parseWikiStageDrops(result.snapshot, data).size).toBe(300);
   });
 

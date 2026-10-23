@@ -1,5 +1,5 @@
 import { Languages, Moon, Sun } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { tools } from "./app/tools";
 import { useI18n } from "./i18n";
 
@@ -31,6 +31,12 @@ export function App() {
   );
 
   const tool = useMemo(() => tools.find((item) => item.path === path) ?? tools[0], [path]);
+
+  useEffect(() => {
+    const handlePopState = () => setPath(currentPath());
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   function navigate(nextPath: string) {
     window.history.pushState({}, "", browserPath(nextPath));

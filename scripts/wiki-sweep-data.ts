@@ -17,13 +17,20 @@ export function getWikiDropTableUrl(html: string) {
   for (const [, attributes, heading] of accordions) {
     if (heading.replace(/<[^>]*>/g, "").trim() !== "素材ドロップ場所一覧") continue;
     const url = new URL("/thetrickal/::partial_content/lazy_accordion", wikiSourceUrl);
-    const names = { page: "page", line: "line", key: "key", part: "part", src: "source-hash", hash: "html-hash" };
+    const names = {
+      page: "page",
+      line: "line",
+      documentStack: "document-stack",
+      parentPartPath: "parent-part-path",
+      sourceHash: "source-hash",
+      htmlHash: "html-hash",
+    };
     for (const [parameter, attribute] of Object.entries(names)) {
       const value = attributes.match(new RegExp(`\\bdata-${attribute}="([^"]+)"`))?.[1];
       if (!value) throw new Error(`wikiの素材表に data-${attribute} がありません。取得形式を確認してください。`);
       url.searchParams.set(parameter, value);
     }
-    if (url.searchParams.get("page") !== "装備設計図" || url.searchParams.get("part") !== "main") {
+    if (url.searchParams.get("page") !== "装備設計図" || url.searchParams.get("parentPartPath") !== "main") {
       throw new Error("wikiの素材表が別ページを参照しています。取得元を確認してください。");
     }
     return url;

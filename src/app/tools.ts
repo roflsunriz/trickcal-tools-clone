@@ -1,7 +1,9 @@
-import { Search } from "lucide-react";
+import { Paintbrush, Search, Utensils } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import type { MessageKey } from "../i18n";
+import { BoardTool } from "../tools/community/BoardTool";
+import { FoodTool } from "../tools/community/FoodTool";
 import { SweepTool } from "../tools/sweep/SweepTool";
 
 export type ToolDefinition = {
@@ -21,5 +23,21 @@ export const tools: ToolDefinition[] = [
     descriptionKey: "tool.sweep.description",
     Icon: Search,
     Component: SweepTool,
+  },
+  {
+    id: "board",
+    path: "/board",
+    labelKey: "tool.board.label",
+    descriptionKey: "tool.board.description",
+    Icon: Paintbrush,
+    Component: BoardTool,
+  },
+  {
+    id: "food",
+    path: "/food",
+    labelKey: "tool.food.label",
+    descriptionKey: "tool.food.description",
+    Icon: Utensils,
+    Component: FoodTool,
   },
 ];

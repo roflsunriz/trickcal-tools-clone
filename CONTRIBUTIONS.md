@@ -14,6 +14,8 @@ When adding third-party-derived data or assets, include enough context in the pu
 
 Equipment blueprint and fragment drops for worlds 3 onward are imported from the [Trickcal community wiki's equipment blueprint table](https://wikiwiki.jp/thetrickal/装備設計図). The captured table and its source modification time are stored in `scripts/fixtures/wiki-equipment-drops.html`. See [更新手順](how-to-update.md) for the reproducible import process. Rank 1 materials and worlds 1–2 retain the existing repository data because that table does not cover them.
 
+Crayon board cells and Japanese apostle metadata are imported from the [Trickcal strategy portal's board manager](https://trickcal-strategy.pages.dev/board/manager.html). Food preferences and rarity metadata are imported from the [Trickcal community wiki's banquet hall table](https://wikiwiki.jp/thetrickal/宴会場). Reduced source snapshots are stored in `scripts/fixtures/community-board.html` and `scripts/fixtures/community-food.html`; generated app data records their SHA-256 hashes.
+
 ## Maintainer Notes
 
 - Keep the app deployable as a static Vite site.

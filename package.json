@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build && bun run pages:routes",
-    "data:update": "bun scripts/update-sweep-data.ts",
+    "data:update": "bun scripts/update-all-data.ts",
+    "data:update:community": "bun scripts/update-community-data.ts",
+    "data:update:sweep": "bun scripts/update-sweep-data.ts",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint .",
