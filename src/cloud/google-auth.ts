@@ -124,20 +124,34 @@ async function waitForGoogleIdentity(): Promise<GoogleOAuth> {
 export async function requestGoogleAccessToken(clientId: string) {
   const oauth = await waitForGoogleIdentity();
   return new Promise<{ accessToken: string; expiresAt: number }>((resolve, reject) => {
+    let settled = false;
+    const timeout = window.setTimeout(() => {
+      settled = true;
+      reject(new Error("GOOGLE_LOGIN_TIMEOUT"));
+    }, 120_000);
+    const fail = (message: string) => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timeout);
+      reject(new Error(message));
+    };
     const client = oauth.initTokenClient({
       client_id: clientId,
       scope: "https://www.googleapis.com/auth/drive.appdata",
       callback: (response) => {
+        if (settled) return;
         if (response.error || !response.access_token) {
-          reject(new Error(response.error_description || response.error || "GOOGLE_LOGIN_FAILED"));
+          fail(response.error_description || response.error || "GOOGLE_LOGIN_FAILED");
           return;
         }
+        settled = true;
+        window.clearTimeout(timeout);
         resolve({
           accessToken: response.access_token,
           expiresAt: Date.now() + Math.max(60, response.expires_in ?? 3600) * 1000,
         });
       },
-      error_callback: (error) => reject(new Error(error.type || "GOOGLE_LOGIN_FAILED")),
+      error_callback: (error) => fail(error.type || "GOOGLE_LOGIN_FAILED"),
     });
     client.requestAccessToken({ prompt: localStorage.getItem(consentStorageKey) === "true" ? "" : "consent" });
   });

@@ -15,3 +15,4 @@
 - 静的GitHub PagesのGoogle同期はGIS token modelとDrive `appDataFolder` を使う。ブラウザtoken modelのaccess tokenは短命で、期限切れ後の取得はユーザー操作が必要なため、有効期限内だけlocalStorageから復元し、期限切れ時は再ログインを案内する。Client Secret・refresh tokenは静的クライアントで扱わない。
 - Google同期の対象は周回v3、クレヨンv1、言語、テーマの4キーに限定する。Drive復元値はschema、時刻、全キー、各1MB上限を検証し、新しい更新時刻だけを自動適用する。Drive APIの401は保存済み認証を破棄し、その他の失敗では端末内データを維持する。
 - 本番OAuthにはDrive APIを有効化したWeb Client IDと、`https://roflsunriz.github.io` の承認済みJavaScript生成元が必要。PagesはGitHub変数 `GOOGLE_CLIENT_ID` を `VITE_GOOGLE_CLIENT_ID` へ渡し、未設定時はログインを無効化して設定不足を表示する。
+- 2026-10-23にWeb Client IDのJSONをローカルで検証し、本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認した。Client IDだけをGitHub変数 `GOOGLE_CLIENT_ID` へ登録し、Client Secretは読込出力・repository・GitHub変数へ保存しない。

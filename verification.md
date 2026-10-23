@@ -158,4 +158,5 @@ bun run build
 - 使徒82点・料理スプライト5点、計87ファイル（約4.58MB）を取得し、Content-Type、PNG／WebP signature、manifestのSHA-256を検証した。デスクトップのクレヨン・食べ物画面で正しい切り出しを目視し、390×844では両画面のscroll幅が390px、画像失敗0件だった。
 - 通常利用時のwiki・補完元・元サイト・Googleへの通信は0件。Client ID未設定時はGoogleログインを無効化して理由を表示し、設定値を含む本番ビルドではログインボタンが有効になることを確認した。
 - 同期対象4キー、復元schema・最大長・時刻、認証期限、Drive `about`、appDataFolder検索／作成、Bearer header、401処理をモックした。WindowsのBun 1.4.0とVitestで各42テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。
-- 実Googleアカウントの同意画面、Driveへの作成・復元、トークン有効期限内の実再読み込みは未検証。本番用Web Client IDと承認済みJavaScript生成元が未設定であり、設定後に上記「Google Drive同期」の手順で確認する。
+- Web Client IDの本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認し、GitHub変数 `GOOGLE_CLIENT_ID` へClient IDだけを登録した。開発生成元ではログインボタンとGoogle Identity Servicesの読込まで成功した。
+- Codex内ブラウザではOAuthポップアップから応答が返らなかったため、実Googleアカウントの権限付与、Driveへの作成・復元、トークン有効期限内の実再読み込みは未検証。120秒で待機を解除する処理を追加し、通常ブラウザで上記「Google Drive同期」の手順を確認する。
