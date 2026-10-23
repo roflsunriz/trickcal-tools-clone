@@ -185,3 +185,4 @@ bun run build
 - wiki「使徒一覧」の英語名列を保存fixtureへ追加し、ボード82使徒へ全件結合した。性格・種族・配置と料理60件にも英語対訳があり、欠落時に更新を拒否するテストを追加した。BunとVitestの各44テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。
 - 本番ビルドの英語表示で `Gwynn / Composed · Werebeast · Front`、`Aya / Composed · Witch · Middle`、`Kommy (Swimsuit) / Composed`、`ANSA Space Food` を確認した。食べ物画面の全使徒・全料理カードと、表示中のクレヨンカードに日本語文字が残っていないことをDOMで確認した。
 - 英語表示のまま日本語の「グウィン」「宇宙食」と英語の `Gwynn`、`ANSA Space Food` の両方で検索できた。390×844と1280×900でdocumentの表示幅とscroll幅が一致し、画像失敗とJavaScript例外、通信失敗は0件だった。実行環境が付ける既知のPermissions-Policy警告2件は機能・通信エラーではない。
+- `7dfbf21` を `main` へpushし、[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39968786018)と[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39968785975)に成功した。公開JS `index-IJlDq3ZP.js` に `Gwynn`、`ANSA Space Food`、`Composed`、`Witch`、`Middle` が含まれ、公開 `/food/` を英語へ切り替えると82使徒・60料理が英語名と英語性格で表示された。
