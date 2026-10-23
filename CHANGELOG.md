@@ -25,6 +25,7 @@ Keep a Changelogに従い、公開前の変更はUnreleasedに集約します。
 
 ### Changed
 
+- push前監査で互換範囲内の更新を取り込み、Lucide Reactを1.61.0、Viteを8.3.5、ESLintを10.13.0、typescript-eslintを8.72.0、Vitestを5.0.5へ更新した。TypeScript 7はtypescript-eslintの対応範囲外のため6.0.3を維持する。
 - GitHub Actions の月間利用時間を抑えるため、Dependabot version update と自動マージを毎週・即時処理から毎月28日（Asia/Tokyo）の月末一括処理へ変更した。
 - 最適プランを短い素材行と2列のステージカードへ整理し、副産物候補を折りたたみ表示にした。一般的な装備セットはデスクトップ画面内で全ステージを確認でき、モバイルでは読みやすい1列表示へ切り替わる。
 - 共通指針と固有の知見を区別して参照できるよう、AGENTS・READMEなどの実現手段、例外と調査知見を `findings.md` へ分離し、着手前の全文確認と更新先を統一した。
