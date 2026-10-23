@@ -176,3 +176,5 @@ bun run build
 - 認証保存形式をv2へ更新し、Client ID一致時だけtokenと同意記録を復元するテストを追加した。旧OAuthプロジェクトのtokenは破棄し、端末内のツールデータは維持する。
 - クレヨンと食べ物で純粋=緑、活発=黄、冷静=青、憂鬱=紫、狂気=赤、裏面・未知値=中立色となる共通マッピングを確認した。ライト・ダーク両テーマでカード背景・枠線・上端線を目視し、両画面の同じ性格で枠色が一致した。
 - 390×844ではクレヨン・食べ物ともdocumentの表示幅・scroll幅が390pxで、性格色追加による横方向のはみ出しはなかった。BunとVitestの各43テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。
+- OAuth移行コミット `bff14fd` は[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39965570497)と[Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39965570263)、性格色コミット `abc67f5` は[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39966109422)と[Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39966109378)に成功した。公開JS `index-Cb5712Z3.js` は新Client IDだけを含み、旧Client IDを含まない。
+- 公開クレヨン画面で性格別の枠線・背景・画像を確認した。画像失敗0件で、冷静と純粋の枠色がローカル検証値と同じ性格色になることをDOMでも確認した。
