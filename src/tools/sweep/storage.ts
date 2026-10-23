@@ -1,7 +1,8 @@
-import { getDefaultMaterialCount } from "./quickEquipment";
+import { getDefaultMaterialCount, quickRanks } from "./quickEquipment";
+import type { WeaponType } from "./quickEquipment";
 import type { MaterialId, SweepData } from "./types";
 
-const storageVersion = 2;
+const storageVersion = 3;
 
 export const sweepStorageKey = "trickcal_sweep_state";
 export const legacySelectedStorageKey = "trickcal_sweep_selected_materials";
@@ -11,11 +12,15 @@ type PersistedSweepState = {
   schemaVersion: typeof storageVersion;
   selectedQuantities: Record<MaterialId, number>;
   selectedRanks: number[];
+  weaponType: WeaponType;
+  selectedQuickRank: number | null;
 };
 
 export type SweepStorageState = {
   selectedQuantities: Map<MaterialId, number>;
   selectedRanks: Set<number>;
+  weaponType: WeaponType;
+  selectedQuickRank: number | null;
 };
 
 function toPersistedState(state: SweepStorageState): PersistedSweepState {
@@ -23,6 +28,8 @@ function toPersistedState(state: SweepStorageState): PersistedSweepState {
     schemaVersion: storageVersion,
     selectedQuantities: Object.fromEntries(state.selectedQuantities),
     selectedRanks: Array.from(state.selectedRanks).sort((a, b) => a - b),
+    weaponType: state.weaponType,
+    selectedQuickRank: state.selectedQuickRank,
   };
 }
 
@@ -57,6 +64,14 @@ export function sanitizeSelectedRanks(value: unknown, allRanks: number[]) {
 
   const allowedRanks = new Set(allRanks);
   return new Set<number>(value.filter((rank) => typeof rank === "number" && allowedRanks.has(rank)));
+}
+
+export function sanitizeWeaponType(value: unknown): WeaponType {
+  return value === "magic" ? "magic" : "physical";
+}
+
+export function sanitizeSelectedQuickRank(value: unknown) {
+  return typeof value === "number" && quickRanks.includes(value) ? value : null;
 }
 
 function migrateLegacySelectedQuantities(data: SweepData) {
@@ -94,6 +109,8 @@ function migrateLegacyState(data: SweepData, allRanks: number[]) {
   const state: SweepStorageState = {
     selectedQuantities: migrateLegacySelectedQuantities(data),
     selectedRanks: migrateLegacyRanks(allRanks),
+    weaponType: "physical",
+    selectedQuickRank: null,
   };
   writeState(state);
   removeLegacyState();
@@ -108,13 +125,19 @@ export function readSweepStorageState(data: SweepData, allRanks: number[]): Swee
 
   try {
     const parsed = JSON.parse(value);
-    if (!parsed || typeof parsed !== "object" || parsed.schemaVersion !== storageVersion) {
+    if (!parsed || typeof parsed !== "object") {
+      return migrateLegacyState(data, allRanks);
+    }
+
+    if (parsed.schemaVersion !== 2 && parsed.schemaVersion !== storageVersion) {
       return migrateLegacyState(data, allRanks);
     }
 
     const state: SweepStorageState = {
       selectedQuantities: sanitizeSelectedQuantities(parsed.selectedQuantities, data),
       selectedRanks: sanitizeSelectedRanks(parsed.selectedRanks, allRanks),
+      weaponType: sanitizeWeaponType(parsed.weaponType),
+      selectedQuickRank: sanitizeSelectedQuickRank(parsed.selectedQuickRank),
     };
     writeState(state);
     removeLegacyState();
@@ -123,6 +146,8 @@ export function readSweepStorageState(data: SweepData, allRanks: number[]): Swee
     const state: SweepStorageState = {
       selectedQuantities: new Map<MaterialId, number>(),
       selectedRanks: new Set<number>(allRanks),
+      weaponType: "physical",
+      selectedQuickRank: null,
     };
     writeState(state);
     removeLegacyState();

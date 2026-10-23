@@ -1,5 +1,5 @@
 import { Search, Shield, Sparkles, Swords, WandSparkles, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
 import { getMaterialImagePath, getMaterialName } from "./materialNames";
@@ -26,7 +26,10 @@ export function SweepTool() {
   );
   const [selectedRanks, setSelectedRanks] = useState<Set<number>>(initialStorageState.selectedRanks);
   const [query, setQuery] = useState("");
-  const [weaponType, setWeaponType] = useState<WeaponType>("physical");
+  const [weaponType, setWeaponType] = useState<WeaponType>(initialStorageState.weaponType);
+  const [selectedQuickRank, setSelectedQuickRank] = useState<number | null>(initialStorageState.selectedQuickRank);
+  const weaponTypeRef = useRef(initialStorageState.weaponType);
+  const selectedQuickRankRef = useRef(initialStorageState.selectedQuickRank);
 
   const stageData = useMemo(() => buildStageData(data), []);
   const selected = useMemo(() => new Set(selectedQuantities.keys()), [selectedQuantities]);
@@ -54,12 +57,24 @@ export function SweepTool() {
 
   function persistSelected(nextSelectedQuantities: Map<MaterialId, number>) {
     setSelectedQuantities(nextSelectedQuantities);
-    writeSweepStorageState({ selectedQuantities: nextSelectedQuantities, selectedRanks });
+    setSelectedQuickRank(null);
+    selectedQuickRankRef.current = null;
+    writeSweepStorageState({
+      selectedQuantities: nextSelectedQuantities,
+      selectedRanks,
+      weaponType: weaponTypeRef.current,
+      selectedQuickRank: null,
+    });
   }
 
   function persistRanks(nextRanks: Set<number>) {
     setSelectedRanks(nextRanks);
-    writeSweepStorageState({ selectedQuantities, selectedRanks: nextRanks });
+    writeSweepStorageState({
+      selectedQuantities,
+      selectedRanks: nextRanks,
+      weaponType: weaponTypeRef.current,
+      selectedQuickRank: selectedQuickRankRef.current,
+    });
   }
 
   function toggleMaterial(material: MaterialId) {
@@ -90,12 +105,35 @@ export function SweepTool() {
     persistRanks(selectedRanks.size === ranks.length ? new Set() : new Set(ranks));
   }
 
-  function selectEquipmentSet(rank: number) {
-    const nextSelectedQuantities = new Map(Object.entries(buildEquipmentRequirements(rank, weaponType, data)));
+  function selectWeaponType(nextWeaponType: WeaponType) {
+    setWeaponType(nextWeaponType);
+    weaponTypeRef.current = nextWeaponType;
+    if (selectedQuickRankRef.current === null) {
+      writeSweepStorageState({
+        selectedQuantities,
+        selectedRanks,
+        weaponType: nextWeaponType,
+        selectedQuickRank: null,
+      });
+      return;
+    }
+
+    selectEquipmentSet(selectedQuickRankRef.current, nextWeaponType);
+  }
+
+  function selectEquipmentSet(rank: number, nextWeaponType = weaponTypeRef.current) {
+    const nextSelectedQuantities = new Map(Object.entries(buildEquipmentRequirements(rank, nextWeaponType, data)));
     const nextRanks = new Set(requiredEquipmentRanks(rank));
     setSelectedQuantities(nextSelectedQuantities);
     setSelectedRanks(nextRanks);
-    writeSweepStorageState({ selectedQuantities: nextSelectedQuantities, selectedRanks: nextRanks });
+    setSelectedQuickRank(rank);
+    selectedQuickRankRef.current = rank;
+    writeSweepStorageState({
+      selectedQuantities: nextSelectedQuantities,
+      selectedRanks: nextRanks,
+      weaponType: nextWeaponType,
+      selectedQuickRank: rank,
+    });
     setQuery("");
   }
 
@@ -162,7 +200,8 @@ export function SweepTool() {
                 <button
                   className={weaponType === "physical" ? "segment active" : "segment"}
                   type="button"
-                  onClick={() => setWeaponType("physical")}
+                  aria-pressed={weaponType === "physical"}
+                  onClick={() => selectWeaponType("physical")}
                 >
                   <Swords size={16} />
                   <span>{t("sweep.physicalWeapon")}</span>
@@ -170,7 +209,8 @@ export function SweepTool() {
                 <button
                   className={weaponType === "magic" ? "segment active" : "segment"}
                   type="button"
-                  onClick={() => setWeaponType("magic")}
+                  aria-pressed={weaponType === "magic"}
+                  onClick={() => selectWeaponType("magic")}
                 >
                   <WandSparkles size={16} />
                   <span>{t("sweep.magicWeapon")}</span>
@@ -182,10 +222,11 @@ export function SweepTool() {
               <div className="quick-rank-grid">
                 {quickRanks.map((rank) => (
                   <button
-                    className="quick-rank-button"
+                    className={selectedQuickRank === rank ? "quick-rank-button active" : "quick-rank-button"}
                     key={rank}
                     type="button"
                     title={t("sweep.quickRankTitle", { rank })}
+                    aria-pressed={selectedQuickRank === rank}
                     onClick={() => selectEquipmentSet(rank)}
                   >
                     <Sparkles size={15} />
@@ -226,7 +267,7 @@ export function SweepTool() {
           {selected.size === 0 ? (
             <div className="empty-state">{t("sweep.empty")}</div>
           ) : (
-            <>
+            <div className="plan-content">
               <div className="plan-summary">
                 <strong>{plan.length}</strong>
                 <span>{t("sweep.planSummary", { stamina: estimatedStamina })}</span>
@@ -242,64 +283,65 @@ export function SweepTool() {
                   const stageAlternatives = alternatives.get(stage) ?? [];
                   return (
                     <li className="stage-item" key={stage}>
-                      <details open>
-                        <summary>
-                          <span>{stage}</span>
-                          <small>{t("sweep.stageStamina")}</small>
-                        </summary>
-                        <div className="chip-list">
-                          {matched.map((material) => (
-                            <button
-                              className="material-chip"
-                              key={material}
-                              type="button"
-                              onClick={() => toggleMaterial(material)}
-                              title={getMaterialName(material, locale)}
-                            >
-                              <img
-                                src={getMaterialImagePath(material, data[material].rank)}
-                                alt=""
-                                onError={(event) => (event.currentTarget.style.display = "none")}
-                              />
-                              <span>{getMaterialName(material, locale)}</span>
-                              <span className="material-quantity">x{selectedQuantities.get(material) ?? 1}</span>
-                            </button>
-                          ))}
-                        </div>
-                        {stageAlternatives.length > 0 ? (
-                          <div className="alternatives">
-                            <h3>{t("sweep.alternatives")}</h3>
-                            <div className="alternative-list">
-                              {stageAlternatives.slice(0, 8).map((alternative) => (
-                                <div className="alternative-item" key={alternative.stage}>
-                                  <strong>{alternative.stage}</strong>
-                                  <div className="alternative-materials">
-                                    {alternative.materials.slice(0, 3).map((material) => (
-                                      <span
-                                        className="alternative-material"
-                                        key={material}
-                                        title={getMaterialName(material, locale)}
-                                      >
-                                        <img
-                                          src={getMaterialImagePath(material, data[material].rank)}
-                                          alt=""
-                                          onError={(event) => (event.currentTarget.style.display = "none")}
-                                        />
-                                        <span>{getMaterialName(material, locale)}</span>
-                                      </span>
-                                    ))}
-                                  </div>
+                      <div className="stage-item-header">
+                        <strong>{stage}</strong>
+                        <small>{t("sweep.stageStamina")}</small>
+                      </div>
+                      <div className="plan-material-list">
+                        {matched.map((material) => (
+                          <button
+                            className="plan-material"
+                            key={material}
+                            type="button"
+                            onClick={() => toggleMaterial(material)}
+                            title={getMaterialName(material, locale)}
+                          >
+                            <img
+                              src={getMaterialImagePath(material, data[material].rank)}
+                              alt=""
+                              onError={(event) => (event.currentTarget.style.display = "none")}
+                            />
+                            <span>{getMaterialName(material, locale)}</span>
+                            <span className="material-quantity">x{selectedQuantities.get(material) ?? 1}</span>
+                          </button>
+                        ))}
+                      </div>
+                      {stageAlternatives.length > 0 ? (
+                        <details className="alternatives">
+                          <summary>
+                            <span>{t("sweep.alternatives")}</span>
+                            <span className="alternative-count">{stageAlternatives.length}</span>
+                          </summary>
+                          <div className="alternative-list">
+                            {stageAlternatives.slice(0, 8).map((alternative) => (
+                              <div className="alternative-item" key={alternative.stage}>
+                                <strong>{alternative.stage}</strong>
+                                <div className="alternative-materials">
+                                  {alternative.materials.slice(0, 3).map((material) => (
+                                    <span
+                                      className="alternative-material"
+                                      key={material}
+                                      title={getMaterialName(material, locale)}
+                                    >
+                                      <img
+                                        src={getMaterialImagePath(material, data[material].rank)}
+                                        alt=""
+                                        onError={(event) => (event.currentTarget.style.display = "none")}
+                                      />
+                                      <span>{getMaterialName(material, locale)}</span>
+                                    </span>
+                                  ))}
                                 </div>
-                              ))}
-                            </div>
+                              </div>
+                            ))}
                           </div>
-                        ) : null}
-                      </details>
+                        </details>
+                      ) : null}
                     </li>
                   );
                 })}
               </ul>
-            </>
+            </div>
           )}
         </aside>
       </div>
