@@ -160,3 +160,10 @@ bun run build
 - 同期対象4キー、復元schema・最大長・時刻、認証期限、Drive `about`、appDataFolder検索／作成、Bearer header、401処理をモックした。WindowsのBun 1.4.0とVitestで各42テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。
 - Web Client IDの本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認し、GitHub変数 `GOOGLE_CLIENT_ID` へClient IDだけを登録した。開発生成元ではログインボタンとGoogle Identity Servicesの読込まで成功した。
 - Codex内ブラウザではOAuthポップアップから応答が返らなかったため、実Googleアカウントの権限付与、Driveへの作成・復元、トークン有効期限内の実再読み込みは未検証。120秒で待機を解除する処理を追加し、通常ブラウザで上記「Google Drive同期」の手順を確認する。
+
+## 2026-10-23: クレヨン・食べ物・Google同期の公開確認
+
+- `82da198` までの3コミットを `main` へpushした。[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39963287752)は20秒、[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39963287753)はビルド28秒・デプロイ45秒で成功した。注記は `ubuntu-latest` のUbuntu 26移行案内だけだった。
+- 公開した `/food/` で82使徒・60料理、ローカル画像、Googleログインボタンを確認した。画像失敗は0件で、ボタン押下後にGoogle Identity Servicesが読み込まれた。公開JSは `index-EyempdVg.js` だった。
+- Codex内ブラウザでは公開環境でもOAuthポップアップが表示されなかったため、権限付与は行わずページを再読み込みして待機状態を解除した。実GoogleアカウントによるDrive作成・復元は通常ブラウザで確認する。
+- ユーザー環境のOAuth画面で「Mylist Backup Service」と表示された。Google公式資料と照合し、同じCloudプロジェクトのBranding名が表示されていること、別アプリとして維持するならプロジェクト分離が適切であることを確認した。
