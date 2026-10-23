@@ -7,7 +7,7 @@
 - リポジトリ直下で作業し、`COMMON-AGENTS.md` と `AGENTS.md` を読む。
 - `git status --short` で既存の変更を確認し、他の作業による差分を保護する。
 - `package.json` とCIで指定するBunを使用する。依存関係は `bun install --frozen-lockfile` で準備する。
-- 更新時は [トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)、[トリッカル攻略ポータルのボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)に接続できること。通常のアプリ利用とテストには接続不要。
+- 更新時は [トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)、[トリッカル攻略ポータルのボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)、[トリッカルwiki「使徒一覧」](https://wikiwiki.jp/thetrickal/使徒一覧/未実装込み版)に接続できること。通常のアプリ利用とテストには接続不要。
 
 ## 取り込み
 
@@ -21,11 +21,11 @@ git diff -- src/tools/sweep/data.json src/tools/community/data.json scripts/fixt
 
 ### クレヨン・食べ物
 
-クレヨン更新はボードマネージャーの使徒カードから名前・性格・種族・配置と、第1〜3層の特殊マス2・3・4個を読み取ります。食べ物更新はwiki「宴会場」の「好物早見表」から大好物・好物・苦手、料理レアリティ、画像スプライトと切り出し座標を読み取ります。生成結果は `src/tools/community/data.json`、縮約した出典箇所は `scripts/fixtures/community-board.html` と `scripts/fixtures/community-food.html` に保存します。
+クレヨン更新はボードマネージャーの使徒カードから名前・性格・種族・配置と、第1〜3層の特殊マス2・3・4個を読み取ります。食べ物更新はwiki「宴会場」の「好物早見表」から大好物・好物・苦手、料理レアリティ、画像スプライトと切り出し座標を読み取ります。使徒の英語名はwiki「使徒一覧」の英語名列から日本語名で結合し、性格・種族・配置と料理は `scripts/community-translations.ts` の対訳を適用します。生成結果は `src/tools/community/data.json`、縮約した出典箇所は `scripts/fixtures/community-board.html`、`scripts/fixtures/community-food.html`、`scripts/fixtures/community-apostles.html` に保存します。
 
 使徒画像は補完元の個別PNG、料理画像はwikiのWebPスプライトを `public/assets/community/` へ保存します。全画像を取得してContent-TypeとPNG／WebP signatureを検証し、取得元URL、サイズ、SHA-256を `public/assets/community/manifest.json` に記録してからデータと一緒に置き換えます。`--check` でも画像を再取得してmanifest・ローカルファイルと照合します。
 
-使徒名の重複、未知の特殊マス、層ごとのマス数不一致、好物表の列数・件数不足、料理レアリティの矛盾、ボードに存在しない好物表の使徒はエラーです。取得と全件検証が終わるまでファイルを書き換えません。ボードにだけ存在して好物表にない使徒は削除せず、画面で「未確認」と表示します。
+使徒名の重複、英語名・属性対訳・料理対訳の欠落、未知の特殊マス、層ごとのマス数不一致、好物表の列数・件数不足、料理レアリティの矛盾、ボードに存在しない好物表の使徒はエラーです。取得と全件検証が終わるまでファイルを書き換えません。新しい属性や料理が追加された場合は実在する英語表記を確認して対訳を追加し、推測や日本語fallbackで検査を通しません。ボードにだけ存在して好物表にない使徒は削除せず、画面で「未確認」と表示します。
 
 2026-10-23の生成結果はクレヨン82使徒、好物76使徒、60料理、画像87ファイルです。元サイトの公開JSONにない追加使徒を含みます。
 
@@ -46,6 +46,7 @@ git diff -- src/tools/sweep/data.json src/tools/community/data.json scripts/fixt
 5. クレヨン追加使徒の各層が2・3・4マスで、名称・性格・種族・配置が補完元と一致することを確認する。
 6. 食べ物追加使徒の大好物・好物・苦手、料理のレアリティをwiki表と照合する。未確認欄を推測で埋めない。
 7. 追加・更新画像がカード内で正しい使徒・料理を示し、隣接するスプライト画像が混入していないことを確認する。manifestの取得元・形式・SHA-256も確認する。
+8. 英語表示で追加使徒の名前・性格・種族・配置、追加料理名が英語になり、日本語名・英語名のどちらでも検索できることを確認する。
 
 2026-09-11の更新ではワールド31・32を追加し、21-1のランク7装飾品を一覧と逆引き表の両方に合わせて修正しました。wikiの表に含まれるワールド3〜32の300ステージを照合しています。
 

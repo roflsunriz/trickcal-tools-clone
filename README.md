@@ -26,6 +26,8 @@
 
 使徒を選ぶと大好物・好物・苦手な料理だけに絞り込まれます。料理を選ぶと、その料理に反応する使徒を逆引きできます。76使徒・60料理を収録し、情報源で未確認の使徒は未確認と表示します。
 
+英語表示では、クレヨンボードの使徒名・性格・種族・配置と、食べ物画面の使徒名・性格・料理名も英語へ切り替わります。検索は表示言語にかかわらず日本語名・英語名の両方に対応します。
+
 使徒画像82点と料理画像に使うwikiスプライト5点をリポジトリへ同梱しています。通常利用時に画像元サイトへ接続しません。
 
 ## Google Driveへの保存
@@ -44,13 +46,13 @@ Client IDは公開識別子でありClient Secretではありません。Client 
 
 ## データの出典
 
-ワールド3以降の設計図・欠片は、[トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)の「素材ドロップ場所一覧」を使用しています。クレヨン情報は[トリッカル攻略ポータルの使徒・ボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、料理の好みは[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)の「好物早見表」を使用しています。取得した該当部分と更新元のハッシュをリポジトリに保存します。
+ワールド3以降の設計図・欠片は、[トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)の「素材ドロップ場所一覧」を使用しています。クレヨン情報は[トリッカル攻略ポータルの使徒・ボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、料理の好みは[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)の「好物早見表」、使徒の英語名は[トリッカルwiki「使徒一覧」](https://wikiwiki.jp/thetrickal/使徒一覧)の英語名列を使用しています。取得した該当部分と更新元のハッシュをリポジトリに保存します。
 
 データと画像はローカルに同梱しています。通常利用時に情報源への接続は発生しません。収録情報と画像の一括更新方法は[更新手順](how-to-update.md)を参照してください。
 
 ## English
 
-Open the [sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/), [Crayon Board](https://roflsunriz.github.io/trickcal-tools-clone/board/), or [Food Preferences](https://roflsunriz.github.io/trickcal-tools-clone/food/), then switch the language to English. The generated data and images are bundled locally; the Japanese source names remain unchanged where no verified English name is available. Once the deployment is configured with a Google OAuth Web Client ID, the header sign-in button syncs tool settings to the user's private Drive `appDataFolder`.
+Open the [sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/), [Crayon Board](https://roflsunriz.github.io/trickcal-tools-clone/board/), or [Food Preferences](https://roflsunriz.github.io/trickcal-tools-clone/food/), then switch the language to English. Apostle names, personalities, races, rows, and food names are localized; searches accept both Japanese and English names. The generated data and images are bundled locally. Once the deployment is configured with a Google OAuth Web Client ID, the header sign-in button syncs tool settings to the user's private Drive `appDataFolder`.
 
 ## 関連文書
 

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "sources": {
     "board": {
       "url": "https://trickcal-strategy.pages.dev/board/manager.html",
@@ -9,6 +9,10 @@
       "url": "https://wikiwiki.jp/thetrickal/宴会場",
       "sha256": "5c3dcdf75094eca94ba5fb98626e52ca3a559f8c7017401f68b82b857a600a49",
       "lastModified": "2026-10-20 (火) 11:00:00"
+    },
+    "apostles": {
+      "url": "https://wikiwiki.jp/thetrickal/使徒一覧/未実装込み版",
+      "sha256": "56f64a01744e2c24e02f618df7a62b6ff93d48ade4b8b996b9539558cf75d2a8"
     }
   },
   "boardConfig": {
@@ -29,8 +33,11 @@
     "アメリア": {
       "name": "アメリア",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/アメリア.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%A2.png"
@@ -39,13 +46,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Amelia"
     },
     "アヤ": {
       "name": "アヤ",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/アヤ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%A4.png"
@@ -54,13 +65,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Aya"
     },
     "アリス": {
       "name": "アリス",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/アリス.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%AA%E3%82%B9.png"
@@ -69,13 +84,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Alice"
     },
     "アレット": {
       "name": "アレット",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/アレット.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%AC%E3%83%83%E3%83%88.png"
@@ -84,13 +103,17 @@
         "layer1": ["critResist", "crit"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Allet"
     },
     "イード": {
       "name": "イード",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/イード.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A4%E3%83%BC%E3%83%89.png"
@@ -99,13 +122,17 @@
         "layer1": ["attack", "defense"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Ed"
     },
     "イフリート": {
       "name": "イフリート",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/イフリート.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A4%E3%83%95%E3%83%AA%E3%83%BC%E3%83%88.png"
@@ -114,13 +141,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Ifrit"
     },
     "ウイ": {
       "name": "ウイ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ウイ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A6%E3%82%A4.png"
@@ -129,13 +160,17 @@
         "layer1": ["critResist", "crit"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Ui"
     },
     "ヴィヴィ": {
       "name": "ヴィヴィ",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ヴィヴィ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%B4%E3%82%A3%E3%83%B4%E3%82%A3.png"
@@ -144,13 +179,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Vivi"
     },
     "エシュール": {
       "name": "エシュール",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/エシュール.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%AB.png"
@@ -159,13 +198,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Ashur"
     },
     "エスピー": {
       "name": "エスピー",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/エスピー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%82%B9%E3%83%94%E3%83%BC.png"
@@ -174,13 +217,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Espi"
     },
     "エピカ": {
       "name": "エピカ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/エピカ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%83%94%E3%82%AB.png"
@@ -189,13 +236,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Epica"
     },
     "エルフィン": {
       "name": "エルフィン",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/エルフィン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%83%AB%E3%83%95%E3%82%A3%E3%83%B3.png"
@@ -204,13 +255,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Erpin"
     },
     "エレナ": {
       "name": "エレナ",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/エレナ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%83%AC%E3%83%8A.png"
@@ -219,13 +274,17 @@
         "layer1": ["attack", "defense"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Elena"
     },
     "ガヴィア": {
       "name": "ガヴィア",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ガヴィア.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AC%E3%83%B4%E3%82%A3%E3%82%A2.png"
@@ -234,13 +293,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Gabia"
     },
     "カレン": {
       "name": "カレン",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/カレン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AB%E3%83%AC%E3%83%B3.png"
@@ -249,13 +312,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Carren"
     },
     "カンナ": {
       "name": "カンナ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/カンナ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AB%E3%83%B3%E3%83%8A.png"
@@ -264,13 +331,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Canna"
     },
     "ギデオン": {
       "name": "ギデオン",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ギデオン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AE%E3%83%87%E3%82%AA%E3%83%B3.png"
@@ -279,13 +350,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Kidian"
     },
     "キャロット": {
       "name": "キャロット",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/キャロット.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AD%E3%83%A3%E3%83%AD%E3%83%83%E3%83%88.png"
@@ -294,13 +369,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Kyarot"
     },
     "キュウイ": {
       "name": "キュウイ",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/キュウイ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AD%E3%83%A5%E3%82%A6%E3%82%A4.png"
@@ -309,13 +388,17 @@
         "layer1": ["attack", "hp"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Kyuri"
     },
     "グウィン": {
       "name": "グウィン",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/グウィン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B0%E3%82%A6%E3%82%A3%E3%83%B3.png"
@@ -324,13 +407,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Gwynn"
     },
     "クロエ": {
       "name": "クロエ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/クロエ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AF%E3%83%AD%E3%82%A8.png"
@@ -339,13 +426,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Chloe"
     },
     "コミー": {
       "name": "コミー",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/コミー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B3%E3%83%9F%E3%83%BC.png"
@@ -354,13 +445,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Kommy"
     },
     "コミー（水着）": {
       "name": "コミー（水着）",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/コミー（水着）.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B3%E3%83%9F%E3%83%BC%EF%BC%88%E6%B0%B4%E7%9D%80%EF%BC%89.png"
@@ -369,13 +464,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Kommy (Swimsuit)"
     },
     "サリー": {
       "name": "サリー",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/サリー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B5%E3%83%AA%E3%83%BC.png"
@@ -384,13 +483,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Sari"
     },
     "シーラ": {
       "name": "シーラ",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/シーラ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%83%BC%E3%83%A9.png"
@@ -399,13 +502,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Sylla"
     },
     "シェイディ": {
       "name": "シェイディ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/シェイディ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%A7%E3%82%A4%E3%83%87%E3%82%A3.png"
@@ -414,13 +521,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Shaydi"
     },
     "ジェイド": {
       "name": "ジェイド",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ジェイド.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B8%E3%82%A7%E3%82%A4%E3%83%89.png"
@@ -429,13 +540,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Jade"
     },
     "シェルム": {
       "name": "シェルム",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/シェルム.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%A7%E3%83%AB%E3%83%A0.png"
@@ -444,13 +559,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Sherum"
     },
     "シオン・ザ・DB": {
       "name": "シオン・ザ・DB",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/シオン・ザ・DB.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%AA%E3%83%B3%E3%83%BB%E3%82%B6%E3%83%BBDB.png"
@@ -459,13 +578,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "xXionx"
     },
     "シスト": {
       "name": "シスト",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/シスト.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%B9%E3%83%88.png"
@@ -474,13 +597,17 @@
         "layer1": ["critResist", "crit"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Sist"
     },
     "シュパン": {
       "name": "シュパン",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/シュパン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%83%A5%E3%83%91%E3%83%B3.png"
@@ -489,13 +616,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Shoupan"
     },
     "ジュビー": {
       "name": "ジュビー",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ジュビー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B8%E3%83%A5%E3%83%93%E3%83%BC.png"
@@ -504,13 +635,17 @@
         "layer1": ["attack", "defense"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Jubee"
     },
     "ジョアン": {
       "name": "ジョアン",
       "personality": "裏面",
+      "personalityEn": "Resonance",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "全ての列",
+      "deployRowEn": "All Rows",
       "image": {
         "path": "assets/community/characters/ジョアン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B8%E3%83%A7%E3%82%A2%E3%83%B3.png"
@@ -519,13 +654,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Joanne"
     },
     "シルフィール": {
       "name": "シルフィール",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/シルフィール.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%83%AB%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB.png"
@@ -534,13 +673,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Silphir"
     },
     "スノキー": {
       "name": "スノキー",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/スノキー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B9%E3%83%8E%E3%82%AD%E3%83%BC.png"
@@ -549,13 +692,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Snorky"
     },
     "スピッキー": {
       "name": "スピッキー",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/スピッキー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B9%E3%83%94%E3%83%83%E3%82%AD%E3%83%BC.png"
@@ -564,13 +711,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Speaki"
     },
     "セリーネ": {
       "name": "セリーネ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/セリーネ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%BB%E3%83%AA%E3%83%BC%E3%83%8D.png"
@@ -579,13 +730,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Selene"
     },
     "ダーヤ": {
       "name": "ダーヤ",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ダーヤ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%80%E3%83%BC%E3%83%A4.png"
@@ -594,13 +749,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Daya"
     },
     "タイダー": {
       "name": "タイダー",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/タイダー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%BF%E3%82%A4%E3%83%80%E3%83%BC.png"
@@ -609,13 +768,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Taida"
     },
     "チョッピー": {
       "name": "チョッピー",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/チョッピー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%81%E3%83%A7%E3%83%83%E3%83%94%E3%83%BC.png"
@@ -624,13 +787,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Chopi"
     },
     "ディアナ": {
       "name": "ディアナ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ディアナ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%87%E3%82%A3%E3%82%A2%E3%83%8A.png"
@@ -639,13 +806,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Diana"
     },
     "ティグ": {
       "name": "ティグ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ティグ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%86%E3%82%A3%E3%82%B0.png"
@@ -654,13 +825,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Tig"
     },
     "ナイア": {
       "name": "ナイア",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ナイア.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%8A%E3%82%A4%E3%82%A2.png"
@@ -669,13 +844,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Naia"
     },
     "ネル": {
       "name": "ネル",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ネル.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%8D%E3%83%AB.png"
@@ -684,13 +863,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Ner"
     },
     "バター": {
       "name": "バター",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/バター.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%90%E3%82%BF%E3%83%BC.png"
@@ -699,13 +882,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Butter"
     },
     "パトラ": {
       "name": "パトラ",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/パトラ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%91%E3%83%88%E3%83%A9.png"
@@ -714,13 +901,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Patula"
     },
     "バリエ": {
       "name": "バリエ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/バリエ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%90%E3%83%AA%E3%82%A8.png"
@@ -729,13 +920,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Barie"
     },
     "バロン": {
       "name": "バロン",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/バロン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%90%E3%83%AD%E3%83%B3.png"
@@ -744,13 +939,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Barong"
     },
     "ピコラ": {
       "name": "ピコラ",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ピコラ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%94%E3%82%B3%E3%83%A9.png"
@@ -759,13 +958,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Picora"
     },
     "ビッグウッド": {
       "name": "ビッグウッド",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ビッグウッド.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A6%E3%83%83%E3%83%89.png"
@@ -774,13 +977,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "BigWood"
     },
     "ピラ": {
       "name": "ピラ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ピラ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%94%E3%83%A9.png"
@@ -789,13 +996,17 @@
         "layer1": ["critResist", "crit"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Pira"
     },
     "ヒルデ": {
       "name": "ヒルデ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ヒルデ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%92%E3%83%AB%E3%83%87.png"
@@ -804,13 +1015,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Hilde"
     },
     "フェスタ": {
       "name": "フェスタ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/フェスタ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%95%E3%82%A7%E3%82%B9%E3%82%BF.png"
@@ -819,13 +1034,17 @@
         "layer1": ["attack", "defense"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Festa"
     },
     "ブランセ": {
       "name": "ブランセ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ブランセ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%96%E3%83%A9%E3%83%B3%E3%82%BB.png"
@@ -834,13 +1053,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Blanchet"
     },
     "フリックル": {
       "name": "フリックル",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/フリックル.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%95%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AB.png"
@@ -849,13 +1072,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Fricle"
     },
     "ヘイリー": {
       "name": "ヘイリー",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ヘイリー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%98%E3%82%A4%E3%83%AA%E3%83%BC.png"
@@ -864,13 +1091,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Haley"
     },
     "ベニー": {
       "name": "ベニー",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ベニー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%8B%E3%83%BC.png"
@@ -879,13 +1110,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Beni"
     },
     "ベリータ": {
       "name": "ベリータ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ベリータ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%AA%E3%83%BC%E3%82%BF.png"
@@ -894,13 +1129,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Belita"
     },
     "ベル": {
       "name": "ベル",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ベル.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%AB.png"
@@ -909,13 +1148,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Veroo"
     },
     "ベルベット": {
       "name": "ベルベット",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ベルベット.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%AB%E3%83%99%E3%83%83%E3%83%88.png"
@@ -924,13 +1167,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Velvet"
     },
     "ポーシャー": {
       "name": "ポーシャー",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ポーシャー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9D%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%BC.png"
@@ -939,13 +1186,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Posher"
     },
     "マーゴ": {
       "name": "マーゴ",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/マーゴ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%83%BC%E3%82%B4.png"
@@ -954,13 +1205,17 @@
         "layer1": ["attack", "hp"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Mago"
     },
     "マエストロMK2": {
       "name": "マエストロMK2",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/マエストロMK2.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%82%A8%E3%82%B9%E3%83%88%E3%83%ADMK2.png"
@@ -969,13 +1224,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "MaestroMK2"
     },
     "マヨ": {
       "name": "マヨ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/マヨ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%83%A8.png"
@@ -984,13 +1243,17 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Mayo"
     },
     "マリー": {
       "name": "マリー",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "妖精",
+      "raceEn": "Sprite",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/マリー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%83%AA%E3%83%BC.png"
@@ -999,13 +1262,17 @@
         "layer1": ["attack", "hp"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Marie"
     },
     "ミンス": {
       "name": "ミンス",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ミンス.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9F%E3%83%B3%E3%82%B9.png"
@@ -1014,13 +1281,17 @@
         "layer1": ["attack", "hp"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Mynx"
     },
     "メゾン": {
       "name": "メゾン",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/メゾン.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A1%E3%82%BE%E3%83%B3.png"
@@ -1029,13 +1300,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Maison"
     },
     "メロナ": {
       "name": "メロナ",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "精霊",
+      "raceEn": "Elemental",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/メロナ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A1%E3%83%AD%E3%83%8A.png"
@@ -1044,13 +1319,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Meluna"
     },
     "モモ": {
       "name": "モモ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/モモ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A2%E3%83%A2.png"
@@ -1059,13 +1338,17 @@
         "layer1": ["attack", "hp"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Momo"
     },
     "ユミミ": {
       "name": "ユミミ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ユミミ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A6%E3%83%9F%E3%83%9F.png"
@@ -1074,13 +1357,17 @@
         "layer1": ["hp", "crit"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Yumimi"
     },
     "ヨミ": {
       "name": "ヨミ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "ミスティック",
+      "raceEn": "Mystic",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ヨミ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A8%E3%83%9F.png"
@@ -1089,13 +1376,17 @@
         "layer1": ["defense", "attack"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Yomi"
     },
     "リスティ": {
       "name": "リスティ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/リスティ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%82%B9%E3%83%86%E3%82%A3.png"
@@ -1104,13 +1395,17 @@
         "layer1": ["attack", "defense"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Risty"
     },
     "リッツ": {
       "name": "リッツ",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/リッツ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%83%83%E3%83%84.png"
@@ -1119,13 +1414,17 @@
         "layer1": ["hp", "attack"],
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Leets"
     },
     "リニュア": {
       "name": "リニュア",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/リニュア.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%83%8B%E3%83%A5%E3%82%A2.png"
@@ -1134,13 +1433,17 @@
         "layer1": ["attack", "defense"],
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
-      }
+      },
+      "nameEn": "Renewa"
     },
     "リム": {
       "name": "リム",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/リム.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%83%A0.png"
@@ -1149,13 +1452,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Rim"
     },
     "ルード": {
       "name": "ルード",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "竜族",
+      "raceEn": "Dragon",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ルード.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AB%E3%83%BC%E3%83%89.png"
@@ -1164,13 +1471,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Rudd"
     },
     "ルポ": {
       "name": "ルポ",
       "personality": "活発",
+      "personalityEn": "Vivacious",
       "race": "獣人",
+      "raceEn": "Werebeast",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/ルポ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AB%E3%83%9D.png"
@@ -1179,13 +1490,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Rufo"
     },
     "レイジー": {
       "name": "レイジー",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/レイジー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AC%E3%82%A4%E3%82%B8%E3%83%BC.png"
@@ -1194,13 +1509,17 @@
         "layer1": ["defense", "critResist"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Layze"
     },
     "レヴィ": {
       "name": "レヴィ",
       "personality": "憂鬱",
+      "personalityEn": "Depressed",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "中列",
+      "deployRowEn": "Middle",
       "image": {
         "path": "assets/community/characters/レヴィ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AC%E3%83%B4%E3%82%A3.png"
@@ -1209,13 +1528,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Levi"
     },
     "レーテー": {
       "name": "レーテー",
       "personality": "冷静",
+      "personalityEn": "Composed",
       "race": "幽霊",
+      "raceEn": "Phantom",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/レーテー.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AC%E3%83%BC%E3%83%86%E3%83%BC.png"
@@ -1224,13 +1547,17 @@
         "layer1": ["crit", "critResist"],
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Lethe"
     },
     "ローネ": {
       "name": "ローネ",
       "personality": "純粋",
+      "personalityEn": "Innocence",
       "race": "エルフ",
+      "raceEn": "Elf",
       "deployRow": "前列",
+      "deployRowEn": "Front",
       "image": {
         "path": "assets/community/characters/ローネ.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AD%E3%83%BC%E3%83%8D.png"
@@ -1239,13 +1566,17 @@
         "layer1": ["crit", "hp"],
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
-      }
+      },
+      "nameEn": "Rohne"
     },
     "ロレット": {
       "name": "ロレット",
       "personality": "狂気",
+      "personalityEn": "Madness",
       "race": "魔女",
+      "raceEn": "Witch",
       "deployRow": "後列",
+      "deployRowEn": "Rear",
       "image": {
         "path": "assets/community/characters/ロレット.png",
         "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AD%E3%83%AC%E3%83%83%E3%83%88.png"
@@ -1254,11 +1585,13 @@
         "layer1": ["critResist", "defense"],
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
-      }
+      },
+      "nameEn": "Rollett"
     }
   },
   "foods": {
     "ANSA宇宙食": {
+      "nameEn": "ANSA Space Food",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1268,6 +1601,7 @@
       }
     },
     "チョコアイス": {
+      "nameEn": "Chocolate Ice Cream",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1277,6 +1611,7 @@
       }
     },
     "ディープダークチョコアイス": {
+      "nameEn": "Deep Dark Chocolate Ice Cream",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1286,6 +1621,7 @@
       }
     },
     "宇宙食": {
+      "nameEn": "Space Food",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1295,6 +1631,7 @@
       }
     },
     "ココナッツ松葉粥": {
+      "nameEn": "Coconut Pine Needle Porridge",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1304,6 +1641,7 @@
       }
     },
     "ココナッツ万能野菜ジュース": {
+      "nameEn": "Coconut All-Purpose Vegetable Juice",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1313,6 +1651,7 @@
       }
     },
     "ご飯": {
+      "nameEn": "Bowl of Rice",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1322,6 +1661,7 @@
       }
     },
     "もち米ご飯": {
+      "nameEn": "Glutinous Rice",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1331,6 +1671,7 @@
       }
     },
     "トリプルチョコミントアイス": {
+      "nameEn": "Triple Mint Chocolate Ice Cream",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1340,6 +1681,7 @@
       }
     },
     "チョコミントアイス": {
+      "nameEn": "Mint Chocolate Ice Cream",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1349,6 +1691,7 @@
       }
     },
     "ホットアイスアメリカーノ": {
+      "nameEn": "Warm Iced Americano",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1358,6 +1701,7 @@
       }
     },
     "灼熱アイスアメリカーノ": {
+      "nameEn": "Hot Frozen Americano",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1367,6 +1711,7 @@
       }
     },
     "オーガニックレモンティー": {
+      "nameEn": "Organic Lemon Tea",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1376,6 +1721,7 @@
       }
     },
     "レモンティー": {
+      "nameEn": "Lemon Tea",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1385,6 +1731,7 @@
       }
     },
     "幽霊プリン": {
+      "nameEn": "Ghost Pudding",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1394,6 +1741,7 @@
       }
     },
     "悪霊プリン": {
+      "nameEn": "Evil Spirit Pudding",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1403,6 +1751,7 @@
       }
     },
     "海藻サラダ": {
+      "nameEn": "Seaweed Salad",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1412,6 +1761,7 @@
       }
     },
     "海藻ポキ": {
+      "nameEn": "Seaweed Poke",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1421,6 +1771,7 @@
       }
     },
     "シナモン味の飴玉": {
+      "nameEn": "Cinnamon Candy",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1430,6 +1781,7 @@
       }
     },
     "シナモン味の健康アメ玉": {
+      "nameEn": "Healthy Cinnamon Candy",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1439,6 +1791,7 @@
       }
     },
     "アニマル缶": {
+      "nameEn": "Beast Feed Can",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1448,6 +1801,7 @@
       }
     },
     "高級アニマル缶": {
+      "nameEn": "Premium Beast Feed Can",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1457,6 +1811,7 @@
       }
     },
     "かぼちゃ粥": {
+      "nameEn": "Pumpkin Porridge",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1466,6 +1821,7 @@
       }
     },
     "かぼちゃシチュー": {
+      "nameEn": "Pumpkin Stew",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1475,6 +1831,7 @@
       }
     },
     "一級品秘密のブドウジュース": {
+      "nameEn": "Premium Secret Grape Juice",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1484,6 +1841,7 @@
       }
     },
     "UFCニンジンフライ": {
+      "nameEn": "UFC Fried Carrot",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1493,6 +1851,7 @@
       }
     },
     "UFC野菜フライ": {
+      "nameEn": "UFC Fried Vegetables",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1502,6 +1861,7 @@
       }
     },
     "秘密のブドウジュース": {
+      "nameEn": "Secret Grape Juice",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1511,6 +1871,7 @@
       }
     },
     "ソフトクレームブリュレ": {
+      "nameEn": "Soft Crème Brûlée",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1520,6 +1881,7 @@
       }
     },
     "竜族キャンディ": {
+      "nameEn": "Dragon Candy",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1529,6 +1891,7 @@
       }
     },
     "逆鱗なでなでキャンディ": {
+      "nameEn": "Dragon Scale Candy",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1538,6 +1901,7 @@
       }
     },
     "クレームブリュレ": {
+      "nameEn": "Crème Brûlée",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1547,6 +1911,7 @@
       }
     },
     "マンガ肉焼き": {
+      "nameEn": "Grilled Manga Meat",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1556,6 +1921,7 @@
       }
     },
     "海賊マンガ肉焼き": {
+      "nameEn": "Pirate Grilled Manga Meat",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1565,6 +1931,7 @@
       }
     },
     "空気カツレツ": {
+      "nameEn": "Air-Fried Pork Cutlet",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1574,6 +1941,7 @@
       }
     },
     "水素カツレツ": {
+      "nameEn": "Hydrogen Cutlet",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1583,6 +1951,7 @@
       }
     },
     "キャラメルポップコーン": {
+      "nameEn": "Caramel Popcorn",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1592,6 +1961,7 @@
       }
     },
     "エルフキャラメルポップコーン": {
+      "nameEn": "Elf Caramel Popcorn",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1601,6 +1971,7 @@
       }
     },
     "ガーネットの実": {
+      "nameEn": "Pomegranate Fruit",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-4.webp",
@@ -1610,6 +1981,7 @@
       }
     },
     "ザクロフルーツパンチ": {
+      "nameEn": "Pomegranate Fruit Punch",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-4.webp",
@@ -1619,6 +1991,7 @@
       }
     },
     "メロンボッコンチーニ": {
+      "nameEn": "Melon Bocconcini",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-4.webp",
@@ -1628,6 +2001,7 @@
       }
     },
     "マスクメロンボッコンチーニ": {
+      "nameEn": "Muskmelon Bocconcini",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-4.webp",
@@ -1637,6 +2011,7 @@
       }
     },
     "ハニーポット": {
+      "nameEn": "Honey Jar",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1646,6 +2021,7 @@
       }
     },
     "ハチミツツボ": {
+      "nameEn": "Honey Pot",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1655,6 +2031,7 @@
       }
     },
     "プレッツェル": {
+      "nameEn": "Pretzel",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1664,6 +2041,7 @@
       }
     },
     "ハートプレッツェル": {
+      "nameEn": "Heart Pretzel",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1673,6 +2051,7 @@
       }
     },
     "あーんイチゴケーキ": {
+      "nameEn": "Say \"Ahh\" Strawberry Cake",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1682,6 +2061,7 @@
       }
     },
     "イチゴケーキ": {
+      "nameEn": "Strawberry Cake",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
@@ -1691,6 +2071,7 @@
       }
     },
     "ハニーガーリックサーモン": {
+      "nameEn": "Honey Garlic Salmon",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1700,6 +2081,7 @@
       }
     },
     "ロイヤルハニーガーリックサーモン": {
+      "nameEn": "Royal Honey Garlic Salmon",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1709,6 +2091,7 @@
       }
     },
     "穀物ドリンク": {
+      "nameEn": "Grain Drink",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-4.webp",
@@ -1718,6 +2101,7 @@
       }
     },
     "927粒穀物ドリンク": {
+      "nameEn": "927-Grain Drink",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-4.webp",
@@ -1727,6 +2111,7 @@
       }
     },
     "金のフルーツ飴": {
+      "nameEn": "Golden Candied Fruit",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1736,6 +2121,7 @@
       }
     },
     "白銀フルーツ飴": {
+      "nameEn": "Silver Candied Fruit",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1745,6 +2131,7 @@
       }
     },
     "二口草-野菜包み": {
+      "nameEn": "Two-Bite Grass Vegetable Wrap",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1754,6 +2141,7 @@
       }
     },
     "一口草-野菜包み": {
+      "nameEn": "One-Bite Grass Vegetable Wrap",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
@@ -1763,6 +2151,7 @@
       }
     },
     "マシュマロマカロン": {
+      "nameEn": "Marshmallow Macaron",
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1772,6 +2161,7 @@
       }
     },
     "低糖マシュマロマカロン": {
+      "nameEn": "Low-Sugar Marshmallow Macaron",
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
@@ -1781,6 +2171,7 @@
       }
     },
     "宝石タルト": {
+      "nameEn": "Gem Tart",
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
@@ -1790,6 +2181,7 @@
       }
     },
     "秘宝タルト": {
+      "nameEn": "Treasure Tart",
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",

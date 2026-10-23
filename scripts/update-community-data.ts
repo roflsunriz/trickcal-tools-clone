@@ -4,8 +4,10 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { format, resolveConfig } from "prettier";
 import {
+  apostleSourceUrl,
   boardSourceUrl,
   buildCommunityData,
+  extractApostleSnapshot,
   extractBoardSnapshot,
   extractFoodSnapshot,
   foodSourceUrl,
@@ -15,6 +17,7 @@ const repositoryRoot = fileURLToPath(new URL("../", import.meta.url));
 const dataPath = resolve(repositoryRoot, "src/tools/community/data.json");
 const boardSnapshotPath = resolve(repositoryRoot, "scripts/fixtures/community-board.html");
 const foodSnapshotPath = resolve(repositoryRoot, "scripts/fixtures/community-food.html");
+const apostleSnapshotPath = resolve(repositoryRoot, "scripts/fixtures/community-apostles.html");
 const assetManifestPath = resolve(repositoryRoot, "public/assets/community/manifest.json");
 
 type GeneratedFile = {
@@ -85,8 +88,12 @@ function sameFile(file: GeneratedFile, before: Buffer | undefined) {
 async function main() {
   const args = process.argv.slice(2);
   if (args.some((arg) => arg !== "--check")) throw new Error("使い方: bun scripts/update-community-data.ts [--check]");
-  const [boardHtml, foodHtml] = await Promise.all([fetchText(boardSourceUrl), fetchText(foodSourceUrl)]);
-  const data = buildCommunityData(boardHtml, foodHtml);
+  const [boardHtml, foodHtml, apostleHtml] = await Promise.all([
+    fetchText(boardSourceUrl),
+    fetchText(foodSourceUrl),
+    fetchText(apostleSourceUrl),
+  ]);
+  const data = buildCommunityData(boardHtml, foodHtml, apostleHtml);
   const assetSources = new Map<string, string>();
   for (const character of Object.values(data.characters))
     assetSources.set(character.image.path, character.image.sourceUrl);
@@ -123,6 +130,7 @@ async function main() {
     { path: dataPath, after: formatted, text: true },
     { path: boardSnapshotPath, after: `${extractBoardSnapshot(boardHtml)}\n`, text: true },
     { path: foodSnapshotPath, after: `${extractFoodSnapshot(foodHtml)}\n`, text: true },
+    { path: apostleSnapshotPath, after: `${extractApostleSnapshot(apostleHtml)}\n`, text: true },
     { path: assetManifestPath, after: manifest, text: true },
     ...assets.map((asset) => ({
       path: resolve(repositoryRoot, "public", asset.path),
@@ -137,6 +145,7 @@ async function main() {
   console.log(
     `食べ物情報: ${Object.keys(data.foodPreferences).length}使徒・${Object.keys(data.foods).length}料理 (${foodSourceUrl})`,
   );
+  console.log(`英語使徒名: ${Object.keys(data.characters).length}使徒 (${apostleSourceUrl})`);
   console.log(`画像: ${assets.length}ファイルを検証しました。`);
   if (!changed.length) {
     console.log("クレヨン・食べ物データ、画像、保存済みの出典表は一致しています。変更はありません。");

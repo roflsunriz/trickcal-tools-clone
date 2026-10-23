@@ -2,7 +2,7 @@ import { Search, Utensils, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
-import { getPersonalityTone } from "./types";
+import { characterName, getPersonalityTone } from "./types";
 import type { CommunityData, FoodPreference } from "./types";
 
 const data = rawData as CommunityData;
@@ -19,28 +19,43 @@ function preferenceForFood(preference: FoodPreference | undefined, food: string)
 }
 
 export function FoodTool() {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
   const [characterSearch, setCharacterSearch] = useState("");
   const [foodSearch, setFoodSearch] = useState("");
   const [selectedCharacter, setSelectedCharacter] = useState<string>();
   const [selectedFood, setSelectedFood] = useState<string>();
-  const characterNames = useMemo(() => Object.keys(data.characters).sort((a, b) => a.localeCompare(b, "ja")), []);
+  const characterNames = useMemo(
+    () =>
+      Object.keys(data.characters).sort((a, b) =>
+        characterName(data.characters[a], locale).localeCompare(characterName(data.characters[b], locale), locale),
+      ),
+    [locale],
+  );
   const foodNames = useMemo(
     () =>
       Object.keys(data.foods).sort((a, b) => {
         const rank = rarityOrder[data.foods[a].rarity] - rarityOrder[data.foods[b].rarity];
-        return rank || a.localeCompare(b, "ja");
+        const nameA = locale === "en" ? data.foods[a].nameEn : a;
+        const nameB = locale === "en" ? data.foods[b].nameEn : b;
+        return rank || nameA.localeCompare(nameB, locale);
       }),
-    [],
+    [locale],
   );
   const selectedPreference = selectedCharacter ? data.foodPreferences[selectedCharacter] : undefined;
 
   const visibleCharacters = characterNames.filter((name) => {
-    const matchesSearch = name.toLocaleLowerCase("ja").includes(characterSearch.trim().toLocaleLowerCase("ja"));
+    const query = characterSearch.trim().toLocaleLowerCase(locale);
+    const character = data.characters[name];
+    const matchesSearch = [character.name, character.nameEn].some((candidate) =>
+      candidate.toLocaleLowerCase(locale).includes(query),
+    );
     return matchesSearch && (!selectedFood || preferenceForFood(data.foodPreferences[name], selectedFood));
   });
   const visibleFoods = foodNames.filter((food) => {
-    const matchesSearch = food.toLocaleLowerCase("ja").includes(foodSearch.trim().toLocaleLowerCase("ja"));
+    const query = foodSearch.trim().toLocaleLowerCase(locale);
+    const matchesSearch = [food, data.foods[food].nameEn].some((candidate) =>
+      candidate.toLocaleLowerCase(locale).includes(query),
+    );
     return matchesSearch && (!selectedCharacter || preferenceForFood(selectedPreference, food));
   });
 
@@ -108,10 +123,10 @@ export function FoodTool() {
                       decoding="async"
                       onError={(event) => event.currentTarget.parentElement?.classList.add("image-error")}
                     />
-                    <span className="character-avatar-fallback">{name.slice(0, 1)}</span>
+                    <span className="character-avatar-fallback">{characterName(character, locale).slice(0, 1)}</span>
                   </span>
-                  <strong>{name}</strong>
-                  <small>{character.personality}</small>
+                  <strong>{characterName(character, locale)}</strong>
+                  <small>{locale === "en" ? character.personalityEn : character.personality}</small>
                   {preference ? <span className="preference-badge">{t(`food.preference.${preference}`)}</span> : null}
                   {!data.foodPreferences[name] ? (
                     <span className="unconfirmed-badge">{t("food.unconfirmed")}</span>
@@ -158,7 +173,7 @@ export function FoodTool() {
                     />
                     <Utensils className="food-image-fallback" size={23} />
                   </span>
-                  <strong>{food}</strong>
+                  <strong>{locale === "en" ? data.foods[food].nameEn : food}</strong>
                   <small>{t(`food.rarity.${data.foods[food].rarity}`)}</small>
                   {preference ? <span className="preference-badge">{t(`food.preference.${preference}`)}</span> : null}
                 </button>

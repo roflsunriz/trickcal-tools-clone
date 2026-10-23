@@ -8,9 +8,16 @@ import type {
   FoodPreference,
   FoodRarity,
 } from "../src/tools/community/types";
+import {
+  deployRowEnglishNames,
+  foodEnglishNames,
+  personalityEnglishNames,
+  raceEnglishNames,
+} from "./community-translations";
 
 export const boardSourceUrl = "https://trickcal-strategy.pages.dev/board/manager.html";
 export const foodSourceUrl = "https://wikiwiki.jp/thetrickal/宴会場";
+export const apostleSourceUrl = "https://wikiwiki.jp/thetrickal/使徒一覧/未実装込み版";
 
 const boardTypeNames: Record<string, BoardCellType> = {
   攻撃: "attack",
@@ -56,8 +63,8 @@ function characterCardSections(html: string) {
   });
 }
 
-export function parseBoardCharacters(html: string): Record<string, CommunityCharacter> {
-  const characters: Record<string, CommunityCharacter> = {};
+export function parseBoardCharacters(html: string): Record<string, Omit<CommunityCharacter, "nameEn">> {
+  const characters: Record<string, Omit<CommunityCharacter, "nameEn">> = {};
   for (const section of characterCardSections(html)) {
     const openingTag = section.match(/^<div\b[^>]*>/)?.[0] ?? "";
     const name = normalizeCharacterName(attribute(openingTag, "data-name"));
@@ -82,11 +89,23 @@ export function parseBoardCharacters(html: string): Record<string, CommunityChar
       throw new Error(`${name}: ボードの特殊マス数が2・3・4になっていません。`);
     }
 
+    const personality = attribute(openingTag, "data-trait");
+    const race = attribute(openingTag, "data-race");
+    const deployRow = attribute(openingTag, "data-placement");
+    const personalityEn = personalityEnglishNames[personality];
+    const raceEn = raceEnglishNames[race];
+    const deployRowEn = deployRowEnglishNames[deployRow];
+    if (!personalityEn || !raceEn || !deployRowEn) {
+      throw new Error(`${name}: 性格・種族・配置の英語名がありません（${personality}・${race}・${deployRow}）。`);
+    }
     characters[name] = {
       name,
-      personality: attribute(openingTag, "data-trait"),
-      race: attribute(openingTag, "data-race"),
-      deployRow: attribute(openingTag, "data-placement"),
+      personality,
+      personalityEn,
+      race,
+      raceEn,
+      deployRow,
+      deployRowEn,
       image: {
         path: `assets/community/characters/${name}.png`,
         sourceUrl: boardImageSource(name),
@@ -98,6 +117,37 @@ export function parseBoardCharacters(html: string): Record<string, CommunityChar
     throw new Error(`クレヨン情報が${Object.keys(characters).length}人分しかありません。取得元を確認してください。`);
   }
   return characters;
+}
+
+function findApostleTable(html: string) {
+  const tables = [...html.matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/g)]
+    .map(([table]) => table)
+    .filter((table) => {
+      const firstRow = table.match(/<tr\b[^>]*>[\s\S]*?<\/tr>/)?.[0] ?? "";
+      const heading = stripTags(firstRow);
+      return heading.includes("名前") && heading.includes("韓国語名") && heading.includes("英語名");
+    });
+  if (tables.length !== 1) throw new Error("wikiの使徒一覧を一意に取得できません。");
+  return tables[0];
+}
+
+export function parseApostleEnglishNames(html: string) {
+  const table = findApostleTable(html);
+  const names: Record<string, string> = {};
+  const rows = [...table.matchAll(/<tr\b[^>]*>[\s\S]*?<\/tr>/g)].slice(1);
+  for (const [row] of rows) {
+    const cells = [...row.matchAll(/<td\b[^>]*>[\s\S]*?<\/td>/g)].map(([cell]) => stripTags(cell));
+    if (cells.length < 13) continue;
+    const name = normalizeCharacterName(cells[2].replace(/\s*\?\s*$/, ""));
+    const nameEn = cells[12].trim();
+    if (!name || !nameEn) continue;
+    if (names[name] && names[name] !== nameEn) throw new Error(`使徒「${name}」の英語名が重複しています。`);
+    names[name] = nameEn;
+  }
+  if (Object.keys(names).length < 82) {
+    throw new Error(`使徒一覧の英語名が${Object.keys(names).length}人分しかありません。`);
+  }
+  return { names, table };
 }
 
 function findFoodPreferenceTable(html: string) {
@@ -147,7 +197,7 @@ function rarityFromCell(cell: string): FoodRarity {
 export function parseFoodPreferences(html: string) {
   const table = findFoodPreferenceTable(html);
   const preferences: Record<string, FoodPreference> = {};
-  const foods: Record<string, { rarity: FoodRarity; image: CommunityFoodImage }> = {};
+  const foods: Record<string, { nameEn: string; rarity: FoodRarity; image: CommunityFoodImage }> = {};
   const rows = [...table.matchAll(/<tr\b[^>]*>[\s\S]*?<\/tr>/g)].slice(1);
 
   for (const [row] of rows) {
@@ -172,7 +222,9 @@ export function parseFoodPreferences(html: string) {
         ) {
           throw new Error(`${food}: 料理のレアリティまたは画像位置が行によって異なります。`);
         }
-        foods[food] = { rarity, image };
+        const nameEn = foodEnglishNames[food];
+        if (!nameEn) throw new Error(`${food}: 料理の英語名がありません。`);
+        foods[food] = { nameEn, rarity, image };
         return [food];
       });
 
@@ -204,14 +256,30 @@ export function extractFoodSnapshot(html: string) {
   return findFoodPreferenceTable(html).replace(/>\s+</g, "><").trim();
 }
 
+export function extractApostleSnapshot(html: string) {
+  return findApostleTable(html).replace(/>\s+</g, "><").trim();
+}
+
 export function sourceHash(value: string) {
   return createHash("sha256").update(value).digest("hex");
 }
 
-export function buildCommunityData(boardHtml: string, foodHtml: string): CommunityData {
+export function buildCommunityData(boardHtml: string, foodHtml: string, apostleHtml: string): CommunityData {
   const boardSnapshot = extractBoardSnapshot(boardHtml);
   const foodSnapshot = extractFoodSnapshot(foodHtml);
-  const characters = parseBoardCharacters(boardSnapshot);
+  const parsedCharacters = parseBoardCharacters(boardSnapshot);
+  const apostleSnapshot = extractApostleSnapshot(apostleHtml);
+  const { names: apostleEnglishNames } = parseApostleEnglishNames(apostleSnapshot);
+  const missingEnglishNames = Object.keys(parsedCharacters).filter((name) => !apostleEnglishNames[name]);
+  if (missingEnglishNames.length) {
+    throw new Error(`使徒一覧に英語名がない使徒があります: ${missingEnglishNames.join(", ")}`);
+  }
+  const characters = Object.fromEntries(
+    Object.entries(parsedCharacters).map(([name, character]) => [
+      name,
+      { ...character, nameEn: apostleEnglishNames[name] },
+    ]),
+  );
   const { preferences, foods } = parseFoodPreferences(foodSnapshot);
   const unknownFoodCharacters = Object.keys(preferences).filter((name) => !characters[name]);
   if (unknownFoodCharacters.length) {
@@ -221,10 +289,11 @@ export function buildCommunityData(boardHtml: string, foodHtml: string): Communi
   if (!modified) throw new Error("wikiの更新日時を取得できません。");
 
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     sources: {
       board: { url: boardSourceUrl, sha256: sourceHash(boardSnapshot) },
       food: { url: foodSourceUrl, sha256: sourceHash(foodSnapshot), lastModified: modified },
+      apostles: { url: apostleSourceUrl, sha256: sourceHash(apostleSnapshot) },
     },
     boardConfig: {
       layer1: { bonusPerCell: 3, crayonsPerCell: 2 },

@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
 import { boardCellKey, readCommunityStorageState, writeCommunityStorageState } from "./storage";
-import { boardCellTypes, getPersonalityTone } from "./types";
+import { boardCellTypes, characterDetails, characterName, getPersonalityTone } from "./types";
 import type { BoardCellType, BoardLayer, CommunityData } from "./types";
 
 const data = rawData as CommunityData;
@@ -14,13 +14,16 @@ function assetPath(path: string) {
 }
 
 export function BoardTool() {
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
   const [layer, setLayer] = useState<BoardLayer>("layer1");
   const [cellType, setCellType] = useState<BoardCellType>("attack");
   const [state, setState] = useState(() => readCommunityStorageState(data.characters));
   const characters = useMemo(
-    () => Object.values(data.characters).sort((a, b) => a.name.localeCompare(b.name, "ja")),
-    [],
+    () =>
+      Object.values(data.characters).sort((a, b) =>
+        characterName(a, locale).localeCompare(characterName(b, locale), locale),
+      ),
+    [locale],
   );
   const visibleCharacters = useMemo(
     () => characters.filter((character) => character.boardTypes[layer].includes(cellType)),
@@ -200,13 +203,11 @@ export function BoardTool() {
                         decoding="async"
                         onError={(event) => event.currentTarget.parentElement?.classList.add("image-error")}
                       />
-                      <span className="character-avatar-fallback">{character.name.slice(0, 1)}</span>
+                      <span className="character-avatar-fallback">{characterName(character, locale).slice(0, 1)}</span>
                     </span>
                     <span className="board-character-info">
-                      <strong>{character.name}</strong>
-                      <small>
-                        {character.personality} · {character.race} · {character.deployRow}
-                      </small>
+                      <strong>{characterName(character, locale)}</strong>
+                      <small>{characterDetails(character, locale)}</small>
                     </span>
                     {active ? <Check size={19} /> : null}
                   </button>

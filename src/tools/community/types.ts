@@ -19,9 +19,13 @@ export function getPersonalityTone(personality: string): PersonalityTone {
 
 export type CommunityCharacter = {
   name: string;
+  nameEn: string;
   personality: string;
+  personalityEn: string;
   race: string;
+  raceEn: string;
   deployRow: string;
+  deployRowEn: string;
   image: {
     path: string;
     sourceUrl: string;
@@ -43,13 +47,24 @@ export type FoodPreference = {
 };
 
 export type CommunityData = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   sources: {
     board: { url: string; sha256: string };
     food: { url: string; sha256: string; lastModified: string };
+    apostles: { url: string; sha256: string };
   };
   boardConfig: Record<BoardLayer, { bonusPerCell: number; crayonsPerCell: number }>;
   characters: Record<string, CommunityCharacter>;
-  foods: Record<string, { rarity: FoodRarity; image: CommunityFoodImage }>;
+  foods: Record<string, { nameEn: string; rarity: FoodRarity; image: CommunityFoodImage }>;
   foodPreferences: Record<string, FoodPreference>;
 };
+
+export function characterName(character: CommunityCharacter, locale: "ja" | "en") {
+  return locale === "en" ? character.nameEn : character.name;
+}
+
+export function characterDetails(character: CommunityCharacter, locale: "ja" | "en") {
+  return locale === "en"
+    ? `${character.personalityEn} · ${character.raceEn} · ${character.deployRowEn}`
+    : `${character.personality} · ${character.race} · ${character.deployRow}`;
+}

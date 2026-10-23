@@ -3,3 +3,4 @@ node_modules
 tsconfig.tsbuildinfo
 scripts/fixtures/community-board.html
 scripts/fixtures/community-food.html
+scripts/fixtures/community-apostles.html

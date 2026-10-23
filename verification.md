@@ -16,7 +16,7 @@ bun run build
 - `scripts/wiki-sweep-data.test.ts`: 保存した実際の素材表を使用し、遅延取得URLの解決、全ステージの読み取り、未知の装備・欠落・矛盾の拒否、既存データの保護、再生成、通信失敗を確認する。
 - `src/tools/sweep/sweep.test.ts`: 新ワールド全20ステージの主副ドロップ、装飾品2種類の32-5への集約、新ワールドの副産物候補を確認する。
 - `quickEquipment.test.ts` と `storage.test.ts`: 必要素材・数量と保存状態の修復を確認する。
-- `scripts/community-data.test.ts`: 保存したボードカードと好物表から82使徒・76使徒分の好み・60料理を再生成し、追加使徒、欠落・不正形式の拒否と87画像のmanifest・SHA-256一致を確認する。
+- `scripts/community-data.test.ts`: 保存したボードカード・好物表・使徒一覧から82使徒・76使徒分の好み・60料理と全英語名を再生成し、追加使徒、英語対訳、欠落・不正形式の拒否と87画像のmanifest・SHA-256一致を確認する。
 - `src/tools/community/storage.test.ts`: 所持使徒と開放マスの保存・復元、未知の使徒・マス・保存形式の除外を確認する。
 - `src/cloud/cloud.test.ts`: 同期対象キーと復元データの検証、認証期限、Web Client ID、Driveユーザー・appDataFolderの作成／検索、401エラーを確認する。
 - OAuth認証保存はClient ID一致を必須とし、別プロジェクトへの切替時に旧tokenを復元しないことも同テストで確認する。
@@ -50,6 +50,7 @@ bun run build
 3. コミー（水着）を選び、好物と苦手が絞り込まれることを確認する。料理側から選択し、該当する使徒へ逆引きできることも確認する。
 4. 使徒・料理検索、選択解除、日本語・英語、1280×900と390×844で、横方向のはみ出しや操作不能がないことを確認する。
 5. 使徒カードと料理カードに対応するローカル画像が表示され、Networkで画像元サイトへの通信や404がないことを確認する。
+6. 英語へ切り替え、クレヨンカードの使徒名・性格・種族・配置と、食べ物カードの使徒名・性格・料理名に日本語が残らないことを確認する。日本語名と英語名の両方で検索できることも確認する。
 
 ### Google Drive同期
 
@@ -60,7 +61,7 @@ bun run build
 5. 期限切れ・Drive 401・破損バックアップ・通信失敗で端末内データを失わず、再ログインまたは再同期の案内が表示されることを確認する。
 6. ログアウトでトークンが失効・削除され、端末内とDrive内の設定は残ることを確認する。
 
-全ツールで、開発者ツールにJavaScript例外・失敗通信がなく、通常利用時に3つの情報源へ通信しないことを確認します。Google同期時の通信先はGoogle Identity Services、OAuth、Drive APIに限られることを確認します。
+全ツールで、開発者ツールにJavaScript例外・失敗通信がなく、通常利用時に4つの情報源へ通信しないことを確認します。Google同期時の通信先はGoogle Identity Services、OAuth、Drive APIに限られることを確認します。
 
 ## エラーへの対処
 
@@ -178,3 +179,9 @@ bun run build
 - 390×844ではクレヨン・食べ物ともdocumentの表示幅・scroll幅が390pxで、性格色追加による横方向のはみ出しはなかった。BunとVitestの各43テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。
 - OAuth移行コミット `bff14fd` は[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39965570497)と[Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39965570263)、性格色コミット `abc67f5` は[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39966109422)と[Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39966109378)に成功した。公開JS `index-Cb5712Z3.js` は新Client IDだけを含み、旧Client IDを含まない。
 - 公開クレヨン画面で性格別の枠線・背景・画像を確認した。画像失敗0件で、冷静と純粋の枠色がローカル検証値と同じ性格色になることをDOMでも確認した。
+
+## 2026-10-23: クレヨン・食べ物データの英語対応
+
+- wiki「使徒一覧」の英語名列を保存fixtureへ追加し、ボード82使徒へ全件結合した。性格・種族・配置と料理60件にも英語対訳があり、欠落時に更新を拒否するテストを追加した。BunとVitestの各44テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。
+- 本番ビルドの英語表示で `Gwynn / Composed · Werebeast · Front`、`Aya / Composed · Witch · Middle`、`Kommy (Swimsuit) / Composed`、`ANSA Space Food` を確認した。食べ物画面の全使徒・全料理カードと、表示中のクレヨンカードに日本語文字が残っていないことをDOMで確認した。
+- 英語表示のまま日本語の「グウィン」「宇宙食」と英語の `Gwynn`、`ANSA Space Food` の両方で検索できた。390×844と1280×900でdocumentの表示幅とscroll幅が一致し、画像失敗とJavaScript例外、通信失敗は0件だった。実行環境が付ける既知のPermissions-Policy警告2件は機能・通信エラーではない。
