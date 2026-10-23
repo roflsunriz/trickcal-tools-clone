@@ -2,6 +2,7 @@ import { Search, Utensils, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
+import { readFoodStorageState, writeFoodStorageState } from "./food-storage";
 import { characterName, getPersonalityTone } from "./types";
 import type { CommunityData, FoodPreference } from "./types";
 
@@ -20,10 +21,8 @@ function preferenceForFood(preference: FoodPreference | undefined, food: string)
 
 export function FoodTool() {
   const { locale, t } = useI18n();
-  const [characterSearch, setCharacterSearch] = useState("");
-  const [foodSearch, setFoodSearch] = useState("");
-  const [selectedCharacter, setSelectedCharacter] = useState<string>();
-  const [selectedFood, setSelectedFood] = useState<string>();
+  const [state, setState] = useState(() => readFoodStorageState(data));
+  const { characterSearch, foodSearch, selectedCharacter, selectedFood } = state;
   const characterNames = useMemo(
     () =>
       Object.keys(data.characters).sort((a, b) =>
@@ -59,19 +58,25 @@ export function FoodTool() {
     return matchesSearch && (!selectedCharacter || preferenceForFood(selectedPreference, food));
   });
 
+  function updateState(nextState: typeof state) {
+    setState(nextState);
+    writeFoodStorageState(nextState);
+  }
+
   function chooseCharacter(name: string) {
-    setSelectedCharacter(selectedCharacter === name ? undefined : name);
-    setSelectedFood(undefined);
+    updateState({
+      ...state,
+      selectedCharacter: selectedCharacter === name ? undefined : name,
+      selectedFood: undefined,
+    });
   }
 
   function chooseFood(food: string) {
-    setSelectedFood(selectedFood === food ? undefined : food);
-    setSelectedCharacter(undefined);
+    updateState({ ...state, selectedCharacter: undefined, selectedFood: selectedFood === food ? undefined : food });
   }
 
   function clearSelection() {
-    setSelectedCharacter(undefined);
-    setSelectedFood(undefined);
+    updateState({ ...state, selectedCharacter: undefined, selectedFood: undefined });
   }
 
   return (
@@ -99,8 +104,9 @@ export function FoodTool() {
             <input
               type="search"
               value={characterSearch}
+              maxLength={500}
               placeholder={t("food.searchCharacter")}
-              onChange={(event) => setCharacterSearch(event.target.value)}
+              onChange={(event) => updateState({ ...state, characterSearch: event.target.value })}
             />
           </label>
           <div className="food-card-grid character-food-grid">
@@ -146,8 +152,9 @@ export function FoodTool() {
             <input
               type="search"
               value={foodSearch}
+              maxLength={500}
               placeholder={t("food.searchFood")}
-              onChange={(event) => setFoodSearch(event.target.value)}
+              onChange={(event) => updateState({ ...state, foodSearch: event.target.value })}
             />
           </label>
           {selectedCharacter && !selectedPreference ? <div className="empty-state">{t("food.noData")}</div> : null}

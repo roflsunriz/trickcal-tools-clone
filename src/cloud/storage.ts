@@ -4,6 +4,7 @@ export const cloudLocalUpdatedAtKey = "trickcal_cloud_local_updated_at";
 export const cloudStorageKeys = [
   "trickcal_sweep_state",
   "trickcal_community_state",
+  "trickcal_food_state",
   "trickcal_locale",
   "trickcal_theme",
 ] as const;
@@ -11,7 +12,7 @@ export const cloudStorageKeys = [
 type CloudStorageKey = (typeof cloudStorageKeys)[number];
 
 export type CloudBackup = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   updatedAt: string;
   values: Record<CloudStorageKey, string | null>;
 };
@@ -40,11 +41,15 @@ export function createCloudBackup(now = Date.now()): CloudBackup {
     CloudStorageKey,
     string | null
   >;
-  return { schemaVersion: 1, updatedAt: new Date(updatedAt).toISOString(), values };
+  return { schemaVersion: 2, updatedAt: new Date(updatedAt).toISOString(), values };
 }
 
 export function validateCloudBackup(value: unknown): CloudBackup {
-  if (!isRecord(value) || value.schemaVersion !== 1 || typeof value.updatedAt !== "string") {
+  if (
+    !isRecord(value) ||
+    (value.schemaVersion !== 1 && value.schemaVersion !== 2) ||
+    typeof value.updatedAt !== "string"
+  ) {
     throw new Error("INVALID_BACKUP");
   }
   const updatedAt = Date.parse(value.updatedAt);
@@ -53,11 +58,15 @@ export function validateCloudBackup(value: unknown): CloudBackup {
   const values = {} as Record<CloudStorageKey, string | null>;
   for (const key of cloudStorageKeys) {
     const entry = value.values[key];
+    if (value.schemaVersion === 1 && key === "trickcal_food_state" && entry === undefined) {
+      values[key] = null;
+      continue;
+    }
     if (entry !== null && typeof entry !== "string") throw new Error("INVALID_BACKUP");
     if (typeof entry === "string" && entry.length > 1_000_000) throw new Error("INVALID_BACKUP");
     values[key] = entry;
   }
-  return { schemaVersion: 1, updatedAt: new Date(updatedAt).toISOString(), values };
+  return { schemaVersion: 2, updatedAt: new Date(updatedAt).toISOString(), values };
 }
 
 export function applyCloudBackup(backup: CloudBackup) {

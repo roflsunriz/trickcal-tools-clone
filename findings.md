@@ -13,7 +13,7 @@
 - 元サイト `trickcal.nossite.com` の公開JSONは2026-10-23確認時にクレヨン65使徒・好み58使徒。追加使徒を含む正本は生成済み `src/tools/community/data.json` とし、縮約fixtureのSHA-256と出典URLを同ファイルへ記録する。
 - 補完元の `assets/icons/<使徒名>.png` は82使徒すべて存在する。料理画像はwiki好物表の `::icon/48:0`〜`48:4` の5枚の200px WebPスプライトと、50px刻みの `left`・`top` から再現できる。更新時は87画像のContent-Type、PNG／WebP signature、SHA-256を検証し、`public/assets/community/manifest.json` を正本にする。
 - 静的GitHub PagesのGoogle同期はGIS token modelとDrive `appDataFolder` を使う。ブラウザtoken modelのaccess tokenは短命で、期限切れ後の取得はユーザー操作が必要なため、有効期限内だけlocalStorageから復元し、期限切れ時は再ログインを案内する。Client Secret・refresh tokenは静的クライアントで扱わない。
-- Google同期の対象は周回v3、クレヨンv1、言語、テーマの4キーに限定する。Drive復元値はschema、時刻、全キー、各1MB上限を検証し、新しい更新時刻だけを自動適用する。Drive APIの401は保存済み認証を破棄し、その他の失敗では端末内データを維持する。
+- Google同期の対象は周回v3、クレヨンv1、食べ物v1、言語、テーマの5キーに限定する。食べ物v1は使徒検索・料理検索と、排他的な使徒選択・料理選択を保存し、実在する名前だけを復元する。Driveバックアップはschema v2とし、食べ物キーのないv1を食べ物未選択として明示的に移行する。復元値は時刻、全キー、各1MB上限を検証し、新しい更新時刻だけを自動適用する。Drive APIの401は保存済み認証を破棄し、その他の失敗では端末内データを維持する。
 - 本番OAuthにはDrive APIを有効化したWeb Client IDと、`https://roflsunriz.github.io` の承認済みJavaScript生成元が必要。PagesはGitHub変数 `GOOGLE_CLIENT_ID` を `VITE_GOOGLE_CLIENT_ID` へ渡し、未設定時はログインを無効化して設定不足を表示する。
 - 2026-10-23にWeb Client IDのJSONをローカルで検証し、本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認した。Client IDだけをGitHub変数 `GOOGLE_CLIENT_ID` へ登録し、Client Secretは読込出力・repository・GitHub変数へ保存しない。
 - OAuth同意画面のアプリ名は個別Client ID名ではなく、Google Auth Platformの同一CloudプロジェクトにあるBranding設定から表示される。既存アプリ「Mylist Backup Service」と同じプロジェクトではその名称になるため、既存アプリを維持するなら本ツール用プロジェクトを分ける。既存プロジェクトを本ツール専用へ転用する場合だけBranding名・ホーム・プライバシーポリシー等を変更する。根拠はGoogle公式のBrand Verification資料（2026-10-23確認）。

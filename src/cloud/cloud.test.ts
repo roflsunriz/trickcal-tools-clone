@@ -41,6 +41,7 @@ describe("cloud backup validation", () => {
 
   it("captures only supported settings and applies a validated backup", () => {
     localStorage.setItem("trickcal_sweep_state", '{"schemaVersion":3}');
+    localStorage.setItem("trickcal_food_state", '{"schemaVersion":1,"characterSearch":"レーテー"}');
     localStorage.setItem("not_synced", "secret");
     markCloudStateChanged(1_700_000_000_000);
     const backup = createCloudBackup();
@@ -52,11 +53,30 @@ describe("cloud backup validation", () => {
     localStorage.clear();
     applyCloudBackup(backup);
     expect(localStorage.getItem("trickcal_sweep_state")).toBe('{"schemaVersion":3}');
+    expect(localStorage.getItem("trickcal_food_state")).toBe('{"schemaVersion":1,"characterSearch":"レーテー"}');
     expect(localStorage.getItem(cloudLocalUpdatedAtKey)).toBe("1700000000000");
+  });
+
+  it("migrates a version 1 backup without food state", () => {
+    const legacyKeys = cloudStorageKeys.filter((key) => key !== "trickcal_food_state");
+    const migrated = validateCloudBackup({
+      schemaVersion: 1,
+      updatedAt: "2026-10-23T00:00:00.000Z",
+      values: Object.fromEntries(legacyKeys.map((key) => [key, null])),
+    });
+
+    expect(migrated.schemaVersion).toBe(2);
+    expect(migrated.values.trickcal_food_state).toBeNull();
   });
 
   it("rejects incomplete, oversized, and invalid backups", () => {
     expect(() => validateCloudBackup({ schemaVersion: 1, updatedAt: "bad", values: {} })).toThrow("INVALID_BACKUP");
+    expect(() => validateCloudBackup({ schemaVersion: 1, updatedAt: new Date().toISOString(), values: {} })).toThrow(
+      "INVALID_BACKUP",
+    );
+    expect(() => validateCloudBackup({ schemaVersion: 2, updatedAt: new Date().toISOString(), values: {} })).toThrow(
+      "INVALID_BACKUP",
+    );
     expect(() =>
       validateCloudBackup({
         schemaVersion: 1,
@@ -137,7 +157,7 @@ describe("Google Drive appDataFolder requests", () => {
 
   it("creates an appDataFolder file and reports authorization failures", async () => {
     const backup: CloudBackup = {
-      schemaVersion: 1,
+      schemaVersion: 2,
       updatedAt: "2026-10-23T00:00:00.000Z",
       values: Object.fromEntries(cloudStorageKeys.map((key) => [key, null])) as CloudBackup["values"],
     };
