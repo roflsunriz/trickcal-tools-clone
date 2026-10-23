@@ -194,3 +194,4 @@ bun run build
 - 食べ物保存形式v1へ使徒検索・料理検索・使徒選択・料理選択を追加し、Google同期対象を5キー、バックアップ形式をv2へ更新した。食べ物キーのないバックアップv1は未選択状態へ移行する。検索文字は各500文字、選択名は現在の82使徒・60料理で検証し、破損・未知・同時選択を安全な状態へ修復する。
 - 本番ビルドで使徒検索「レーテー」、料理検索 `Dragon`、Lethe選択を再読み込み後に復元した。選択解除後も両検索文字が残り、その後にDragon Scale Candyを選んだ状態も再読み込み後に復元した。保存値にはschema、両検索文字、排他的な使徒・料理選択だけが含まれた。
 - WindowsのBun 1.4.0とVitestで各48テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。再読み込み時のJavaScript例外と通信失敗は0件で、実行環境が付ける既知のPermissions-Policy警告2件だけを確認した。
+- `5c0ddd0` を `main` へpushし、[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39971275848)と[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39971275915)に成功した。公開JS `index-xrGi-Dsm.js` に食べ物保存キーと両検索項目が含まれ、公開 `/food/` で検索 `Gwynn`・`Space` とGwynn選択が再読み込み後に復元された。
