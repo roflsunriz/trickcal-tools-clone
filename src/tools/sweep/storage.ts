@@ -1,6 +1,7 @@
 import { getDefaultMaterialCount, quickRanks } from "./quickEquipment";
 import type { WeaponType } from "./quickEquipment";
 import type { MaterialId, SweepData } from "./types";
+import { markCloudStateChanged } from "../../cloud/storage";
 
 const storageVersion = 3;
 
@@ -158,4 +159,5 @@ export function readSweepStorageState(data: SweepData, allRanks: number[]): Swee
 export function writeSweepStorageState(state: SweepStorageState) {
   writeState(state);
   removeLegacyState();
+  markCloudStateChanged();
 }

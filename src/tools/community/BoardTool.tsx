@@ -9,6 +9,10 @@ import type { BoardCellType, BoardLayer, CommunityData } from "./types";
 const data = rawData as CommunityData;
 const layers: BoardLayer[] = ["layer1", "layer2", "layer3"];
 
+function assetPath(path: string) {
+  return `${import.meta.env.BASE_URL}${path}`;
+}
+
 export function BoardTool() {
   const { t } = useI18n();
   const [layer, setLayer] = useState<BoardLayer>("layer1");
@@ -188,7 +192,16 @@ export function BoardTool() {
                     aria-pressed={active}
                     onClick={() => toggleCell(character.name)}
                   >
-                    <span className="character-avatar-fallback">{character.name.slice(0, 1)}</span>
+                    <span className="community-character-image">
+                      <img
+                        src={assetPath(character.image.path)}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                        onError={(event) => event.currentTarget.parentElement?.classList.add("image-error")}
+                      />
+                      <span className="character-avatar-fallback">{character.name.slice(0, 1)}</span>
+                    </span>
                     <span className="board-character-info">
                       <strong>{character.name}</strong>
                       <small>

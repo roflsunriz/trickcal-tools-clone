@@ -3,6 +3,8 @@ dist/
 .vite/
 *.tsbuildinfo
 *.local
+.env
+.env.*
 dev-server.*.log
 
 COMMON-AGENTS.md

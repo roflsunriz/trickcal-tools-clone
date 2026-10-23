@@ -9,6 +9,10 @@ type PreferenceLevel = keyof FoodPreference;
 const levels: PreferenceLevel[] = ["veryLike", "like", "dislike"];
 const rarityOrder = { common: 1, uncommon: 2, rare: 3, legendary: 4 } as const;
 
+function assetPath(path: string) {
+  return `${import.meta.env.BASE_URL}${path}`;
+}
+
 function preferenceForFood(preference: FoodPreference | undefined, food: string): PreferenceLevel | undefined {
   return levels.find((level) => preference?.[level].includes(food));
 }
@@ -95,7 +99,16 @@ export function FoodTool() {
                   aria-pressed={selectedCharacter === name}
                   onClick={() => chooseCharacter(name)}
                 >
-                  <span className="character-avatar-fallback">{name.slice(0, 1)}</span>
+                  <span className="community-character-image food-character-image">
+                    <img
+                      src={assetPath(character.image.path)}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      onError={(event) => event.currentTarget.parentElement?.classList.add("image-error")}
+                    />
+                    <span className="character-avatar-fallback">{name.slice(0, 1)}</span>
+                  </span>
                   <strong>{name}</strong>
                   <small>{character.personality}</small>
                   {preference ? <span className="preference-badge">{t(`food.preference.${preference}`)}</span> : null}
@@ -134,7 +147,15 @@ export function FoodTool() {
                   onClick={() => chooseFood(food)}
                 >
                   <span className={`food-symbol rarity-${data.foods[food].rarity}`}>
-                    <Utensils size={23} />
+                    <img
+                      src={assetPath(data.foods[food].image.path)}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      style={{ left: data.foods[food].image.left, top: data.foods[food].image.top }}
+                      onError={(event) => event.currentTarget.parentElement?.classList.add("image-error")}
+                    />
+                    <Utensils className="food-image-fallback" size={23} />
                   </span>
                   <strong>{food}</strong>
                   <small>{t(`food.rarity.${data.foods[food].rarity}`)}</small>

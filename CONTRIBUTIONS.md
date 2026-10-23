@@ -16,6 +16,8 @@ Equipment blueprint and fragment drops for worlds 3 onward are imported from the
 
 Crayon board cells and Japanese apostle metadata are imported from the [Trickcal strategy portal's board manager](https://trickcal-strategy.pages.dev/board/manager.html). Food preferences and rarity metadata are imported from the [Trickcal community wiki's banquet hall table](https://wikiwiki.jp/thetrickal/宴会場). Reduced source snapshots are stored in `scripts/fixtures/community-board.html` and `scripts/fixtures/community-food.html`; generated app data records their SHA-256 hashes.
 
+Apostle images come from the strategy portal's corresponding icon files. Food art uses the community wiki's source sprite sheets and recorded crop coordinates. The downloaded files, source URLs, media types, sizes, and SHA-256 values are recorded in `public/assets/community/manifest.json`. These game images are not relicensed by this repository's MIT License.
+
 ## Maintainer Notes
 
 - Keep the app deployable as a static Vite site.

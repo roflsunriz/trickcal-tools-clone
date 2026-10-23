@@ -11,3 +11,7 @@
 - クレヨン補完元のボードマネージャーは、各 `.char-card` に使徒属性と2・3・4個の特殊マスを持つ。2026-10-23時点で82使徒。種類は攻撃・会心・HP・抵抗・防御へ限定して検証し、欠落や未知値では生成しない。
 - wiki「宴会場」の好物早見表は使徒列、特別料理1列、区切り列、好物4列、区切り列、苦手4列の計12セル。背景色は料理レアリティを表す。半角・全角括弧を正規化してボード名と照合し、2026-10-23時点で76使徒・60料理を生成する。情報がないボード使徒は削除せず未確認として表示する。
 - 元サイト `trickcal.nossite.com` の公開JSONは2026-10-23確認時にクレヨン65使徒・好み58使徒。追加使徒を含む正本は生成済み `src/tools/community/data.json` とし、縮約fixtureのSHA-256と出典URLを同ファイルへ記録する。
+- 補完元の `assets/icons/<使徒名>.png` は82使徒すべて存在する。料理画像はwiki好物表の `::icon/48:0`〜`48:4` の5枚の200px WebPスプライトと、50px刻みの `left`・`top` から再現できる。更新時は87画像のContent-Type、PNG／WebP signature、SHA-256を検証し、`public/assets/community/manifest.json` を正本にする。
+- 静的GitHub PagesのGoogle同期はGIS token modelとDrive `appDataFolder` を使う。ブラウザtoken modelのaccess tokenは短命で、期限切れ後の取得はユーザー操作が必要なため、有効期限内だけlocalStorageから復元し、期限切れ時は再ログインを案内する。Client Secret・refresh tokenは静的クライアントで扱わない。
+- Google同期の対象は周回v3、クレヨンv1、言語、テーマの4キーに限定する。Drive復元値はschema、時刻、全キー、各1MB上限を検証し、新しい更新時刻だけを自動適用する。Drive APIの401は保存済み認証を破棄し、その他の失敗では端末内データを維持する。
+- 本番OAuthにはDrive APIを有効化したWeb Client IDと、`https://roflsunriz.github.io` の承認済みJavaScript生成元が必要。PagesはGitHub変数 `GOOGLE_CLIENT_ID` を `VITE_GOOGLE_CLIENT_ID` へ渡し、未設定時はログインを無効化して設定不足を表示する。

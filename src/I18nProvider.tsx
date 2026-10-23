@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { I18nContext, localeStorageKey, messages, readLocale } from "./i18n";
 import type { I18nContextValue, Locale, MessageKey } from "./i18n";
+import { markCloudStateChanged } from "./cloud/storage";
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(readLocale);
@@ -10,6 +11,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     function setLocale(nextLocale: Locale) {
       setLocaleState(nextLocale);
       localStorage.setItem(localeStorageKey, nextLocale);
+      markCloudStateChanged();
     }
 
     function t(key: MessageKey, values: Record<string, string | number> = {}) {

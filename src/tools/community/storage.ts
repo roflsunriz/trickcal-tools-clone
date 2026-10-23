@@ -1,4 +1,5 @@
 import type { BoardCellType, BoardLayer, CommunityCharacter } from "./types";
+import { markCloudStateChanged } from "../../cloud/storage";
 
 const schemaVersion = 1;
 export const communityStorageKey = "trickcal_community_state";
@@ -66,4 +67,5 @@ export function writeCommunityStorageState(state: CommunityStorageState) {
       activatedCells: [...state.activatedCells].sort(),
     }),
   );
+  markCloudStateChanged();
 }

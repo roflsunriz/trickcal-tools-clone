@@ -1,6 +1,8 @@
 import { Languages, Moon, Sun } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { tools } from "./app/tools";
+import { CloudAccountControls } from "./cloud/CloudAccountControls";
+import { markCloudStateChanged } from "./cloud/storage";
 import { useI18n } from "./i18n";
 
 const defaultPath = "/sweep";
@@ -47,6 +49,7 @@ export function App() {
     const nextTheme = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
     localStorage.setItem("trickcal_theme", nextTheme);
+    markCloudStateChanged();
   }
 
   function toggleLocale() {
@@ -74,6 +77,7 @@ export function App() {
             </button>
           ))}
         </nav>
+        <CloudAccountControls />
         <button
           className="icon-button locale-button"
           type="button"

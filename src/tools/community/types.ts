@@ -9,7 +9,18 @@ export type CommunityCharacter = {
   personality: string;
   race: string;
   deployRow: string;
+  image: {
+    path: string;
+    sourceUrl: string;
+  };
   boardTypes: Record<BoardLayer, BoardCellType[]>;
+};
+
+export type CommunityFoodImage = {
+  path: string;
+  sourceUrl: string;
+  left: number;
+  top: number;
 };
 
 export type FoodPreference = {
@@ -26,6 +37,6 @@ export type CommunityData = {
   };
   boardConfig: Record<BoardLayer, { bonusPerCell: number; crayonsPerCell: number }>;
   characters: Record<string, CommunityCharacter>;
-  foods: Record<string, { rarity: FoodRarity }>;
+  foods: Record<string, { rarity: FoodRarity; image: CommunityFoodImage }>;
   foodPreferences: Record<string, FoodPreference>;
 };

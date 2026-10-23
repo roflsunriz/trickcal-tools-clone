@@ -1,0 +1,614 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "path": "assets/community/characters/アメリア.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%A2.png",
+      "mimeType": "image/png",
+      "bytes": 32919,
+      "sha256": "7765d30fe228e6ea68af2a15bf42163eba2b9d6d33d3e56196b441c589d29293"
+    },
+    {
+      "path": "assets/community/characters/アヤ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%A4.png",
+      "mimeType": "image/png",
+      "bytes": 28890,
+      "sha256": "d0a04480f768d494caaf88e3bb474ef9230e290a35079a49092ba296b2750ea4"
+    },
+    {
+      "path": "assets/community/characters/アリス.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%AA%E3%82%B9.png",
+      "mimeType": "image/png",
+      "bytes": 37541,
+      "sha256": "c3360bcbb1f0a4dc2b00d83e072d46472268e6ddf7df5783652ed9e35398ba17"
+    },
+    {
+      "path": "assets/community/characters/アレット.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A2%E3%83%AC%E3%83%83%E3%83%88.png",
+      "mimeType": "image/png",
+      "bytes": 34368,
+      "sha256": "418868ee4d5a99b06273eb4372e24162d1b236b2ec0abbe8ff8ec574d7efca1a"
+    },
+    {
+      "path": "assets/community/characters/イード.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A4%E3%83%BC%E3%83%89.png",
+      "mimeType": "image/png",
+      "bytes": 28706,
+      "sha256": "2682a3f487f6ff6e5a068926aa1e978b1d8717392f774eed1eaa3e3df56a2f58"
+    },
+    {
+      "path": "assets/community/characters/イフリート.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A4%E3%83%95%E3%83%AA%E3%83%BC%E3%83%88.png",
+      "mimeType": "image/png",
+      "bytes": 37755,
+      "sha256": "c2d34843eddf628dbb6e002fc59cf171bf1ee2125b386aa42ae09ef6c39e09a9"
+    },
+    {
+      "path": "assets/community/characters/ウイ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A6%E3%82%A4.png",
+      "mimeType": "image/png",
+      "bytes": 39766,
+      "sha256": "563f16f15ae09a92add0d083e949e44b74eddb391ace134c82d261674d16d96e"
+    },
+    {
+      "path": "assets/community/characters/ヴィヴィ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%B4%E3%82%A3%E3%83%B4%E3%82%A3.png",
+      "mimeType": "image/png",
+      "bytes": 36267,
+      "sha256": "156bed69bd72c9d495061454c65ad7f7400ca65aeb4b9323166816f7e5188f50"
+    },
+    {
+      "path": "assets/community/characters/エシュール.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%AB.png",
+      "mimeType": "image/png",
+      "bytes": 35185,
+      "sha256": "9385bb57bcb95f31829f84cd9b97fc6aefed5b74bf6f6e91b4ac871d4a87679c"
+    },
+    {
+      "path": "assets/community/characters/エスピー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%82%B9%E3%83%94%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 33320,
+      "sha256": "b63517acfdaceaf9ecab09729fcaff475aae1af7c1cca27bbdfbf2b0267744e3"
+    },
+    {
+      "path": "assets/community/characters/エピカ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%83%94%E3%82%AB.png",
+      "mimeType": "image/png",
+      "bytes": 38645,
+      "sha256": "b5e1fe15e0c2883e16c8bb7c8365d6271d87a2b52e133c8eb0ee0b2999b58191"
+    },
+    {
+      "path": "assets/community/characters/エルフィン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%83%AB%E3%83%95%E3%82%A3%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 34567,
+      "sha256": "e6fa0ebf5cf7a5640978c4c7cd8a9abc795753d06ff11dc249d599afbcd6284a"
+    },
+    {
+      "path": "assets/community/characters/エレナ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%A8%E3%83%AC%E3%83%8A.png",
+      "mimeType": "image/png",
+      "bytes": 31443,
+      "sha256": "8ef19cb79360bb71482c0a724b5e18bbf6c3db44a38dc3c0c5c9ec7792793198"
+    },
+    {
+      "path": "assets/community/characters/ガヴィア.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AC%E3%83%B4%E3%82%A3%E3%82%A2.png",
+      "mimeType": "image/png",
+      "bytes": 30078,
+      "sha256": "09e0088c3935e5dc680a631746c65a28811147fb40bbec798f5b0979f7ca52f5"
+    },
+    {
+      "path": "assets/community/characters/カレン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AB%E3%83%AC%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 32471,
+      "sha256": "7e22461a5a53b464d5add6444814ea7caebbd3f03df11d44adfa910efcbf4b57"
+    },
+    {
+      "path": "assets/community/characters/カンナ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AB%E3%83%B3%E3%83%8A.png",
+      "mimeType": "image/png",
+      "bytes": 35439,
+      "sha256": "7907cfa45a1f3ca85daa6567c69288258e6cd2da4acd63d02d2c2c8b531928fd"
+    },
+    {
+      "path": "assets/community/characters/ギデオン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AE%E3%83%87%E3%82%AA%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 31945,
+      "sha256": "10354e104523fcfb6aac5d3908f26922f352d74e547c34cc03bcb54b80862293"
+    },
+    {
+      "path": "assets/community/characters/キャロット.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AD%E3%83%A3%E3%83%AD%E3%83%83%E3%83%88.png",
+      "mimeType": "image/png",
+      "bytes": 36354,
+      "sha256": "42bbc2f972946fe648546bb35e8cf1e07e58c42b0df82aa8978e3767695db5f0"
+    },
+    {
+      "path": "assets/community/characters/キュウイ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AD%E3%83%A5%E3%82%A6%E3%82%A4.png",
+      "mimeType": "image/png",
+      "bytes": 31964,
+      "sha256": "1dbb89421eb63af87eed9282752c6ffe0c4d39a1a5b16ac4ef55b25f5dfbdcb5"
+    },
+    {
+      "path": "assets/community/characters/グウィン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B0%E3%82%A6%E3%82%A3%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 103221,
+      "sha256": "36adb60488337dfd2d548c8993afaffefdc6c111e86247d0cd7e83786f1d4301"
+    },
+    {
+      "path": "assets/community/characters/クロエ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%AF%E3%83%AD%E3%82%A8.png",
+      "mimeType": "image/png",
+      "bytes": 35847,
+      "sha256": "10b70364656340065cc7cfb50b4058015a02d9194595ca48869a80341bd1222d"
+    },
+    {
+      "path": "assets/community/characters/コミー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B3%E3%83%9F%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 33658,
+      "sha256": "96cd9cc3500449cfcf939a3bb689c69073ff2290f0a4ebda197077c17be2c99f"
+    },
+    {
+      "path": "assets/community/characters/コミー（水着）.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B3%E3%83%9F%E3%83%BC%EF%BC%88%E6%B0%B4%E7%9D%80%EF%BC%89.png",
+      "mimeType": "image/png",
+      "bytes": 125629,
+      "sha256": "8957637b11cfffa436f5690bd0bc35afa0641008db0c1537306a306ccb466756"
+    },
+    {
+      "path": "assets/community/characters/サリー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B5%E3%83%AA%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 30891,
+      "sha256": "c471a9f19f4c593a5db7b137a0db85c6af1a8f709fa3d2808f63ae88551274bc"
+    },
+    {
+      "path": "assets/community/characters/シーラ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%83%BC%E3%83%A9.png",
+      "mimeType": "image/png",
+      "bytes": 35750,
+      "sha256": "41b4e212d34afdcaddbc2886f2c9c533ba8cbfae31a2506a7153187f87a81e3d"
+    },
+    {
+      "path": "assets/community/characters/シェイディ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%A7%E3%82%A4%E3%83%87%E3%82%A3.png",
+      "mimeType": "image/png",
+      "bytes": 35080,
+      "sha256": "46613012fac56d2301cd1a468debad8b303b4bfd2ba154697ce0fc20dd3b2bb9"
+    },
+    {
+      "path": "assets/community/characters/ジェイド.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B8%E3%82%A7%E3%82%A4%E3%83%89.png",
+      "mimeType": "image/png",
+      "bytes": 36160,
+      "sha256": "f85a425570d6c58ba3600ab045534f10029cad19a119c6d7c93af0453a3e6f0e"
+    },
+    {
+      "path": "assets/community/characters/シェルム.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%A7%E3%83%AB%E3%83%A0.png",
+      "mimeType": "image/png",
+      "bytes": 109945,
+      "sha256": "5b03386b5639103e35ee19f6b4ec385ac570b4acbf4ff98afb3e7c20891db9f6"
+    },
+    {
+      "path": "assets/community/characters/シオン・ザ・DB.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%AA%E3%83%B3%E3%83%BB%E3%82%B6%E3%83%BBDB.png",
+      "mimeType": "image/png",
+      "bytes": 34827,
+      "sha256": "659f44b1d0f96861d31fb171d17e7a00fe9b03c01b96593b6d5d1aba674e9696"
+    },
+    {
+      "path": "assets/community/characters/シスト.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%82%B9%E3%83%88.png",
+      "mimeType": "image/png",
+      "bytes": 35690,
+      "sha256": "7d7ef797116c39fd11da6bcb0829de1077059277fc129d361b2091fc781610dd"
+    },
+    {
+      "path": "assets/community/characters/シュパン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%83%A5%E3%83%91%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 30888,
+      "sha256": "8bdeb2d4cc64c8e222e3fc9053f635b588ad89cdaedb28e5a06611d2d4b968b6"
+    },
+    {
+      "path": "assets/community/characters/ジュビー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B8%E3%83%A5%E3%83%93%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 33208,
+      "sha256": "aed15b005fee0a531f59f5e4c99c514058dde047443f711e19dab382276b25c5"
+    },
+    {
+      "path": "assets/community/characters/ジョアン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B8%E3%83%A7%E3%82%A2%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 116112,
+      "sha256": "624908f543e68a2aced2196be744c098fa4d835ee2c035cff4c36d3a2e7767df"
+    },
+    {
+      "path": "assets/community/characters/シルフィール.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B7%E3%83%AB%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB.png",
+      "mimeType": "image/png",
+      "bytes": 34519,
+      "sha256": "23d11426ac8b7a9c075e30e110efac44a3495a82f416f0865a2c4d866388d88d"
+    },
+    {
+      "path": "assets/community/characters/スノキー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B9%E3%83%8E%E3%82%AD%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 28824,
+      "sha256": "092c9dd2d5164ae31a3413dff897cafe17c2d1d182be3540cfb58125e28c59a7"
+    },
+    {
+      "path": "assets/community/characters/スピッキー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%B9%E3%83%94%E3%83%83%E3%82%AD%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 36075,
+      "sha256": "c3ff1ef75dc3bc8c3b14b75f5f21e1031bdf79c8304bb11ba8dbb39625a0b5db"
+    },
+    {
+      "path": "assets/community/characters/セリーネ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%BB%E3%83%AA%E3%83%BC%E3%83%8D.png",
+      "mimeType": "image/png",
+      "bytes": 35384,
+      "sha256": "24350fae8c4456e1ae5d223ad6de88ce7c602512a21ebf4bfb1948c1ac8dd399"
+    },
+    {
+      "path": "assets/community/characters/ダーヤ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%80%E3%83%BC%E3%83%A4.png",
+      "mimeType": "image/png",
+      "bytes": 113776,
+      "sha256": "84756fc7f3c1d0ed7efa11491c511ad45f364b4008f2da41711ec3318949bc55"
+    },
+    {
+      "path": "assets/community/characters/タイダー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%82%BF%E3%82%A4%E3%83%80%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 31450,
+      "sha256": "9946234332039b24f4a08278834aa08835565d87cc8545b81b29ed4b40e59c8f"
+    },
+    {
+      "path": "assets/community/characters/チョッピー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%81%E3%83%A7%E3%83%83%E3%83%94%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 24957,
+      "sha256": "b90c8c5058c9f21dbee885bf89622af82c10992c1dab13c13702a4fe7576d366"
+    },
+    {
+      "path": "assets/community/characters/ディアナ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%87%E3%82%A3%E3%82%A2%E3%83%8A.png",
+      "mimeType": "image/png",
+      "bytes": 29848,
+      "sha256": "cdc0ec4b73290f846143cbb40ddf15b5889ff8e3e176f38d8cf5f6145fb89b4c"
+    },
+    {
+      "path": "assets/community/characters/ティグ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%86%E3%82%A3%E3%82%B0.png",
+      "mimeType": "image/png",
+      "bytes": 103961,
+      "sha256": "aa1d7d2fd2fd33fb83c3f49fc9d5e73f05a77ff63a2b3f88fb7fed4da75ae9ed"
+    },
+    {
+      "path": "assets/community/characters/ナイア.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%8A%E3%82%A4%E3%82%A2.png",
+      "mimeType": "image/png",
+      "bytes": 37354,
+      "sha256": "9433b257ddfc74398fa3bb0edb6ab4c7f695558fdd190d4113d7e91081fafd02"
+    },
+    {
+      "path": "assets/community/characters/ネル.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%8D%E3%83%AB.png",
+      "mimeType": "image/png",
+      "bytes": 37048,
+      "sha256": "64a607457796fd38d22b3f9a885348299cdf9f63a661d38e3b679aa6d4ac0272"
+    },
+    {
+      "path": "assets/community/characters/バター.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%90%E3%82%BF%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 38153,
+      "sha256": "54ba05043eb960b81fcc468c1ab1dea3eb16b42b17d2ae286b61c9b8b526edda"
+    },
+    {
+      "path": "assets/community/characters/パトラ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%91%E3%83%88%E3%83%A9.png",
+      "mimeType": "image/png",
+      "bytes": 32423,
+      "sha256": "6c9d4a4775f436240becf3a7987882ae4d8313f57dc9b96dbd37b9931ef258af"
+    },
+    {
+      "path": "assets/community/characters/バリエ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%90%E3%83%AA%E3%82%A8.png",
+      "mimeType": "image/png",
+      "bytes": 102941,
+      "sha256": "3cb900387051375ca13daa2fbb7cf0eeeba9110cf23fb154be35dcc7112cc7f8"
+    },
+    {
+      "path": "assets/community/characters/バロン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%90%E3%83%AD%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 114286,
+      "sha256": "2ec7b9d02bd1919bf3bb2a14d013864a06c726dd9c38cf6a5512b9f08aa6d10f"
+    },
+    {
+      "path": "assets/community/characters/ピコラ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%94%E3%82%B3%E3%83%A9.png",
+      "mimeType": "image/png",
+      "bytes": 38657,
+      "sha256": "15be568ea31d8d0a60235c4dd190603a4722d2e12aad9445f099bc813ac89d4a"
+    },
+    {
+      "path": "assets/community/characters/ビッグウッド.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%93%E3%83%83%E3%82%B0%E3%82%A6%E3%83%83%E3%83%89.png",
+      "mimeType": "image/png",
+      "bytes": 32594,
+      "sha256": "7027e9aba876498e2949b20f70a481963c5ea74f64e43b9f3e4cd4fc5486a02d"
+    },
+    {
+      "path": "assets/community/characters/ピラ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%94%E3%83%A9.png",
+      "mimeType": "image/png",
+      "bytes": 112071,
+      "sha256": "48ce7be2c320dd819762d0e19982f9f6d6f2a3353e8416b18951caf02cdf0c86"
+    },
+    {
+      "path": "assets/community/characters/ヒルデ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%92%E3%83%AB%E3%83%87.png",
+      "mimeType": "image/png",
+      "bytes": 38480,
+      "sha256": "0f9a34a1a25511aa87faf375c2fe491dc1900a59b004a50a85298a14ddacce0f"
+    },
+    {
+      "path": "assets/community/characters/フェスタ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%95%E3%82%A7%E3%82%B9%E3%82%BF.png",
+      "mimeType": "image/png",
+      "bytes": 36551,
+      "sha256": "8428ec457ef0eb8783545d4e392e33a190940a3faf992282385fe75a947ff4b1"
+    },
+    {
+      "path": "assets/community/characters/ブランセ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%96%E3%83%A9%E3%83%B3%E3%82%BB.png",
+      "mimeType": "image/png",
+      "bytes": 100384,
+      "sha256": "ae3af616ea2f3605749a29aa143ec240cdc7d5b271c87298e3a812b645bff86c"
+    },
+    {
+      "path": "assets/community/characters/フリックル.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%95%E3%83%AA%E3%83%83%E3%82%AF%E3%83%AB.png",
+      "mimeType": "image/png",
+      "bytes": 37470,
+      "sha256": "a6007600a4caba505ed2f2f446501a94e35722a284ad2ef142b966a3416aca50"
+    },
+    {
+      "path": "assets/community/characters/ヘイリー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%98%E3%82%A4%E3%83%AA%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 38716,
+      "sha256": "1c038e86866468f3b7b3409524267f1867a48674468810b16be7f99a37b7e630"
+    },
+    {
+      "path": "assets/community/characters/ベニー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%8B%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 32363,
+      "sha256": "7ce1792c4db2d0e6988afe18892212b505bf16915dcc790df55bf660a7f297da"
+    },
+    {
+      "path": "assets/community/characters/ベリータ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%AA%E3%83%BC%E3%82%BF.png",
+      "mimeType": "image/png",
+      "bytes": 32693,
+      "sha256": "4c81335b15cd5155d81f487e6bcdde71d63601b9780fb7496a4e401a36a3bd81"
+    },
+    {
+      "path": "assets/community/characters/ベル.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%AB.png",
+      "mimeType": "image/png",
+      "bytes": 28311,
+      "sha256": "408e9efc9f4a7e0c945002acb6c2f4f96816668e8a4c0e16d1e11bbe5f0cf3da"
+    },
+    {
+      "path": "assets/community/characters/ベルベット.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%99%E3%83%AB%E3%83%99%E3%83%83%E3%83%88.png",
+      "mimeType": "image/png",
+      "bytes": 35197,
+      "sha256": "9a2a1f23e086f1513cf1cc9e0ebe35f7d40b3fcef7db03cadd0dd3081c477294"
+    },
+    {
+      "path": "assets/community/characters/ポーシャー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9D%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 31757,
+      "sha256": "02b225b6138b21e1e99ae94ed3bbf47b6f493b415eacc7c93646b481076a89ce"
+    },
+    {
+      "path": "assets/community/characters/マーゴ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%83%BC%E3%82%B4.png",
+      "mimeType": "image/png",
+      "bytes": 34558,
+      "sha256": "b1c7b9f8bd65a31b8459b8df2dc2f7fb5b730b96672bc13cf907c91df861ab06"
+    },
+    {
+      "path": "assets/community/characters/マエストロMK2.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%82%A8%E3%82%B9%E3%83%88%E3%83%ADMK2.png",
+      "mimeType": "image/png",
+      "bytes": 37017,
+      "sha256": "77706b563e9f81316b12a6eff6738f5bc79c1bd2b87d15e50066a45f340a8355"
+    },
+    {
+      "path": "assets/community/characters/マヨ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%83%A8.png",
+      "mimeType": "image/png",
+      "bytes": 31937,
+      "sha256": "c0b98047bba52634823aa0717c12ceb947e3af78e97c067f24d515288a3da0b2"
+    },
+    {
+      "path": "assets/community/characters/マリー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9E%E3%83%AA%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 36417,
+      "sha256": "328be8c0eda0a38e2a5d95dd23886e6ac7875f36b638487e0456f02c26020a83"
+    },
+    {
+      "path": "assets/community/characters/ミンス.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%9F%E3%83%B3%E3%82%B9.png",
+      "mimeType": "image/png",
+      "bytes": 29322,
+      "sha256": "eb82784b9ce380b87d2ea9c7e1054da120a834569b8e4f7b76775b42ba5ea065"
+    },
+    {
+      "path": "assets/community/characters/メゾン.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A1%E3%82%BE%E3%83%B3.png",
+      "mimeType": "image/png",
+      "bytes": 28684,
+      "sha256": "db8b17ddcff1b4f363b5490ad0eb9fd33862e3118bcedebe66216c37fa8ddf12"
+    },
+    {
+      "path": "assets/community/characters/メロナ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A1%E3%83%AD%E3%83%8A.png",
+      "mimeType": "image/png",
+      "bytes": 31164,
+      "sha256": "d57ba6f65aafa4bb46e4914a414521926d5649e5da2fac100e3479b880acdb63"
+    },
+    {
+      "path": "assets/community/characters/モモ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A2%E3%83%A2.png",
+      "mimeType": "image/png",
+      "bytes": 37205,
+      "sha256": "305603ea5f5930df2f43efe0660641d35ea24ea2e8142685e452beae3154329b"
+    },
+    {
+      "path": "assets/community/characters/ユミミ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A6%E3%83%9F%E3%83%9F.png",
+      "mimeType": "image/png",
+      "bytes": 27875,
+      "sha256": "b8d8f532f611ab3ba22bd3a2a2d6d281df8e48b5e0ac5b3d2302b477f35af57b"
+    },
+    {
+      "path": "assets/community/characters/ヨミ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%A8%E3%83%9F.png",
+      "mimeType": "image/png",
+      "bytes": 101228,
+      "sha256": "6b51edde244882061eae9e81d881dd81484488a844fe67421b983afcf328769f"
+    },
+    {
+      "path": "assets/community/characters/リスティ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%82%B9%E3%83%86%E3%82%A3.png",
+      "mimeType": "image/png",
+      "bytes": 31416,
+      "sha256": "17205fd41daea4500ccc2c168dc46a90bc84460f162497c7f5765462536b29e9"
+    },
+    {
+      "path": "assets/community/characters/リッツ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%83%83%E3%83%84.png",
+      "mimeType": "image/png",
+      "bytes": 31259,
+      "sha256": "4524cb7bb2ac6e8d6730fb69abb1ba759091eeec712e26119e8693d6d9c0e5cc"
+    },
+    {
+      "path": "assets/community/characters/リニュア.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%83%8B%E3%83%A5%E3%82%A2.png",
+      "mimeType": "image/png",
+      "bytes": 96695,
+      "sha256": "8451f580044f4935885710368f8ad9075679fd674b454657432c7b0583e08026"
+    },
+    {
+      "path": "assets/community/characters/リム.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AA%E3%83%A0.png",
+      "mimeType": "image/png",
+      "bytes": 33699,
+      "sha256": "c783fe9444636ca160af77e3b19fd24a4da2f63ee4b01bb00dd10969ac63b209"
+    },
+    {
+      "path": "assets/community/characters/ルード.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AB%E3%83%BC%E3%83%89.png",
+      "mimeType": "image/png",
+      "bytes": 33146,
+      "sha256": "2ce02c5716738c234a52221a249f22c77c2e0ee31fec88bc45c76ebd95903b75"
+    },
+    {
+      "path": "assets/community/characters/ルポ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AB%E3%83%9D.png",
+      "mimeType": "image/png",
+      "bytes": 35745,
+      "sha256": "0ad435450fb69b8f2f7b265cd5f590a11fa34e49eb9d9f5b71d4a0bd662f8b31"
+    },
+    {
+      "path": "assets/community/characters/レイジー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AC%E3%82%A4%E3%82%B8%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 28773,
+      "sha256": "0859dcdc633138de8547a053920997c0363203d506c2814baac30d0841a92e46"
+    },
+    {
+      "path": "assets/community/characters/レヴィ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AC%E3%83%B4%E3%82%A3.png",
+      "mimeType": "image/png",
+      "bytes": 33935,
+      "sha256": "32485810d7ab550153ab6a0e71c247a5fafd9655ca02f7024d31a942edf23fc2"
+    },
+    {
+      "path": "assets/community/characters/レーテー.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AC%E3%83%BC%E3%83%86%E3%83%BC.png",
+      "mimeType": "image/png",
+      "bytes": 99134,
+      "sha256": "dbe1af7c4ff5752836a2641e0accb67f198b53c52169007b1cb6ce1f1ea30355"
+    },
+    {
+      "path": "assets/community/characters/ローネ.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AD%E3%83%BC%E3%83%8D.png",
+      "mimeType": "image/png",
+      "bytes": 31431,
+      "sha256": "27ed11c5691c8c7952cf6cf6a75a25a3dfd0f8ebdadb1ee8b316bea53f22582e"
+    },
+    {
+      "path": "assets/community/characters/ロレット.png",
+      "sourceUrl": "https://trickcal-strategy.pages.dev/assets/icons/%E3%83%AD%E3%83%AC%E3%83%83%E3%83%88.png",
+      "mimeType": "image/png",
+      "bytes": 107484,
+      "sha256": "8da8f95a244afc1ba6e70a66581d26d8f0c482741795198d8b3b8b99f12373b1"
+    },
+    {
+      "path": "assets/community/foods/food-0.webp",
+      "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+      "mimeType": "image/webp",
+      "bytes": 159338,
+      "sha256": "76e24fe5bbd6b9332e38e934cf4ad12d32cccebe89df3539c083dff779ae0fc8"
+    },
+    {
+      "path": "assets/community/foods/food-1.webp",
+      "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+      "mimeType": "image/webp",
+      "bytes": 160342,
+      "sha256": "5b927c7dd3ad55564c26c83dae0d78e85e37d6d9dbf7f9f34135bf9c7e65168b"
+    },
+    {
+      "path": "assets/community/foods/food-2.webp",
+      "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+      "mimeType": "image/webp",
+      "bytes": 154018,
+      "sha256": "519b64e0dee6d4519e3c5591c1f1eb238883fed3df8879ab3922749d801bc864"
+    },
+    {
+      "path": "assets/community/foods/food-3.webp",
+      "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+      "mimeType": "image/webp",
+      "bytes": 156050,
+      "sha256": "b64f4f5c3f4dc4a711aba6ccc43633636ac22439f100f0c664c24184f665820c"
+    },
+    {
+      "path": "assets/community/foods/food-4.webp",
+      "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+      "mimeType": "image/webp",
+      "bytes": 149468,
+      "sha256": "45abbd3e3c5e13393e010d990a5e4a3665077c6363bfef4778ea6dea757f9d4b"
+    }
+  ]
+}

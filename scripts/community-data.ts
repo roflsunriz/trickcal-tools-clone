@@ -4,6 +4,7 @@ import type {
   BoardLayer,
   CommunityCharacter,
   CommunityData,
+  CommunityFoodImage,
   FoodPreference,
   FoodRarity,
 } from "../src/tools/community/types";
@@ -38,6 +39,10 @@ function attribute(html: string, name: string) {
 
 function stripTags(html: string) {
   return decodeHtml(html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ")).trim();
+}
+
+function boardImageSource(name: string) {
+  return new URL(`../assets/icons/${encodeURIComponent(name)}.png`, boardSourceUrl).href;
 }
 
 function characterCardSections(html: string) {
@@ -82,6 +87,10 @@ export function parseBoardCharacters(html: string): Record<string, CommunityChar
       personality: attribute(openingTag, "data-trait"),
       race: attribute(openingTag, "data-race"),
       deployRow: attribute(openingTag, "data-placement"),
+      image: {
+        path: `assets/community/characters/${name}.png`,
+        sourceUrl: boardImageSource(name),
+      },
       boardTypes: layers,
     };
   }
@@ -103,13 +112,28 @@ function findFoodPreferenceTable(html: string) {
   return tables[0];
 }
 
-function foodFromCell(cell: string) {
+function foodFromCell(cell: string): { name: string; image: CommunityFoodImage } | undefined {
   const alt = cell.match(/\balt="([^"]+)"/)?.[1];
   if (!alt) return undefined;
   const name = decodeHtml(alt)
     .replace(/_高学年スキル$/, "")
     .trim();
-  return name || undefined;
+  const sourceUrl = decodeHtml(cell.match(/\bsrc="([^"]+)"/)?.[1] ?? "");
+  const sheet = sourceUrl.match(/\/48:(\d+)/)?.[1];
+  const left = Number(cell.match(/\bleft:\s*(-?\d+)px/)?.[1]);
+  const top = Number(cell.match(/\btop:\s*(-?\d+)px/)?.[1]);
+  if (!name || !sourceUrl || !sheet || !Number.isFinite(left) || !Number.isFinite(top)) {
+    throw new Error(`料理画像の名前・スプライト・座標を取得できません: ${name}`);
+  }
+  return {
+    name,
+    image: {
+      path: `assets/community/foods/food-${sheet}.webp`,
+      sourceUrl,
+      left,
+      top,
+    },
+  };
 }
 
 function rarityFromCell(cell: string): FoodRarity {
@@ -123,7 +147,7 @@ function rarityFromCell(cell: string): FoodRarity {
 export function parseFoodPreferences(html: string) {
   const table = findFoodPreferenceTable(html);
   const preferences: Record<string, FoodPreference> = {};
-  const foods: Record<string, { rarity: FoodRarity }> = {};
+  const foods: Record<string, { rarity: FoodRarity; image: CommunityFoodImage }> = {};
   const rows = [...table.matchAll(/<tr\b[^>]*>[\s\S]*?<\/tr>/g)].slice(1);
 
   for (const [row] of rows) {
@@ -135,13 +159,20 @@ export function parseFoodPreferences(html: string) {
 
     const readFoods = (indexes: number[]) =>
       indexes.flatMap((index) => {
-        const food = foodFromCell(cells[index]);
-        if (!food) return [];
+        const detail = foodFromCell(cells[index]);
+        if (!detail) return [];
+        const { name: food, image } = detail;
         const rarity = rarityFromCell(cells[index]);
-        if (foods[food] && foods[food].rarity !== rarity) {
-          throw new Error(`${food}: 料理のレアリティが行によって異なります。`);
+        if (
+          foods[food] &&
+          (foods[food].rarity !== rarity ||
+            foods[food].image.path !== image.path ||
+            foods[food].image.left !== image.left ||
+            foods[food].image.top !== image.top)
+        ) {
+          throw new Error(`${food}: 料理のレアリティまたは画像位置が行によって異なります。`);
         }
-        foods[food] = { rarity };
+        foods[food] = { rarity, image };
         return [food];
       });
 
