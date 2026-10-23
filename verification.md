@@ -105,3 +105,8 @@ bun run build
 
 - Lucide React 1.61.0、Vite 8.3.5、ESLint 10.13.0、typescript-eslint 8.72.0、Vitest 5.0.5へ更新した。`typescript-eslint@8.72.0` のTypeScript対応範囲は `>=4.8.4 <6.1.0` のため、範囲外のTypeScript 7.0.2へは更新せず6.0.3を維持した。
 - `bun install --frozen-lockfile`、lint、型チェック、本番ビルド、BunとVitestの各29テストに成功した。`bun audit` は198パッケージを検査して脆弱性0件、`bun outdated` の残りは互換範囲外のTypeScript 7.0.2だけだった。
+
+## 2026-10-23: 装備セット改善の公開確認
+
+- `90b4b4d` を `main` へpushし、[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39951669293)と[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/39951669411)の両方に成功した。Actionsの注記は `ubuntu-latest` のUbuntu 26移行案内だけで、ビルドや公開の失敗はなかった。
+- 公開HTMLがローカルビルドと同じ `index-BGl-pbQC.js` と `index-Bq529Lk1.css` を参照することを確認した。公開画面でも魔法・Rank 9の再読み込み後の復元、12素材、6ステージ、1280×900の2列・スクロールなし、390×844の1列・横方向のはみ出しなしを確認した。JavaScript例外、通信失敗、wikiへの通信はいずれも0件だった。
