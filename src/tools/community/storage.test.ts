@@ -8,6 +8,7 @@ import {
   writeCommunityStorageState,
 } from "./storage";
 import type { CommunityData } from "./types";
+import { getPersonalityTone } from "./types";
 
 const data = rawData as CommunityData;
 
@@ -56,5 +57,15 @@ describe("community storage", () => {
 
     localStorage.setItem(communityStorageKey, JSON.stringify({ schemaVersion: 999 }));
     expect(readCommunityStorageState(data.characters).ownedCharacters.size).toBe(0);
+  });
+
+  it("maps every known personality to a stable color tone", () => {
+    expect(getPersonalityTone("純粋")).toBe("pure");
+    expect(getPersonalityTone("活発")).toBe("lively");
+    expect(getPersonalityTone("冷静")).toBe("calm");
+    expect(getPersonalityTone("憂鬱")).toBe("gloomy");
+    expect(getPersonalityTone("狂気")).toBe("mad");
+    expect(getPersonalityTone("裏面")).toBe("reverse");
+    expect(getPersonalityTone("unknown")).toBe("neutral");
   });
 });

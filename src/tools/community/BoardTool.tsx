@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
 import { boardCellKey, readCommunityStorageState, writeCommunityStorageState } from "./storage";
-import { boardCellTypes } from "./types";
+import { boardCellTypes, getPersonalityTone } from "./types";
 import type { BoardCellType, BoardLayer, CommunityData } from "./types";
 
 const data = rawData as CommunityData;
@@ -183,7 +183,7 @@ export function BoardTool() {
               const owned = state.ownedCharacters.has(character.name);
               return (
                 <article
-                  className={active ? "board-character-card active" : "board-character-card"}
+                  className={`board-character-card personality-${getPersonalityTone(character.personality)}${active ? " active" : ""}`}
                   key={character.name}
                 >
                   <button

@@ -20,6 +20,7 @@ bun run build
 - `src/tools/community/storage.test.ts`: 所持使徒と開放マスの保存・復元、未知の使徒・マス・保存形式の除外を確認する。
 - `src/cloud/cloud.test.ts`: 同期対象キーと復元データの検証、認証期限、Web Client ID、Driveユーザー・appDataFolderの作成／検索、401エラーを確認する。
 - OAuth認証保存はClient ID一致を必須とし、別プロジェクトへの切替時に旧tokenを復元しないことも同テストで確認する。
+- 性格色は既知6分類と未知値のfallbackを単体テストし、クレヨン・食べ物の両画面で同じ使徒が同じ背景・枠線になることをライト・ダークテーマで確認する。
 
 外部wikiとの照合には `bun run data:update --check` を使用します。外部ページの編集や障害でCIが変動しないように、CIのテストは保存した出典表から実行します。
 
@@ -168,3 +169,10 @@ bun run build
 - 公開した `/food/` で82使徒・60料理、ローカル画像、Googleログインボタンを確認した。画像失敗は0件で、ボタン押下後にGoogle Identity Servicesが読み込まれた。公開JSは `index-EyempdVg.js` だった。
 - Codex内ブラウザでは公開環境でもOAuthポップアップが表示されなかったため、権限付与は行わずページを再読み込みして待機状態を解除した。実GoogleアカウントによるDrive作成・復元は通常ブラウザで確認する。
 - ユーザー環境のOAuth画面で「Mylist Backup Service」と表示された。Google公式資料と照合し、同じCloudプロジェクトのBranding名が表示されていること、別アプリとして維持するならプロジェクト分離が適切であることを確認した。
+
+## 2026-10-23: OAuthプロジェクト切替と使徒の性格色
+
+- 別Google CloudプロジェクトのWeb Client IDを検証し、本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認した。GitHub変数 `GOOGLE_CLIENT_ID` は新しいClient IDと一致し、Client Secretは使用・出力・保存していない。
+- 認証保存形式をv2へ更新し、Client ID一致時だけtokenと同意記録を復元するテストを追加した。旧OAuthプロジェクトのtokenは破棄し、端末内のツールデータは維持する。
+- クレヨンと食べ物で純粋=緑、活発=黄、冷静=青、憂鬱=紫、狂気=赤、裏面・未知値=中立色となる共通マッピングを確認した。ライト・ダーク両テーマでカード背景・枠線・上端線を目視し、両画面の同じ性格で枠色が一致した。
+- 390×844ではクレヨン・食べ物ともdocumentの表示幅・scroll幅が390pxで、性格色追加による横方向のはみ出しはなかった。BunとVitestの各43テスト、整形、lint、型チェック、本番ビルド、一括データ・画像照合に成功した。

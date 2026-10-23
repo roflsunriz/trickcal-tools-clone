@@ -2,6 +2,7 @@ import { Search, Utensils, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useI18n } from "../../i18n";
 import rawData from "./data.json";
+import { getPersonalityTone } from "./types";
 import type { CommunityData, FoodPreference } from "./types";
 
 const data = rawData as CommunityData;
@@ -93,7 +94,7 @@ export function FoodTool() {
               const character = data.characters[name];
               return (
                 <button
-                  className={`food-character-card${selectedCharacter === name ? " selected" : ""}${preference ? ` preference-${preference}` : ""}`}
+                  className={`food-character-card personality-${getPersonalityTone(character.personality)}${selectedCharacter === name ? " selected" : ""}${preference ? ` preference-${preference}` : ""}`}
                   key={name}
                   type="button"
                   aria-pressed={selectedCharacter === name}
