@@ -5,6 +5,7 @@
 - [周回ツールを開く](https://roflsunriz.github.io/trickcal-tools-clone/sweep/)
 - [クレヨンボードを開く](https://roflsunriz.github.io/trickcal-tools-clone/board/)
 - [食べ物の好みを開く](https://roflsunriz.github.io/trickcal-tools-clone/food/)
+- [プライバシーポリシー](https://roflsunriz.github.io/trickcal-tools-clone/privacy/)・[利用規約](https://roflsunriz.github.io/trickcal-tools-clone/terms/)
 
 ## 使い方
 
@@ -45,6 +46,8 @@ Googleが発行したアクセストークンの有効期限内は、ページ�
 3. GitHubリポジトリ変数 `GOOGLE_CLIENT_ID` にClient IDを設定します。Pagesビルドが `VITE_GOOGLE_CLIENT_ID` として取り込みます。
 
 Client IDは公開識別子でありClient Secretではありません。Client Secret、アクセストークン、Cookieはリポジトリ変数やファイルへ保存しないでください。ローカルでは実行プロセスの `VITE_GOOGLE_CLIENT_ID` 環境変数を使用します。
+
+Google OAuthのBrandingには、同一ドメインで公開したホームページ、[プライバシーポリシー](https://roflsunriz.github.io/trickcal-tools-clone/privacy/)、[利用規約](https://roflsunriz.github.io/trickcal-tools-clone/terms/)を登録します。各ページはサイト共通フッターからも開けます。
 
 ## データの出典
 

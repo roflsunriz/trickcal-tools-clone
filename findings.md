@@ -17,6 +17,7 @@
 - 本番OAuthにはDrive APIを有効化したWeb Client IDと、`https://roflsunriz.github.io` の承認済みJavaScript生成元が必要。PagesはGitHub変数 `GOOGLE_CLIENT_ID` を `VITE_GOOGLE_CLIENT_ID` へ渡し、未設定時はログインを無効化して設定不足を表示する。
 - 2026-10-23にWeb Client IDのJSONをローカルで検証し、本番生成元 `https://roflsunriz.github.io`、開発生成元 `http://127.0.0.1:5173`、空のリダイレクトURIを確認した。Client IDだけをGitHub変数 `GOOGLE_CLIENT_ID` へ登録し、Client Secretは読込出力・repository・GitHub変数へ保存しない。
 - OAuth同意画面のアプリ名は個別Client ID名ではなく、Google Auth Platformの同一CloudプロジェクトにあるBranding設定から表示される。既存アプリ「Mylist Backup Service」と同じプロジェクトではその名称になるため、既存アプリを維持するなら本ツール用プロジェクトを分ける。既存プロジェクトを本ツール専用へ転用する場合だけBranding名・ホーム・プライバシーポリシー等を変更する。根拠はGoogle公式のBrand Verification資料（2026-10-23確認）。
+- ExternalのOAuthアプリを本番公開するBrandingには、同一の承認済みドメイン上にホームページ、プライバシーポリシー、利用規約が必要。2026-10-24時点の公開URLはサイト直下、`/privacy/`、`/terms/` とし、全画面共通フッターから到達できる。Google CloudはTesting中に未入力欄を必須表示せずAudienceからBrandingへ戻すため、公開不能時は3 URLの実在と保存状態を先に確認する。根拠はGoogle公式のManage OAuth App Branding。
 - OAuthクライアントを別プロジェクトへ切り替える場合、localStorageの認証形式にClient IDを保存して一致を検証する。旧Client IDのtokenと同意記録は破棄し、端末内の周回・クレヨン等のデータだけを新しい `appDataFolder` へ初回同期する。
 - 使徒カードの性格色は純粋=緑、活発=黄、冷静=青、憂鬱=紫、狂気=赤とし、裏面・未知値は中立色へfallbackする。クレヨンと食べ物で同じclass mappingとCSS変数を使い、ライト・ダーク両テーマで背景・枠線・上端線へ反映する。
 - wiki「使徒一覧/未実装込み版」は日本語名・韓国語名・英語名を同じ行に持ち、2026-10-23時点でボード82使徒の日本語名が全件一致する。使徒英語名はこの表を更新時に取得して結合する。性格は純粋=`Innocence`、活発=`Vivacious`、冷静=`Composed`、憂鬱=`Depressed`、狂気=`Madness`、種族は `Sprite`・`Witch` 等、配置は `Front`・`Middle`・`Rear` を使う。料理60件は元ツールの英語辞書を基準に上位料理を補った明示的対訳とし、新しい値は対訳欠落エラーにして日本語fallbackを許可しない。

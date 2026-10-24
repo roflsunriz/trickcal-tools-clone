@@ -4,6 +4,7 @@ import { tools } from "./app/tools";
 import { CloudAccountControls } from "./cloud/CloudAccountControls";
 import { markCloudStateChanged } from "./cloud/storage";
 import { useI18n } from "./i18n";
+import { LegalPage } from "./legal/LegalPage";
 
 const defaultPath = "/sweep";
 
@@ -32,6 +33,7 @@ export function App() {
     () => (localStorage.getItem("trickcal_theme") as "light" | "dark") || "dark",
   );
 
+  const legalKind = path === "/privacy" ? "privacy" : path === "/terms" ? "terms" : null;
   const tool = useMemo(() => tools.find((item) => item.path === path) ?? tools[0], [path]);
 
   useEffect(() => {
@@ -39,6 +41,11 @@ export function App() {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  useEffect(() => {
+    const pageTitle = legalKind ? t(`legal.${legalKind}.title`) : t(tool.labelKey);
+    document.title = `${pageTitle} | Trickcal Tools`;
+  }, [legalKind, t, tool.labelKey]);
 
   function navigate(nextPath: string) {
     window.history.pushState({}, "", browserPath(nextPath));
@@ -66,7 +73,7 @@ export function App() {
         <nav className="tool-tabs" aria-label={t("app.tools")}>
           {tools.map(({ Icon, ...item }) => (
             <button
-              className={item.path === tool.path ? "tool-tab active" : "tool-tab"}
+              className={!legalKind && item.path === tool.path ? "tool-tab active" : "tool-tab"}
               key={item.id}
               type="button"
               onClick={() => navigate(item.path)}
@@ -91,9 +98,36 @@ export function App() {
           {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </header>
-      <main className="app-main">
-        <tool.Component />
-      </main>
+      <main className="app-main">{legalKind ? <LegalPage kind={legalKind} /> : <tool.Component />}</main>
+      <footer className="site-footer">
+        <span>{t("footer.description")}</span>
+        <nav aria-label={t("footer.legal")}>
+          <button
+            className={path === "/privacy" ? "footer-link active" : "footer-link"}
+            type="button"
+            onClick={() => navigate("/privacy")}
+            aria-current={path === "/privacy" ? "page" : undefined}
+          >
+            {t("footer.privacy")}
+          </button>
+          <button
+            className={path === "/terms" ? "footer-link active" : "footer-link"}
+            type="button"
+            onClick={() => navigate("/terms")}
+            aria-current={path === "/terms" ? "page" : undefined}
+          >
+            {t("footer.terms")}
+          </button>
+          <a
+            className="footer-link"
+            href="https://github.com/roflsunriz/trickcal-tools-clone/issues"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t("footer.contact")}
+          </a>
+        </nav>
+      </footer>
     </div>
   );
 }

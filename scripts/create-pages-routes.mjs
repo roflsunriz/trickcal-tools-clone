@@ -2,7 +2,7 @@ import { copyFile, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 
 const distDir = "dist";
-const routes = ["sweep", "board", "food"];
+const routes = ["sweep", "board", "food", "privacy", "terms"];
 
 for (const route of routes) {
   const routeDir = join(distDir, route);
