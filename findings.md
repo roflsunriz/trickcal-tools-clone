@@ -1,5 +1,6 @@
 # 調査知見
 
+- 関連サイト `trickcal-data` の公開URLは `https://roflsunriz.github.io/trickcal-data/`。ツール側は全画面共通フッターからリンクし、日英のリンク名とナビゲーションのaria-labelを同時に更新する。
 - 装備ドロップ表は通常HTMLに含まれず、`lazy-accordion-container` の属性から公開部分取得URLを組み立てる。2026-10-23時点の属性とqueryは `document-stack`→`documentStack`、`parent-part-path`→`parentPartPath`、`source-hash`→`sourceHash`、`html-hash`→`htmlHash` であり、行番号やhashを固定しない。取得HTMLは出典・wiki更新日時付きfixtureとして保存し、CIからwikiへ接続しない。
 - wikiコードは「rank + 装備種別」を表す。`equipmentByRank` と保存済み選択が使う `material-NNN` を表示名変更に合わせて振り直さない。
 - 出典表はworld 3以降・rank 2以上だけ。rank 1とworld 1/2の既存dataを表から再生成しない。

@@ -102,6 +102,14 @@ export function App() {
       <footer className="site-footer">
         <span>{t("footer.description")}</span>
         <nav aria-label={t("footer.legal")}>
+          <a
+            className="footer-link"
+            href="https://roflsunriz.github.io/trickcal-data/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {t("footer.data")}
+          </a>
           <button
             className={path === "/privacy" ? "footer-link active" : "footer-link"}
             type="button"

@@ -5,6 +5,7 @@
 - [周回ツールを開く](https://roflsunriz.github.io/trickcal-tools-clone/sweep/)
 - [クレヨンボードを開く](https://roflsunriz.github.io/trickcal-tools-clone/board/)
 - [食べ物の好みを開く](https://roflsunriz.github.io/trickcal-tools-clone/food/)
+- [攻略資料・文字起こしを開く](https://roflsunriz.github.io/trickcal-data/)
 - [プライバシーポリシー](https://roflsunriz.github.io/trickcal-tools-clone/privacy/)・[利用規約](https://roflsunriz.github.io/trickcal-tools-clone/terms/)
 
 ## 使い方
