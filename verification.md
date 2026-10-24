@@ -78,7 +78,8 @@ bun run build
 - 日英のプライバシーポリシーと利用規約を追加し、全画面共通フッター、ブラウザの戻る・進む、直接URLから両ページを開けることを確認した。
 - 本番ビルドで `dist/privacy/index.html` と `dist/terms/index.html` を生成した。専用ブラウザで日本語・英語、ライト・ダークテーマを確認し、390×844では表示幅とスクロール幅がともに390pxだった。
 - 整形、lint、型チェック、本番ビルド、BunとVitestの各48テストに成功した。公開前監査で検出したZod 4.4.3の脆弱性を4.6.6への更新で解消し、198パッケージの再監査は指摘なしだった。
-- TypeScript 7.0.2はtypescript-eslintの対応範囲外のため、既存の6.0.3を維持した。公開URLのHTTP 200、GitHub Actions、Pages反映はpush後に確認する。
+- TypeScript 7.0.2はtypescript-eslintの対応範囲外のため、既存の6.0.3を維持した。
+- `9f8aad2` を `main` へpushし、[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/40046483096)と[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/40046483026)に成功した。公開した `/privacy/` と `/terms/` はHTTP 200を返し、公開JS `index-CPvrBggy.js` に日英の両本文、`drive.appdata`、Google API Services User Data Policyへの導線が含まれることを確認した。公開ブラウザでも両ページの本文と相互導線を確認した。
 
 ## エラーへの対処
 
