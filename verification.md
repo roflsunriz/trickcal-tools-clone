@@ -76,6 +76,7 @@ bun run build
 - 本番ビルドをローカル配信し、共通フッターに日本語の「攻略データ」と英語の「Strategy Data」が表示され、`https://roflsunriz.github.io/trickcal-data/` を新しいタブで開く設定になっていることを確認した。
 - 1265×720と390×844でリンクが操作可能な位置に表示され、390px幅では文書幅とスクロール幅が一致した。リンク先の公開URLはHTTP 200を返した。
 - `bun run format`、lint、型チェック、本番ビルド、BunとVitestの各48テストに成功した。
+- `6eae65f` を `main` へpushし、[CI](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/40049456263)と[GitHub Pages](https://github.com/roflsunriz/trickcal-tools-clone/actions/runs/40049456287)に成功した。公開スイープ画面の共通フッターで英語の「Strategy Data」と正しいリンク先を確認した。
 
 全ツールで、開発者ツールにJavaScript例外・失敗通信がなく、通常利用時に4つの情報源へ通信しないことを確認します。Google同期時の通信先はGoogle Identity Services、OAuth、Drive APIに限られることを確認します。
 
