@@ -13,6 +13,7 @@ export const maximumOfferingResearchStage = 12;
 export type CandyIncomeSettings = {
   shrineLevel: number;
   offeringResearchStage: number;
+  includeNaturalRecovery: boolean;
   includeDailyMail: boolean;
   includeDailyShop: boolean;
   includeSubscription: boolean;
@@ -33,6 +34,7 @@ export type CandyIncome = {
 export const defaultCandyIncomeSettings: CandyIncomeSettings = {
   shrineLevel: 13,
   offeringResearchStage: 0,
+  includeNaturalRecovery: true,
   includeDailyMail: true,
   includeDailyShop: true,
   includeSubscription: false,
@@ -67,7 +69,7 @@ export function calculateCandyIncome(settings: CandyIncomeSettings): CandyIncome
   if (!eliefOption) throw new Error("エリーフ購入回数は0〜10回で指定してください。");
 
   const income = {
-    natural: naturalRecoveryPerDay,
+    natural: settings.includeNaturalRecovery ? naturalRecoveryPerDay : 0,
     offering: offeringCandyPerDay(settings.shrineLevel, settings.offeringResearchStage),
     dailyMail: settings.includeDailyMail ? dailyMailCandy : 0,
     dailyShop: settings.includeDailyShop ? dailyShopCandy : 0,

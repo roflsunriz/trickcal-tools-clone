@@ -42,6 +42,24 @@ describe("Rank-up candy income", () => {
     expect(eliefPurchaseOptions[10]).toEqual({ purchases: 10, candy: 1000, elief: 600 });
   });
 
+  it("excludes each optional daily source when its checkbox is cleared", () => {
+    expect(
+      calculateCandyIncome({
+        ...defaultCandyIncomeSettings,
+        includeNaturalRecovery: false,
+        includeDailyMail: false,
+        includeDailyShop: false,
+        includeSubscription: false,
+      }),
+    ).toMatchObject({
+      natural: 0,
+      dailyMail: 0,
+      dailyShop: 0,
+      subscription: 0,
+      totalPerDay: 288,
+    });
+  });
+
   it("calculates one-apostle and all-apostle theoretical durations", () => {
     const counts = Object.values((communityData as CommunityData).characters).reduce(
       (result, character) => ({ ...result, [character.attackType]: result[character.attackType] + 1 }),

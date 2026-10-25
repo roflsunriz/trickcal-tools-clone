@@ -190,6 +190,14 @@ export function RankUpTool() {
           <label>
             <input
               type="checkbox"
+              checked={candySettings.includeNaturalRecovery}
+              onChange={(event) => updateCandySettings({ includeNaturalRecovery: event.target.checked })}
+            />
+            <span>{t("rankUp.candy.includeNaturalRecovery")}</span>
+          </label>
+          <label>
+            <input
+              type="checkbox"
               checked={candySettings.includeDailyMail}
               onChange={(event) => updateCandySettings({ includeDailyMail: event.target.checked })}
             />
