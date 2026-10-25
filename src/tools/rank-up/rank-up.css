@@ -1,0 +1,242 @@
+.rank-up-root {
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.rank-up-controls {
+  display: grid;
+  gap: 18px;
+  padding: 20px;
+}
+
+.rank-up-control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.rank-up-control-row h2,
+.rank-up-plan-heading h2,
+.rank-plan-heading h3 {
+  margin: 0;
+}
+
+.rank-up-control-row p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.rank-up-weapon-switch {
+  flex: 0 0 auto;
+}
+
+.rank-up-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rank-up-summary-card {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-strong);
+}
+
+.rank-up-summary-card span {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.rank-up-summary-card strong {
+  color: var(--accent);
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+.rank-up-notes {
+  display: grid;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.rank-up-notes p {
+  margin: 0;
+}
+
+.rank-up-notes p:first-child {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--text);
+}
+
+.rank-up-notes p:first-child svg {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  color: var(--accent);
+}
+
+.rank-up-notes a {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.rank-up-plan {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.rank-up-plan-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.rank-up-plan-heading span {
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.rank-plan-section {
+  padding: 18px;
+}
+
+.rank-plan-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rank-plan-heading h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.rank-plan-heading span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.rank-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.rank-stage-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-strong);
+}
+
+.rank-stage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rank-stage-header strong {
+  font-size: 1.15rem;
+}
+
+.rank-stage-header span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  color: white;
+  background: var(--accent);
+  font-weight: 800;
+}
+
+.rank-stage-materials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.rank-stage-material {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.rank-stage-material img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.rank-stage-material span {
+  overflow: hidden;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+}
+
+.rank-stage-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 980px) {
+  .rank-plan-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .rank-up-control-row,
+  .rank-up-plan-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .rank-up-weapon-switch,
+  .rank-up-weapon-switch .segment {
+    width: 100%;
+  }
+
+  .rank-up-weapon-switch .segment {
+    justify-content: center;
+  }
+
+  .rank-up-summary,
+  .rank-plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rank-up-plan-heading span {
+    text-align: left;
+  }
+}

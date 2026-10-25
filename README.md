@@ -1,8 +1,9 @@
 # Trickcal Tools Clone
 
-トリッカルの周回計画、クレヨンボード、食べ物の好みをまとめて確認できる非公式ツール集です。日本語・英語に対応しています。
+トリッカルの周回計画、Rank 1から9までの一括育成、クレヨンボード、食べ物の好みをまとめて確認できる非公式ツール集です。日本語・英語に対応しています。
 
 - [周回ツールを開く](https://roflsunriz.github.io/trickcal-tools-clone/sweep/)
+- [ランク一括育成を開く](https://roflsunriz.github.io/trickcal-tools-clone/rank-up/)
 - [クレヨンボードを開く](https://roflsunriz.github.io/trickcal-tools-clone/board/)
 - [食べ物の好みを開く](https://roflsunriz.github.io/trickcal-tools-clone/food/)
 - [攻略資料・文字起こしを開く](https://roflsunriz.github.io/trickcal-data/)
@@ -15,6 +16,12 @@
 3. 表示された周回ステージと、必要な場合だけ副産物候補を開いて確認します。素材、絞り込み、装備セットの武器種・必要ランクはブラウザに保存され、再読み込み後も選択色とともに復元されます。
 
 ワールド1〜32、ランク1〜9を収録しています。ワールド31・32ではランク9の素材を2種類ずつ集められます。
+
+### ランク一括育成
+
+物理または魔法を選ぶと、1使徒をRank 1からRank 9まで育てるためのステージと周回回数をRank別に表示します。wiki記載の体感ドロップ率70〜80%の中間値である75%を目安にし、各ステージには70〜80%の回数幅と全ドロップ成功時の最小回数も併記します。
+
+Rank 2への昇格に使うRank 1装備は高ランク周回の副産物で集まりやすいため、専用周回から除外します。Rank 3装備に必要なRank 2設計図は計画に含みます。ドロップは確率のため、各Rankを作成した時点で所持数を確認し、不足分だけ追加周回してください。
 
 ### クレヨンボード
 
@@ -52,13 +59,13 @@ Google OAuthのBrandingには、同一ドメインで公開したホームペー
 
 ## データの出典
 
-ワールド3以降の設計図・欠片は、[トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)の「素材ドロップ場所一覧」を使用しています。クレヨン情報は[トリッカル攻略ポータルの使徒・ボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、料理の好みは[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)の「好物早見表」、使徒の英語名は[トリッカルwiki「使徒一覧」](https://wikiwiki.jp/thetrickal/使徒一覧)の英語名列を使用しています。取得した該当部分と更新元のハッシュをリポジトリに保存します。
+ワールド3以降の設計図・欠片と必要数・最小キャンディは、[トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)を使用しています。周回回数の目安は[「進軍」](https://wikiwiki.jp/thetrickal/進軍)に記載された体感ドロップ率70〜80%を使用します。クレヨン情報は[トリッカル攻略ポータルの使徒・ボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、料理の好みは[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)の「好物早見表」、使徒の英語名は[トリッカルwiki「使徒一覧」](https://wikiwiki.jp/thetrickal/使徒一覧)の英語名列を使用しています。取得した該当部分と更新元のハッシュをリポジトリに保存します。
 
 データと画像はローカルに同梱しています。通常利用時に情報源への接続は発生しません。収録情報と画像の一括更新方法は[更新手順](how-to-update.md)を参照してください。
 
 ## English
 
-Open the [sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/), [Crayon Board](https://roflsunriz.github.io/trickcal-tools-clone/board/), or [Food Preferences](https://roflsunriz.github.io/trickcal-tools-clone/food/), then switch the language to English. Apostle names, personalities, races, rows, and food names are localized; searches accept both Japanese and English names. The generated data and images are bundled locally. Once the deployment is configured with a Google OAuth Web Client ID, the header sign-in button syncs tool settings to the user's private Drive `appDataFolder`.
+Open the [sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/), [Rank-up Planner](https://roflsunriz.github.io/trickcal-tools-clone/rank-up/), [Crayon Board](https://roflsunriz.github.io/trickcal-tools-clone/board/), or [Food Preferences](https://roflsunriz.github.io/trickcal-tools-clone/food/), then switch the language to English. Apostle names, personalities, races, rows, and food names are localized; searches accept both Japanese and English names. The generated data and images are bundled locally. Once the deployment is configured with a Google OAuth Web Client ID, the header sign-in button syncs tool settings to the user's private Drive `appDataFolder`.
 
 ## 関連文書
 

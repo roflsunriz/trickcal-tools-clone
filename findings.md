@@ -3,6 +3,7 @@
 - 関連サイト `trickcal-data` の公開URLは `https://roflsunriz.github.io/trickcal-data/`。ツール側は全画面共通フッターからリンクし、日英のリンク名とナビゲーションのaria-labelを同時に更新する。
 - 装備ドロップ表は通常HTMLに含まれず、`lazy-accordion-container` の属性から公開部分取得URLを組み立てる。2026-10-23時点の属性とqueryは `document-stack`→`documentStack`、`parent-part-path`→`parentPartPath`、`source-hash`→`sourceHash`、`html-hash`→`htmlHash` であり、行番号やhashを固定しない。取得HTMLは出典・wiki更新日時付きfixtureとして保存し、CIからwikiへ接続しない。
 - wikiコードは「rank + 装備種別」を表す。`equipmentByRank` と保存済み選択が使う `material-NNN` を表示名変更に合わせて振り直さない。
+- ランク一括育成は、wiki「装備設計図」の必要数・最小キャンディと、wiki「進軍」の「1周につき設計図／欠片が各最大1個×2種類、体感ドロップ率70〜80%」を根拠にする。2026-10-25確認時は中間値75%を目安回数、70〜80%を幅、100%を最小回数として表示する。Rank 2への昇格用Rank 1装備は高ランク周回の副産物として除外するが、Rank 3装備用のRank 2設計図は含める。同Rankの6部位は、2素材ステージ、1対象素材だけのステージ、3素材の循環組み合わせを、各対象素材が必要数に達するよう配分する。
 - 出典表はworld 3以降・rank 2以上だけ。rank 1とworld 1/2の既存dataを表から再生成しない。
 - 2026-09-11の表は10-5で設計図と副産物を逆にして重複する。同一素材集合だけ統合し、異なる集合の重複や既存stage欠落はエラーにする。
 - Pages公開ではアプリのBunとは別にActions自体のNode警告も確認する。公開成功はCI、deploy、公開asset反映を分けて判定する。
