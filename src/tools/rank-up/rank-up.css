@@ -95,8 +95,8 @@
 
 .rank-up-plan {
   display: grid;
-  gap: 14px;
-  margin-top: 22px;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .rank-up-plan-heading {
@@ -114,7 +114,7 @@
 }
 
 .rank-plan-section {
-  padding: 18px;
+  padding: 12px;
 }
 
 .rank-plan-heading {
@@ -122,7 +122,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .rank-plan-heading h3 {
@@ -138,75 +138,80 @@
 .rank-plan-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 8px;
 }
 
 .rank-stage-card {
   display: grid;
-  gap: 12px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
   min-width: 0;
-  padding: 14px;
+  padding: 8px 10px;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--panel-strong);
 }
 
 .rank-stage-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  display: grid;
+  justify-items: start;
+  gap: 4px;
 }
 
 .rank-stage-header strong {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .rank-stage-header span {
-  padding: 5px 9px;
+  padding: 3px 7px;
   border-radius: 999px;
   color: white;
   background: var(--accent);
+  font-size: 0.8rem;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .rank-stage-materials {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 4px 8px;
 }
 
 .rank-stage-material {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   min-width: 0;
 }
 
 .rank-stage-material img {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   flex: 0 0 auto;
   object-fit: contain;
 }
 
 .rank-stage-material span {
   overflow: hidden;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 650;
-  line-height: 1.35;
+  line-height: 1.25;
   text-overflow: ellipsis;
 }
 
 .rank-stage-detail {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 6px 12px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
+  display: grid;
+  justify-items: end;
+  gap: 3px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .candy-calculator {
@@ -457,5 +462,22 @@
 
   .rank-up-plan-heading span {
     text-align: left;
+  }
+
+  .rank-stage-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .rank-stage-detail {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 10px;
+    padding: 6px 0 0;
+    border-top: 1px solid var(--border);
+    border-left: 0;
+    text-align: left;
+    white-space: normal;
   }
 }
