@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import type {
   BoardCellType,
   BoardLayer,
+  CharacterAttackType,
   CommunityCharacter,
   CommunityData,
   CommunityFoodImage,
@@ -25,6 +26,11 @@ const boardTypeNames: Record<string, BoardCellType> = {
   HP: "hp",
   抵抗: "critResist",
   防御: "defense",
+};
+
+const attackTypeNames: Record<string, CharacterAttackType> = {
+  物理: "physical",
+  魔法: "magic",
 };
 
 function decodeHtml(value: string) {
@@ -63,8 +69,8 @@ function characterCardSections(html: string) {
   });
 }
 
-export function parseBoardCharacters(html: string): Record<string, Omit<CommunityCharacter, "nameEn">> {
-  const characters: Record<string, Omit<CommunityCharacter, "nameEn">> = {};
+export function parseBoardCharacters(html: string): Record<string, Omit<CommunityCharacter, "nameEn" | "attackType">> {
+  const characters: Record<string, Omit<CommunityCharacter, "nameEn" | "attackType">> = {};
   for (const section of characterCardSections(html)) {
     const openingTag = section.match(/^<div\b[^>]*>/)?.[0] ?? "";
     const name = normalizeCharacterName(attribute(openingTag, "data-name"));
@@ -134,6 +140,7 @@ function findApostleTable(html: string) {
 export function parseApostleEnglishNames(html: string) {
   const table = findApostleTable(html);
   const names: Record<string, string> = {};
+  const attackTypes: Record<string, CharacterAttackType> = {};
   const rows = [...table.matchAll(/<tr\b[^>]*>[\s\S]*?<\/tr>/g)].slice(1);
   for (const [row] of rows) {
     const cells = [...row.matchAll(/<td\b[^>]*>[\s\S]*?<\/td>/g)].map(([cell]) => stripTags(cell));
@@ -141,13 +148,17 @@ export function parseApostleEnglishNames(html: string) {
     const name = normalizeCharacterName(cells[2].replace(/\s*\?\s*$/, ""));
     const nameEn = cells[12].trim();
     if (!name || !nameEn) continue;
+    const attackTypeName = cells[8].replace(/^\d+\./, "").trim();
+    const attackType = attackTypeNames[attackTypeName];
+    if (!attackType) throw new Error(`${name}: 未知の攻撃タイプ「${attackTypeName}」です。`);
     if (names[name] && names[name] !== nameEn) throw new Error(`使徒「${name}」の英語名が重複しています。`);
     names[name] = nameEn;
+    attackTypes[name] = attackType;
   }
-  if (Object.keys(names).length < 82) {
-    throw new Error(`使徒一覧の英語名が${Object.keys(names).length}人分しかありません。`);
+  if (Object.keys(names).length < 82 || Object.keys(attackTypes).length !== Object.keys(names).length) {
+    throw new Error(`使徒一覧の英語名・攻撃タイプが${Object.keys(names).length}人分しかありません。`);
   }
-  return { names, table };
+  return { names, attackTypes, table };
 }
 
 function findFoodPreferenceTable(html: string) {
@@ -269,15 +280,18 @@ export function buildCommunityData(boardHtml: string, foodHtml: string, apostleH
   const foodSnapshot = extractFoodSnapshot(foodHtml);
   const parsedCharacters = parseBoardCharacters(boardSnapshot);
   const apostleSnapshot = extractApostleSnapshot(apostleHtml);
-  const { names: apostleEnglishNames } = parseApostleEnglishNames(apostleSnapshot);
+  const { names: apostleEnglishNames, attackTypes } = parseApostleEnglishNames(apostleSnapshot);
   const missingEnglishNames = Object.keys(parsedCharacters).filter((name) => !apostleEnglishNames[name]);
-  if (missingEnglishNames.length) {
-    throw new Error(`使徒一覧に英語名がない使徒があります: ${missingEnglishNames.join(", ")}`);
+  const missingAttackTypes = Object.keys(parsedCharacters).filter((name) => !attackTypes[name]);
+  if (missingEnglishNames.length || missingAttackTypes.length) {
+    throw new Error(
+      `使徒一覧に英語名・攻撃タイプがない使徒があります: ${[...new Set([...missingEnglishNames, ...missingAttackTypes])].join(", ")}`,
+    );
   }
   const characters = Object.fromEntries(
     Object.entries(parsedCharacters).map(([name, character]) => [
       name,
-      { ...character, nameEn: apostleEnglishNames[name] },
+      { ...character, nameEn: apostleEnglishNames[name], attackType: attackTypes[name] },
     ]),
   );
   const { preferences, foods } = parseFoodPreferences(foodSnapshot);
@@ -289,7 +303,7 @@ export function buildCommunityData(boardHtml: string, foodHtml: string, apostleH
   if (!modified) throw new Error("wikiの更新日時を取得できません。");
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     sources: {
       board: { url: boardSourceUrl, sha256: sourceHash(boardSnapshot) },
       food: { url: foodSourceUrl, sha256: sourceHash(foodSnapshot), lastModified: modified },

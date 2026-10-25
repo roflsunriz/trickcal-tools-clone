@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "sources": {
     "board": {
       "url": "https://trickcal-strategy.pages.dev/board/manager.html",
@@ -47,7 +47,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Amelia"
+      "nameEn": "Amelia",
+      "attackType": "physical"
     },
     "アヤ": {
       "name": "アヤ",
@@ -66,7 +67,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Aya"
+      "nameEn": "Aya",
+      "attackType": "magic"
     },
     "アリス": {
       "name": "アリス",
@@ -85,7 +87,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Alice"
+      "nameEn": "Alice",
+      "attackType": "magic"
     },
     "アレット": {
       "name": "アレット",
@@ -104,7 +107,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Allet"
+      "nameEn": "Allet",
+      "attackType": "physical"
     },
     "イード": {
       "name": "イード",
@@ -123,7 +127,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Ed"
+      "nameEn": "Ed",
+      "attackType": "magic"
     },
     "イフリート": {
       "name": "イフリート",
@@ -142,7 +147,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Ifrit"
+      "nameEn": "Ifrit",
+      "attackType": "magic"
     },
     "ウイ": {
       "name": "ウイ",
@@ -161,7 +167,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Ui"
+      "nameEn": "Ui",
+      "attackType": "magic"
     },
     "ヴィヴィ": {
       "name": "ヴィヴィ",
@@ -180,7 +187,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Vivi"
+      "nameEn": "Vivi",
+      "attackType": "magic"
     },
     "エシュール": {
       "name": "エシュール",
@@ -199,7 +207,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Ashur"
+      "nameEn": "Ashur",
+      "attackType": "magic"
     },
     "エスピー": {
       "name": "エスピー",
@@ -218,7 +227,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Espi"
+      "nameEn": "Espi",
+      "attackType": "magic"
     },
     "エピカ": {
       "name": "エピカ",
@@ -237,7 +247,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Epica"
+      "nameEn": "Epica",
+      "attackType": "physical"
     },
     "エルフィン": {
       "name": "エルフィン",
@@ -256,7 +267,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Erpin"
+      "nameEn": "Erpin",
+      "attackType": "magic"
     },
     "エレナ": {
       "name": "エレナ",
@@ -275,7 +287,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Elena"
+      "nameEn": "Elena",
+      "attackType": "physical"
     },
     "ガヴィア": {
       "name": "ガヴィア",
@@ -294,7 +307,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Gabia"
+      "nameEn": "Gabia",
+      "attackType": "magic"
     },
     "カレン": {
       "name": "カレン",
@@ -313,7 +327,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Carren"
+      "nameEn": "Carren",
+      "attackType": "magic"
     },
     "カンナ": {
       "name": "カンナ",
@@ -332,7 +347,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Canna"
+      "nameEn": "Canna",
+      "attackType": "physical"
     },
     "ギデオン": {
       "name": "ギデオン",
@@ -351,7 +367,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Kidian"
+      "nameEn": "Kidian",
+      "attackType": "physical"
     },
     "キャロット": {
       "name": "キャロット",
@@ -370,7 +387,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Kyarot"
+      "nameEn": "Kyarot",
+      "attackType": "magic"
     },
     "キュウイ": {
       "name": "キュウイ",
@@ -389,7 +407,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Kyuri"
+      "nameEn": "Kyuri",
+      "attackType": "magic"
     },
     "グウィン": {
       "name": "グウィン",
@@ -408,7 +427,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Guin"
+      "nameEn": "Guin",
+      "attackType": "magic"
     },
     "クロエ": {
       "name": "クロエ",
@@ -427,7 +447,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Chloe"
+      "nameEn": "Chloe",
+      "attackType": "magic"
     },
     "コミー": {
       "name": "コミー",
@@ -446,7 +467,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Kommy"
+      "nameEn": "Kommy",
+      "attackType": "physical"
     },
     "コミー（水着）": {
       "name": "コミー（水着）",
@@ -465,7 +487,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Kommy (Swimsuit)"
+      "nameEn": "Kommy (Swimsuit)",
+      "attackType": "magic"
     },
     "サリー": {
       "name": "サリー",
@@ -484,7 +507,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Sari"
+      "nameEn": "Sari",
+      "attackType": "physical"
     },
     "シーラ": {
       "name": "シーラ",
@@ -503,7 +527,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Sylla"
+      "nameEn": "Sylla",
+      "attackType": "physical"
     },
     "シェイディ": {
       "name": "シェイディ",
@@ -522,7 +547,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Shaydi"
+      "nameEn": "Shaydi",
+      "attackType": "physical"
     },
     "ジェイド": {
       "name": "ジェイド",
@@ -541,7 +567,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Jade"
+      "nameEn": "Jade",
+      "attackType": "magic"
     },
     "シェルム": {
       "name": "シェルム",
@@ -560,7 +587,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Sherum"
+      "nameEn": "Sherum",
+      "attackType": "magic"
     },
     "シオン・ザ・DB": {
       "name": "シオン・ザ・DB",
@@ -579,7 +607,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "xXionx"
+      "nameEn": "xXionx",
+      "attackType": "physical"
     },
     "シスト": {
       "name": "シスト",
@@ -598,7 +627,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Sist"
+      "nameEn": "Sist",
+      "attackType": "physical"
     },
     "シュパン": {
       "name": "シュパン",
@@ -617,7 +647,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Shoupan"
+      "nameEn": "Shoupan",
+      "attackType": "magic"
     },
     "ジュビー": {
       "name": "ジュビー",
@@ -636,7 +667,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Jubee"
+      "nameEn": "Jubee",
+      "attackType": "physical"
     },
     "ジョアン": {
       "name": "ジョアン",
@@ -655,7 +687,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Joanne"
+      "nameEn": "Joanne",
+      "attackType": "physical"
     },
     "シルフィール": {
       "name": "シルフィール",
@@ -674,7 +707,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Silphir"
+      "nameEn": "Silphir",
+      "attackType": "physical"
     },
     "スノキー": {
       "name": "スノキー",
@@ -693,7 +727,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Snorky"
+      "nameEn": "Snorky",
+      "attackType": "physical"
     },
     "スピッキー": {
       "name": "スピッキー",
@@ -712,7 +747,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Speaki"
+      "nameEn": "Speaki",
+      "attackType": "magic"
     },
     "セリーネ": {
       "name": "セリーネ",
@@ -731,7 +767,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Selene"
+      "nameEn": "Selene",
+      "attackType": "magic"
     },
     "ダーヤ": {
       "name": "ダーヤ",
@@ -750,7 +787,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Daya"
+      "nameEn": "Daya",
+      "attackType": "magic"
     },
     "タイダー": {
       "name": "タイダー",
@@ -769,7 +807,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Taida"
+      "nameEn": "Taida",
+      "attackType": "physical"
     },
     "チョッピー": {
       "name": "チョッピー",
@@ -788,7 +827,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Chopi"
+      "nameEn": "Chopi",
+      "attackType": "physical"
     },
     "ディアナ": {
       "name": "ディアナ",
@@ -807,7 +847,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Diana"
+      "nameEn": "Diana",
+      "attackType": "magic"
     },
     "ティグ": {
       "name": "ティグ",
@@ -826,7 +867,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Tig"
+      "nameEn": "Tig",
+      "attackType": "physical"
     },
     "ナイア": {
       "name": "ナイア",
@@ -845,7 +887,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Naia"
+      "nameEn": "Naia",
+      "attackType": "magic"
     },
     "ネル": {
       "name": "ネル",
@@ -864,7 +907,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Ner"
+      "nameEn": "Ner",
+      "attackType": "magic"
     },
     "バター": {
       "name": "バター",
@@ -883,7 +927,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Butter"
+      "nameEn": "Butter",
+      "attackType": "physical"
     },
     "パトラ": {
       "name": "パトラ",
@@ -902,7 +947,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Patula"
+      "nameEn": "Patula",
+      "attackType": "physical"
     },
     "バリエ": {
       "name": "バリエ",
@@ -921,7 +967,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Barie"
+      "nameEn": "Barie",
+      "attackType": "magic"
     },
     "バロン": {
       "name": "バロン",
@@ -940,7 +987,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Barong"
+      "nameEn": "Barong",
+      "attackType": "magic"
     },
     "ピコラ": {
       "name": "ピコラ",
@@ -959,7 +1007,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Picora"
+      "nameEn": "Picora",
+      "attackType": "magic"
     },
     "ビッグウッド": {
       "name": "ビッグウッド",
@@ -978,7 +1027,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "BigWood"
+      "nameEn": "BigWood",
+      "attackType": "physical"
     },
     "ピラ": {
       "name": "ピラ",
@@ -997,7 +1047,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Pira"
+      "nameEn": "Pira",
+      "attackType": "physical"
     },
     "ヒルデ": {
       "name": "ヒルデ",
@@ -1016,7 +1067,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Hilde"
+      "nameEn": "Hilde",
+      "attackType": "magic"
     },
     "フェスタ": {
       "name": "フェスタ",
@@ -1035,7 +1087,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Festa"
+      "nameEn": "Festa",
+      "attackType": "physical"
     },
     "ブランセ": {
       "name": "ブランセ",
@@ -1054,7 +1107,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Blanchet"
+      "nameEn": "Blanchet",
+      "attackType": "magic"
     },
     "フリックル": {
       "name": "フリックル",
@@ -1073,7 +1127,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Fricle"
+      "nameEn": "Fricle",
+      "attackType": "magic"
     },
     "ヘイリー": {
       "name": "ヘイリー",
@@ -1092,7 +1147,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Haley"
+      "nameEn": "Haley",
+      "attackType": "physical"
     },
     "ベニー": {
       "name": "ベニー",
@@ -1111,7 +1167,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Beni"
+      "nameEn": "Beni",
+      "attackType": "physical"
     },
     "ベリータ": {
       "name": "ベリータ",
@@ -1130,7 +1187,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Belita"
+      "nameEn": "Belita",
+      "attackType": "magic"
     },
     "ベル": {
       "name": "ベル",
@@ -1149,7 +1207,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Veroo"
+      "nameEn": "Veroo",
+      "attackType": "physical"
     },
     "ベルベット": {
       "name": "ベルベット",
@@ -1168,7 +1227,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Velvet"
+      "nameEn": "Velvet",
+      "attackType": "physical"
     },
     "ポーシャー": {
       "name": "ポーシャー",
@@ -1187,7 +1247,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Posher"
+      "nameEn": "Posher",
+      "attackType": "magic"
     },
     "マーゴ": {
       "name": "マーゴ",
@@ -1206,7 +1267,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Mago"
+      "nameEn": "Mago",
+      "attackType": "magic"
     },
     "マエストロMK2": {
       "name": "マエストロMK2",
@@ -1225,7 +1287,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "MaestroMK2"
+      "nameEn": "MaestroMK2",
+      "attackType": "physical"
     },
     "マヨ": {
       "name": "マヨ",
@@ -1244,7 +1307,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Mayo"
+      "nameEn": "Mayo",
+      "attackType": "physical"
     },
     "マリー": {
       "name": "マリー",
@@ -1263,7 +1327,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Marie"
+      "nameEn": "Marie",
+      "attackType": "physical"
     },
     "ミンス": {
       "name": "ミンス",
@@ -1282,7 +1347,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Mynx"
+      "nameEn": "Mynx",
+      "attackType": "physical"
     },
     "メゾン": {
       "name": "メゾン",
@@ -1301,7 +1367,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Maison"
+      "nameEn": "Maison",
+      "attackType": "physical"
     },
     "メロナ": {
       "name": "メロナ",
@@ -1320,7 +1387,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Meluna"
+      "nameEn": "Meluna",
+      "attackType": "magic"
     },
     "モモ": {
       "name": "モモ",
@@ -1339,7 +1407,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Momo"
+      "nameEn": "Momo",
+      "attackType": "magic"
     },
     "ユミミ": {
       "name": "ユミミ",
@@ -1358,7 +1427,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Yumimi"
+      "nameEn": "Yumimi",
+      "attackType": "physical"
     },
     "ヨミ": {
       "name": "ヨミ",
@@ -1377,7 +1447,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Yomi"
+      "nameEn": "Yomi",
+      "attackType": "magic"
     },
     "リスティ": {
       "name": "リスティ",
@@ -1396,7 +1467,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Risty"
+      "nameEn": "Risty",
+      "attackType": "physical"
     },
     "リッツ": {
       "name": "リッツ",
@@ -1415,7 +1487,8 @@
         "layer2": ["attack", "defense", "critResist"],
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
-      "nameEn": "Leets"
+      "nameEn": "Leets",
+      "attackType": "physical"
     },
     "リニュア": {
       "name": "リニュア",
@@ -1434,7 +1507,8 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Renewa"
+      "nameEn": "Renewa",
+      "attackType": "physical"
     },
     "リム": {
       "name": "リム",
@@ -1453,7 +1527,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Rim"
+      "nameEn": "Rim",
+      "attackType": "physical"
     },
     "ルード": {
       "name": "ルード",
@@ -1472,7 +1547,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Rudd"
+      "nameEn": "Rudd",
+      "attackType": "physical"
     },
     "ルポ": {
       "name": "ルポ",
@@ -1491,7 +1567,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Rufo"
+      "nameEn": "Rufo",
+      "attackType": "physical"
     },
     "レイジー": {
       "name": "レイジー",
@@ -1510,7 +1587,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Layze"
+      "nameEn": "Layze",
+      "attackType": "physical"
     },
     "レヴィ": {
       "name": "レヴィ",
@@ -1529,7 +1607,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Levi"
+      "nameEn": "Levi",
+      "attackType": "physical"
     },
     "レーテー": {
       "name": "レーテー",
@@ -1548,7 +1627,8 @@
         "layer2": ["crit", "hp", "critResist"],
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
-      "nameEn": "Lethe"
+      "nameEn": "Lethe",
+      "attackType": "physical"
     },
     "ローネ": {
       "name": "ローネ",
@@ -1567,7 +1647,8 @@
         "layer2": ["crit", "defense", "critResist"],
         "layer3": ["attack", "crit", "hp", "defense"]
       },
-      "nameEn": "Rohne"
+      "nameEn": "Rohne",
+      "attackType": "physical"
     },
     "ロレット": {
       "name": "ロレット",
@@ -1586,7 +1667,8 @@
         "layer2": ["attack", "crit", "hp"],
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
-      "nameEn": "Rollett"
+      "nameEn": "Rollett",
+      "attackType": "magic"
     }
   },
   "foods": {

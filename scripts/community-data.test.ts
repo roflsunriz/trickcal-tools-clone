@@ -30,6 +30,7 @@ describe("community data sources", () => {
     expect(Object.keys(food.preferences)).toHaveLength(76);
     expect(Object.keys(food.foods)).toHaveLength(60);
     expect(Object.keys(apostles.names).length).toBeGreaterThanOrEqual(82);
+    expect(Object.keys(apostles.attackTypes)).toHaveLength(Object.keys(apostles.names).length);
   });
 
   it("includes apostles added after the cloned source data", () => {
@@ -71,6 +72,7 @@ describe("community data sources", () => {
       expect(character.personalityEn).not.toBe("");
       expect(character.raceEn).not.toBe("");
       expect(character.deployRowEn).not.toBe("");
+      expect(["physical", "magic"]).toContain(character.attackType);
     }
     for (const food of Object.values(data.foods)) expect(food.nameEn).not.toBe("");
     expect(data.characters["アメリア"]).toMatchObject({
@@ -78,6 +80,7 @@ describe("community data sources", () => {
       personalityEn: "Composed",
       raceEn: "Elf",
       deployRowEn: "Rear",
+      attackType: "physical",
     });
     expect(data.foods["ANSA宇宙食"].nameEn).toBe("ANSA Space Food");
     expect(data.foods["ロイヤルハニーガーリックサーモン"].nameEn).toBe("Royal Honey Garlic Salmon");
@@ -94,12 +97,15 @@ describe("community data sources", () => {
     expect(() => parseFoodPreferences(foodFixture.replace('alt="ANSA宇宙食"', 'alt="未知料理"'))).toThrow(
       "料理の英語名がありません",
     );
+    expect(() => parseApostleEnglishNames(apostleFixture.replace(">魔法</td>", ">未知</td>"))).toThrow(
+      "未知の攻撃タイプ",
+    );
     expect(() =>
       buildCommunityData(
         boardFixture,
         `${foodFixture}\nLast-modified: ${data.sources.food.lastModified}\n`,
         apostleFixture.replace(">Guin</td>", "></td>"),
       ),
-    ).toThrow("使徒一覧に英語名がない使徒");
+    ).toThrow("使徒一覧に英語名・攻撃タイプがない使徒");
   });
 });
