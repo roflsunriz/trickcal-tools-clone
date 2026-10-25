@@ -43,7 +43,7 @@ describe("community data sources", () => {
     expect(food.preferences["コミー（水着）"].like).toContain("アニマル缶");
     expect(characters["グウィン"].image.path).toBe("assets/community/characters/グウィン.png");
     expect(food.foods["逆鱗なでなでキャンディ"].image.path).toMatch(/assets\/community\/foods\/food-\d+\.webp/);
-    expect(apostleEnglishNames["グウィン"]).toBe("Gwynn");
+    expect(apostleEnglishNames["グウィン"]).toBe("Guin");
     expect(apostleEnglishNames["コミー（水着）"]).toBe("Kommy (Swimsuit)");
   });
 
@@ -98,7 +98,7 @@ describe("community data sources", () => {
       buildCommunityData(
         boardFixture,
         `${foodFixture}\nLast-modified: ${data.sources.food.lastModified}\n`,
-        apostleFixture.replace(">Gwynn</td>", "></td>"),
+        apostleFixture.replace(">Guin</td>", "></td>"),
       ),
     ).toThrow("使徒一覧に英語名がない使徒");
   });

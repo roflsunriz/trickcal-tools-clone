@@ -12,7 +12,7 @@
     },
     "apostles": {
       "url": "https://wikiwiki.jp/thetrickal/使徒一覧/未実装込み版",
-      "sha256": "56f64a01744e2c24e02f618df7a62b6ff93d48ade4b8b996b9539558cf75d2a8"
+      "sha256": "3c5cb8e5b97beae009633b285434b1f05313cc9bee383553a0eb8c7bdd43de83"
     }
   },
   "boardConfig": {
@@ -408,7 +408,7 @@
         "layer2": ["attack", "hp", "defense"],
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
-      "nameEn": "Gwynn"
+      "nameEn": "Guin"
     },
     "クロエ": {
       "name": "クロエ",
