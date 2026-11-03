@@ -76,8 +76,11 @@ export function App() {
               className={!legalKind && item.path === tool.path ? "tool-tab active" : "tool-tab"}
               key={item.id}
               type="button"
+              data-tool-id={item.id}
               onClick={() => navigate(item.path)}
               title={t(item.descriptionKey)}
+              aria-label={t(item.labelKey)}
+              aria-current={!legalKind && item.path === tool.path ? "page" : undefined}
             >
               <Icon size={18} />
               <span>{t(item.labelKey)}</span>
@@ -88,13 +91,20 @@ export function App() {
         <button
           className="icon-button locale-button"
           type="button"
+          data-action="locale"
           onClick={toggleLocale}
           title={t("app.locale.toggle")}
         >
           <Languages size={18} />
           <span>{locale.toUpperCase()}</span>
         </button>
-        <button className="icon-button" type="button" onClick={toggleTheme} title={t("app.theme.toggle")}>
+        <button
+          className="icon-button"
+          type="button"
+          data-action="theme"
+          onClick={toggleTheme}
+          title={t("app.theme.toggle")}
+        >
           {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </header>

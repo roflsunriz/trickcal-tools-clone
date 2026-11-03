@@ -3,6 +3,7 @@ import type {
   BoardCellType,
   BoardLayer,
   CharacterAttackType,
+  CharacterRole,
   CommunityCharacter,
   CommunityData,
   CommunityFoodImage,
@@ -31,6 +32,12 @@ const boardTypeNames: Record<string, BoardCellType> = {
 const attackTypeNames: Record<string, CharacterAttackType> = {
   物理: "physical",
   魔法: "magic",
+};
+
+const roleNames: Record<string, CharacterRole> = {
+  守備: "guard",
+  攻撃: "attacker",
+  支援: "supporter",
 };
 
 function decodeHtml(value: string) {
@@ -69,8 +76,10 @@ function characterCardSections(html: string) {
   });
 }
 
-export function parseBoardCharacters(html: string): Record<string, Omit<CommunityCharacter, "nameEn" | "attackType">> {
-  const characters: Record<string, Omit<CommunityCharacter, "nameEn" | "attackType">> = {};
+export function parseBoardCharacters(
+  html: string,
+): Record<string, Omit<CommunityCharacter, "nameEn" | "attackType" | "role">> {
+  const characters: Record<string, Omit<CommunityCharacter, "nameEn" | "attackType" | "role">> = {};
   for (const section of characterCardSections(html)) {
     const openingTag = section.match(/^<div\b[^>]*>/)?.[0] ?? "";
     const name = normalizeCharacterName(attribute(openingTag, "data-name"));
@@ -141,6 +150,7 @@ export function parseApostleEnglishNames(html: string) {
   const table = findApostleTable(html);
   const names: Record<string, string> = {};
   const attackTypes: Record<string, CharacterAttackType> = {};
+  const roles: Record<string, CharacterRole> = {};
   const rows = [...table.matchAll(/<tr\b[^>]*>[\s\S]*?<\/tr>/g)].slice(1);
   for (const [row] of rows) {
     const cells = [...row.matchAll(/<td\b[^>]*>[\s\S]*?<\/td>/g)].map(([cell]) => stripTags(cell));
@@ -151,14 +161,23 @@ export function parseApostleEnglishNames(html: string) {
     const attackTypeName = cells[8].replace(/^\d+\./, "").trim();
     const attackType = attackTypeNames[attackTypeName];
     if (!attackType) throw new Error(`${name}: 未知の攻撃タイプ「${attackTypeName}」です。`);
+    const roleName = cells[5].replace(/^\d+\./, "").trim();
+    const role = roleNames[roleName];
+    if (!role) throw new Error(`${name}: 未知の役割「${roleName}」です。`);
     if (names[name] && names[name] !== nameEn) throw new Error(`使徒「${name}」の英語名が重複しています。`);
+    if (roles[name] && roles[name] !== role) throw new Error(`使徒「${name}」の役割が矛盾しています。`);
     names[name] = nameEn;
     attackTypes[name] = attackType;
+    roles[name] = role;
   }
-  if (Object.keys(names).length < 82 || Object.keys(attackTypes).length !== Object.keys(names).length) {
-    throw new Error(`使徒一覧の英語名・攻撃タイプが${Object.keys(names).length}人分しかありません。`);
+  if (
+    Object.keys(names).length < 82 ||
+    Object.keys(attackTypes).length !== Object.keys(names).length ||
+    Object.keys(roles).length !== Object.keys(names).length
+  ) {
+    throw new Error(`使徒一覧の英語名・攻撃タイプ・役割が${Object.keys(names).length}人分しかありません。`);
   }
-  return { names, attackTypes, table };
+  return { names, attackTypes, roles, table };
 }
 
 function findFoodPreferenceTable(html: string) {
@@ -280,18 +299,19 @@ export function buildCommunityData(boardHtml: string, foodHtml: string, apostleH
   const foodSnapshot = extractFoodSnapshot(foodHtml);
   const parsedCharacters = parseBoardCharacters(boardSnapshot);
   const apostleSnapshot = extractApostleSnapshot(apostleHtml);
-  const { names: apostleEnglishNames, attackTypes } = parseApostleEnglishNames(apostleSnapshot);
+  const { names: apostleEnglishNames, attackTypes, roles } = parseApostleEnglishNames(apostleSnapshot);
   const missingEnglishNames = Object.keys(parsedCharacters).filter((name) => !apostleEnglishNames[name]);
   const missingAttackTypes = Object.keys(parsedCharacters).filter((name) => !attackTypes[name]);
-  if (missingEnglishNames.length || missingAttackTypes.length) {
+  const missingRoles = Object.keys(parsedCharacters).filter((name) => !roles[name]);
+  if (missingEnglishNames.length || missingAttackTypes.length || missingRoles.length) {
     throw new Error(
-      `使徒一覧に英語名・攻撃タイプがない使徒があります: ${[...new Set([...missingEnglishNames, ...missingAttackTypes])].join(", ")}`,
+      `使徒一覧に英語名・攻撃タイプ・役割がない使徒があります: ${[...new Set([...missingEnglishNames, ...missingAttackTypes, ...missingRoles])].join(", ")}`,
     );
   }
   const characters = Object.fromEntries(
     Object.entries(parsedCharacters).map(([name, character]) => [
       name,
-      { ...character, nameEn: apostleEnglishNames[name], attackType: attackTypes[name] },
+      { ...character, nameEn: apostleEnglishNames[name], attackType: attackTypes[name], role: roles[name] },
     ]),
   );
   const { preferences, foods } = parseFoodPreferences(foodSnapshot);
@@ -303,7 +323,7 @@ export function buildCommunityData(boardHtml: string, foodHtml: string, apostleH
   if (!modified) throw new Error("wikiの更新日時を取得できません。");
 
   return {
-    schemaVersion: 3,
+    schemaVersion: 4,
     sources: {
       board: { url: boardSourceUrl, sha256: sourceHash(boardSnapshot) },
       food: { url: foodSourceUrl, sha256: sourceHash(foodSnapshot), lastModified: modified },

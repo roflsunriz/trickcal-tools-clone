@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "sources": {
     "board": {
       "url": "https://trickcal-strategy.pages.dev/board/manager.html",
@@ -7,12 +7,12 @@
     },
     "food": {
       "url": "https://wikiwiki.jp/thetrickal/宴会場",
-      "sha256": "5c3dcdf75094eca94ba5fb98626e52ca3a559f8c7017401f68b82b857a600a49",
+      "sha256": "af36059802ee79ed8aa80a33e49839974bab58848ac972c8c8b29de74419d902",
       "lastModified": "2026-10-20 (火) 11:00:00"
     },
     "apostles": {
       "url": "https://wikiwiki.jp/thetrickal/使徒一覧/未実装込み版",
-      "sha256": "3c5cb8e5b97beae009633b285434b1f05313cc9bee383553a0eb8c7bdd43de83"
+      "sha256": "376a255aaa6ed637678b0f42f300d2a4900a758ef779239dc90d19c8b7829e3a"
     }
   },
   "boardConfig": {
@@ -48,7 +48,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Amelia",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "supporter"
     },
     "アヤ": {
       "name": "アヤ",
@@ -68,7 +69,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Aya",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "アリス": {
       "name": "アリス",
@@ -88,7 +90,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Alice",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "アレット": {
       "name": "アレット",
@@ -108,7 +111,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Allet",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "イード": {
       "name": "イード",
@@ -128,7 +132,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Ed",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "guard"
     },
     "イフリート": {
       "name": "イフリート",
@@ -148,7 +153,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Ifrit",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "ウイ": {
       "name": "ウイ",
@@ -168,7 +174,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Ui",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "ヴィヴィ": {
       "name": "ヴィヴィ",
@@ -188,7 +195,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Vivi",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "guard"
     },
     "エシュール": {
       "name": "エシュール",
@@ -208,7 +216,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Ashur",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "エスピー": {
       "name": "エスピー",
@@ -228,7 +237,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Espi",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "エピカ": {
       "name": "エピカ",
@@ -248,7 +258,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Epica",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "エルフィン": {
       "name": "エルフィン",
@@ -268,7 +279,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Erpin",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "エレナ": {
       "name": "エレナ",
@@ -288,7 +300,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Elena",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ガヴィア": {
       "name": "ガヴィア",
@@ -308,7 +321,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Gabia",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "カレン": {
       "name": "カレン",
@@ -328,7 +342,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Carren",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "カンナ": {
       "name": "カンナ",
@@ -348,7 +363,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Canna",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ギデオン": {
       "name": "ギデオン",
@@ -368,7 +384,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Kidian",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "キャロット": {
       "name": "キャロット",
@@ -388,7 +405,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Kyarot",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "キュウイ": {
       "name": "キュウイ",
@@ -408,7 +426,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Kyuri",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "グウィン": {
       "name": "グウィン",
@@ -428,7 +447,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Guin",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "クロエ": {
       "name": "クロエ",
@@ -448,7 +468,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Chloe",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "guard"
     },
     "コミー": {
       "name": "コミー",
@@ -468,7 +489,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Kommy",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "コミー（水着）": {
       "name": "コミー（水着）",
@@ -488,7 +510,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Kommy (Swimsuit)",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "サリー": {
       "name": "サリー",
@@ -508,7 +531,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Sari",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "シーラ": {
       "name": "シーラ",
@@ -528,7 +552,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Sylla",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "シェイディ": {
       "name": "シェイディ",
@@ -548,7 +573,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Shaydi",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ジェイド": {
       "name": "ジェイド",
@@ -568,7 +594,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Jade",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "シェルム": {
       "name": "シェルム",
@@ -588,7 +615,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Sherum",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "シオン・ザ・DB": {
       "name": "シオン・ザ・DB",
@@ -608,7 +636,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "xXionx",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "シスト": {
       "name": "シスト",
@@ -628,7 +657,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Sist",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "シュパン": {
       "name": "シュパン",
@@ -648,7 +678,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Shoupan",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "ジュビー": {
       "name": "ジュビー",
@@ -668,7 +699,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Jubee",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ジョアン": {
       "name": "ジョアン",
@@ -688,7 +720,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Joanne",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "supporter"
     },
     "シルフィール": {
       "name": "シルフィール",
@@ -708,7 +741,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Silphir",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "スノキー": {
       "name": "スノキー",
@@ -728,7 +762,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Snorky",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "スピッキー": {
       "name": "スピッキー",
@@ -748,7 +783,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Speaki",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "セリーネ": {
       "name": "セリーネ",
@@ -768,7 +804,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Selene",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "guard"
     },
     "ダーヤ": {
       "name": "ダーヤ",
@@ -788,7 +825,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Daya",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "タイダー": {
       "name": "タイダー",
@@ -808,7 +846,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Taida",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "チョッピー": {
       "name": "チョッピー",
@@ -828,7 +867,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Chopi",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ディアナ": {
       "name": "ディアナ",
@@ -848,7 +888,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Diana",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "ティグ": {
       "name": "ティグ",
@@ -868,7 +909,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Tig",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ナイア": {
       "name": "ナイア",
@@ -888,7 +930,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Naia",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "ネル": {
       "name": "ネル",
@@ -908,7 +951,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Ner",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "バター": {
       "name": "バター",
@@ -928,7 +972,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Butter",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "パトラ": {
       "name": "パトラ",
@@ -948,7 +993,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Patula",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "バリエ": {
       "name": "バリエ",
@@ -968,7 +1014,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Barie",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "バロン": {
       "name": "バロン",
@@ -988,7 +1035,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Barong",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "ピコラ": {
       "name": "ピコラ",
@@ -1008,7 +1056,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Picora",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "ビッグウッド": {
       "name": "ビッグウッド",
@@ -1028,7 +1077,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "BigWood",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "ピラ": {
       "name": "ピラ",
@@ -1048,7 +1098,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Pira",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "supporter"
     },
     "ヒルデ": {
       "name": "ヒルデ",
@@ -1068,7 +1119,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Hilde",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "フェスタ": {
       "name": "フェスタ",
@@ -1088,7 +1140,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Festa",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "supporter"
     },
     "ブランセ": {
       "name": "ブランセ",
@@ -1108,7 +1161,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Blanchet",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "フリックル": {
       "name": "フリックル",
@@ -1128,7 +1182,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Fricle",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "ヘイリー": {
       "name": "ヘイリー",
@@ -1148,7 +1203,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Haley",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ベニー": {
       "name": "ベニー",
@@ -1168,7 +1224,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Beni",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ベリータ": {
       "name": "ベリータ",
@@ -1188,7 +1245,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Belita",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "ベル": {
       "name": "ベル",
@@ -1208,7 +1266,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Veroo",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ベルベット": {
       "name": "ベルベット",
@@ -1228,7 +1287,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Velvet",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "ポーシャー": {
       "name": "ポーシャー",
@@ -1248,7 +1308,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Posher",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "マーゴ": {
       "name": "マーゴ",
@@ -1268,7 +1329,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Mago",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "マエストロMK2": {
       "name": "マエストロMK2",
@@ -1288,7 +1350,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "MaestroMK2",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "マヨ": {
       "name": "マヨ",
@@ -1308,7 +1371,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Mayo",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "マリー": {
       "name": "マリー",
@@ -1328,7 +1392,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Marie",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ミンス": {
       "name": "ミンス",
@@ -1348,7 +1413,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Mynx",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "メゾン": {
       "name": "メゾン",
@@ -1368,7 +1434,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Maison",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "メロナ": {
       "name": "メロナ",
@@ -1388,7 +1455,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Meluna",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "モモ": {
       "name": "モモ",
@@ -1408,7 +1476,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Momo",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     },
     "ユミミ": {
       "name": "ユミミ",
@@ -1428,7 +1497,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Yumimi",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ヨミ": {
       "name": "ヨミ",
@@ -1448,7 +1518,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Yomi",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "supporter"
     },
     "リスティ": {
       "name": "リスティ",
@@ -1468,7 +1539,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Risty",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "リッツ": {
       "name": "リッツ",
@@ -1488,7 +1560,8 @@
         "layer3": ["attack", "crit", "defense", "critResist"]
       },
       "nameEn": "Leets",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "リニュア": {
       "name": "リニュア",
@@ -1508,7 +1581,8 @@
         "layer3": ["attack", "crit", "hp", "critResist"]
       },
       "nameEn": "Renewa",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "リム": {
       "name": "リム",
@@ -1528,7 +1602,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Rim",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ルード": {
       "name": "ルード",
@@ -1548,7 +1623,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Rudd",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "ルポ": {
       "name": "ルポ",
@@ -1568,7 +1644,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Rufo",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "レイジー": {
       "name": "レイジー",
@@ -1588,7 +1665,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Layze",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "レヴィ": {
       "name": "レヴィ",
@@ -1608,7 +1686,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Levi",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "レーテー": {
       "name": "レーテー",
@@ -1628,7 +1707,8 @@
         "layer3": ["crit", "hp", "defense", "critResist"]
       },
       "nameEn": "Lethe",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "attacker"
     },
     "ローネ": {
       "name": "ローネ",
@@ -1648,7 +1728,8 @@
         "layer3": ["attack", "crit", "hp", "defense"]
       },
       "nameEn": "Rohne",
-      "attackType": "physical"
+      "attackType": "physical",
+      "role": "guard"
     },
     "ロレット": {
       "name": "ロレット",
@@ -1668,7 +1749,8 @@
         "layer3": ["attack", "hp", "defense", "critResist"]
       },
       "nameEn": "Rollett",
-      "attackType": "magic"
+      "attackType": "magic",
+      "role": "attacker"
     }
   },
   "foods": {
@@ -1677,7 +1759,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -101
       }
@@ -1687,7 +1769,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -51
       }
@@ -1697,7 +1779,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -51
       }
@@ -1707,7 +1789,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -101
       }
@@ -1717,7 +1799,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -151
       }
@@ -1727,7 +1809,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -151
       }
@@ -1737,7 +1819,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -151
       }
@@ -1747,7 +1829,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -1
       }
@@ -1757,7 +1839,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -151
       }
@@ -1767,7 +1849,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -101
       }
@@ -1777,7 +1859,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -101
       }
@@ -1787,7 +1869,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -101
       }
@@ -1797,7 +1879,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -1
       }
@@ -1807,7 +1889,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -1
       }
@@ -1817,7 +1899,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -151
       }
@@ -1827,7 +1909,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -151
       }
@@ -1837,7 +1919,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -101
       }
@@ -1847,7 +1929,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -101
       }
@@ -1857,7 +1939,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -51
       }
@@ -1867,7 +1949,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -51
       }
@@ -1877,7 +1959,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -1
       }
@@ -1887,7 +1969,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -51
       }
@@ -1897,7 +1979,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -51
       }
@@ -1907,7 +1989,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -51
       }
@@ -1917,7 +1999,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -1
       }
@@ -1927,7 +2009,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -151
       }
@@ -1937,7 +2019,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -151
       }
@@ -1947,7 +2029,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -1
       }
@@ -1957,7 +2039,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -51
       }
@@ -1967,7 +2049,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -51
       }
@@ -1977,7 +2059,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -51
       }
@@ -1987,7 +2069,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -51
       }
@@ -1997,7 +2079,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -1
       }
@@ -2007,7 +2089,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -51
       }
@@ -2017,7 +2099,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -51
       }
@@ -2027,7 +2109,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -51
       }
@@ -2037,7 +2119,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -101
       }
@@ -2047,7 +2129,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -101
       }
@@ -2057,7 +2139,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-4.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -51
       }
@@ -2067,7 +2149,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-4.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -51
       }
@@ -2077,7 +2159,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-4.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -1
       }
@@ -2087,7 +2169,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-4.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -1
       }
@@ -2097,7 +2179,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -151
       }
@@ -2107,7 +2189,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -151
       }
@@ -2117,7 +2199,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -101
       }
@@ -2127,7 +2209,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -101
       }
@@ -2137,7 +2219,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -1
       }
@@ -2147,7 +2229,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-0.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:0?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -1
       }
@@ -2157,7 +2239,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -1
       }
@@ -2167,7 +2249,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -1
       }
@@ -2177,7 +2259,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-4.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -1
       }
@@ -2187,7 +2269,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-4.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:4?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -1
       }
@@ -2197,7 +2279,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -1,
         "top": -151
       }
@@ -2207,7 +2289,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -151
       }
@@ -2217,7 +2299,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -1
       }
@@ -2227,7 +2309,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-2.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:2?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -1
       }
@@ -2237,7 +2319,7 @@
       "rarity": "common",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -101,
         "top": -1
       }
@@ -2247,7 +2329,7 @@
       "rarity": "uncommon",
       "image": {
         "path": "assets/community/foods/food-1.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:1?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -1
       }
@@ -2257,7 +2339,7 @@
       "rarity": "rare",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -151,
         "top": -51
       }
@@ -2267,7 +2349,7 @@
       "rarity": "legendary",
       "image": {
         "path": "assets/community/foods/food-3.webp",
-        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=2e891ce58659b31aa10add8754d9cf50",
+        "sourceUrl": "https://cdn.wikiwiki.jp/to/w/thetrickal/::icon/48:3?rev=85f25f6bd843150f00d0f2b064f0bd5f",
         "left": -51,
         "top": -101
       }

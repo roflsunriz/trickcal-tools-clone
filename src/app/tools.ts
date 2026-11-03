@@ -1,10 +1,11 @@
-import { ChevronsUp, Paintbrush, Search, Utensils } from "lucide-react";
+import { ChevronsUp, Paintbrush, Search, Sparkles, Utensils } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import type { MessageKey } from "../i18n";
 import { BoardTool } from "../tools/community/BoardTool";
 import { FoodTool } from "../tools/community/FoodTool";
 import { RankUpTool } from "../tools/rank-up/RankUpTool";
+import { SkillUpTool } from "../tools/skill-up/SkillUpTool";
 import { SweepTool } from "../tools/sweep/SweepTool";
 
 export type ToolDefinition = {
@@ -32,6 +33,14 @@ export const tools: ToolDefinition[] = [
     descriptionKey: "tool.rankUp.description",
     Icon: ChevronsUp,
     Component: RankUpTool,
+  },
+  {
+    id: "skill-up",
+    path: "/skill-up",
+    labelKey: "tool.skillUp.label",
+    descriptionKey: "tool.skillUp.description",
+    Icon: Sparkles,
+    Component: SkillUpTool,
   },
   {
     id: "board",

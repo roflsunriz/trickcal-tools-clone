@@ -31,6 +31,7 @@ describe("community data sources", () => {
     expect(Object.keys(food.foods)).toHaveLength(60);
     expect(Object.keys(apostles.names).length).toBeGreaterThanOrEqual(82);
     expect(Object.keys(apostles.attackTypes)).toHaveLength(Object.keys(apostles.names).length);
+    expect(Object.keys(apostles.roles)).toHaveLength(Object.keys(apostles.names).length);
   });
 
   it("includes apostles added after the cloned source data", () => {
@@ -73,6 +74,7 @@ describe("community data sources", () => {
       expect(character.raceEn).not.toBe("");
       expect(character.deployRowEn).not.toBe("");
       expect(["physical", "magic"]).toContain(character.attackType);
+      expect(["guard", "attacker", "supporter"]).toContain(character.role);
     }
     for (const food of Object.values(data.foods)) expect(food.nameEn).not.toBe("");
     expect(data.characters["アメリア"]).toMatchObject({
@@ -84,6 +86,16 @@ describe("community data sources", () => {
     });
     expect(data.foods["ANSA宇宙食"].nameEn).toBe("ANSA Space Food");
     expect(data.foods["ロイヤルハニーガーリックサーモン"].nameEn).toBe("Royal Honey Garlic Salmon");
+  });
+
+  it("assigns every included apostle a role from the wiki", () => {
+    const counts = { guard: 0, attacker: 0, supporter: 0 };
+    for (const character of Object.values(data.characters)) {
+      const role = character.role as keyof typeof counts;
+      expect(role in counts).toBe(true);
+      counts[role] += 1;
+    }
+    expect(counts).toEqual({ guard: 12, attacker: 47, supporter: 23 });
   });
 
   it("rejects missing board cells and truncated food tables", () => {
@@ -100,12 +112,13 @@ describe("community data sources", () => {
     expect(() => parseApostleEnglishNames(apostleFixture.replace(">魔法</td>", ">未知</td>"))).toThrow(
       "未知の攻撃タイプ",
     );
+    expect(() => parseApostleEnglishNames(apostleFixture.replace(">守備</td>", ">未知</td>"))).toThrow("未知の役割");
     expect(() =>
       buildCommunityData(
         boardFixture,
         `${foodFixture}\nLast-modified: ${data.sources.food.lastModified}\n`,
         apostleFixture.replace(">Guin</td>", "></td>"),
       ),
-    ).toThrow("使徒一覧に英語名・攻撃タイプがない使徒");
+    ).toThrow("使徒一覧に英語名・攻撃タイプ・役割がない使徒");
   });
 });

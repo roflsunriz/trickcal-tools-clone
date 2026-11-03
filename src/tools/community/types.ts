@@ -13,6 +13,7 @@ export type BoardLayer = "layer1" | "layer2" | "layer3";
 export type FoodRarity = "common" | "uncommon" | "rare" | "legendary";
 export type PersonalityTone = (typeof personalityTones)[keyof typeof personalityTones] | "neutral";
 export type CharacterAttackType = "physical" | "magic";
+export type CharacterRole = "guard" | "attacker" | "supporter";
 
 export function getPersonalityTone(personality: string): PersonalityTone {
   return personalityTones[personality as keyof typeof personalityTones] ?? "neutral";
@@ -28,6 +29,7 @@ export type CommunityCharacter = {
   deployRow: string;
   deployRowEn: string;
   attackType: CharacterAttackType;
+  role: CharacterRole;
   image: {
     path: string;
     sourceUrl: string;
@@ -49,7 +51,7 @@ export type FoodPreference = {
 };
 
 export type CommunityData = {
-  schemaVersion: 3;
+  schemaVersion: 4;
   sources: {
     board: { url: string; sha256: string };
     food: { url: string; sha256: string; lastModified: string };

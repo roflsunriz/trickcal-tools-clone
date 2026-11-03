@@ -1,0 +1,272 @@
+.skill-up-root {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-up-settings,
+.skill-up-breakdown,
+.skill-up-all {
+  padding: clamp(14px, 2.5vw, 24px);
+}
+
+.skill-up-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(135px, 0.65fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.skill-up-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.skill-up-label {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.skill-kind-switch,
+.skill-quick-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-up-field select {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: var(--panel-strong);
+  font: inherit;
+}
+
+.skill-up-results {
+  margin-top: 22px;
+}
+
+.skill-up-results h2,
+.skill-up-breakdown h2,
+.skill-up-all h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.skill-up-results > p,
+.skill-up-breakdown > p,
+.skill-up-all > p {
+  margin: 6px 0 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.skill-up-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.skill-up-summary-card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-strong);
+}
+
+.skill-up-summary-card dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.skill-up-all-summary .skill-up-summary-card dt {
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
+.skill-up-summary-card dd {
+  margin: 6px 0 0;
+  color: var(--accent);
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.skill-up-all-summary .skill-up-summary-card dd {
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+}
+
+.skill-up-notes {
+  display: grid;
+  gap: 6px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.skill-up-notes p {
+  margin: 0;
+}
+
+.skill-up-notes a {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.skill-up-breakdown,
+.skill-up-all {
+  margin-top: 18px;
+}
+
+.skill-up-breakdown table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-up-breakdown th,
+.skill-up-breakdown td {
+  padding: 9px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+
+.skill-up-breakdown th:first-child {
+  width: 18%;
+  text-align: left;
+}
+
+.skill-up-breakdown th:last-child {
+  width: 28%;
+}
+
+.skill-up-breakdown thead th {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.skill-up-breakdown tbody th {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.skill-up-all h3 {
+  margin: 20px 0 10px;
+  font-size: 1rem;
+}
+
+.skill-up-role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.skill-up-role-card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-strong);
+}
+
+.skill-up-role-card h4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 8px;
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.skill-up-role-card h4 span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.skill-up-role-card dl {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+}
+
+.skill-up-role-card dl > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.skill-up-role-card dt {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.skill-up-role-card dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.skill-up-roster-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+@media (max-width: 850px) {
+  .skill-up-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skill-up-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .skill-up-role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .skill-up-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-kind-switch .segment,
+  .skill-quick-buttons .quick-rank-button {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+
+  .skill-up-breakdown th,
+  .skill-up-breakdown td {
+    padding: 8px 3px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .skill-up-all-summary .skill-up-summary-card:last-child {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,9 +1,10 @@
 # Trickcal Tools Clone
 
-トリッカルの周回計画、Rank 1から9までの一括育成、クレヨンボード、食べ物の好みをまとめて確認できる非公式ツール集です。日本語・英語に対応しています。
+トリッカルの周回計画、Rank 1から9までの一括育成、スキル育成、クレヨンボード、食べ物の好みをまとめて確認できる非公式ツール集です。日本語・英語に対応しています。
 
 - [周回ツールを開く](https://roflsunriz.github.io/trickcal-tools-clone/sweep/)
 - [ランク一括育成を開く](https://roflsunriz.github.io/trickcal-tools-clone/rank-up/)
+- [スキル育成を開く](https://roflsunriz.github.io/trickcal-tools-clone/skill-up/)
 - [クレヨンボードを開く](https://roflsunriz.github.io/trickcal-tools-clone/board/)
 - [食べ物の好みを開く](https://roflsunriz.github.io/trickcal-tools-clone/food/)
 - [攻略資料・文字起こしを開く](https://roflsunriz.github.io/trickcal-data/)
@@ -26,6 +27,12 @@ Rank 2への昇格に使うRank 1装備は高ランク周回の副産物で集�
 同じページで、世界樹聖画レベル1〜30、供物量研究0〜12段階、自然回復、定時メール、デイリーショップ、サブスク、エリーフ購入0〜10回を選び、1日あたりのキャンディ内訳と育成日数を計算できます。4つの日次入手条件は横並びのチェックボックスで切り替えられます。全使徒は収録中の82使徒をwikiの攻撃タイプに従って物理44・魔法38に分けて合算します。
 
 日数は所持素材0、75%ドロップ目安、キャンディを装備周回だけに使用し、自然回復を溢れさせず、供物を蓄積上限前に回収する理論値です。イベントや教主レベルアップなどの不定期入手は含みません。サブスクは即時300、毎日120、31日目200の合計4,220を31日平均へ換算します。
+
+### スキル育成
+
+低学年・高学年スキルかパッシブスキルを選び、目標レベル2〜15までの必要マシュマロとゴールドを確認できます。Lv.7・Lv.12へはそれぞれクイック設定ボタンで切り替えられます。合計は1つのスキルをLv.1から育てる場合の費用で、各レベルへ上げる費用も併記します。Lv.13〜15には対応するアサイドの解放が必要で、その育成費用は含みません。
+
+収録中の全82使徒について、低学年・高学年・パッシブの3スキルをそれぞれLv.1から12にする場合の合計と、ガード12人・アタッカー47人・サポーター23人の役割別内訳も表示します。マシュマロの全体合計は役割別の種類を合わせた数で、所持分は差し引きません。
 
 ### クレヨンボード
 
@@ -63,13 +70,13 @@ Google OAuthのBrandingには、同一ドメインで公開したホームペー
 
 ## データの出典
 
-ワールド3以降の設計図・欠片と必要数・最小キャンディは、[トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)を使用しています。周回回数の目安とキャンディの自然回復・定時配布・デイリーショップ・エリーフ購入は[「キャラクター育成」](https://wikiwiki.jp/thetrickal/キャラクター育成)、供物は[「教団本部」](https://wikiwiki.jp/thetrickal/教団本部)、サブスクは[「プレミアムショップ」](https://wikiwiki.jp/thetrickal/プレミアムショップ)を使用します。クレヨン情報は[トリッカル攻略ポータルの使徒・ボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、料理の好みは[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)の「好物早見表」、使徒の英語名と攻撃タイプは[トリッカルwiki「使徒一覧」](https://wikiwiki.jp/thetrickal/使徒一覧)を使用しています。取得した該当部分と更新元のハッシュをリポジトリに保存します。
+ワールド3以降の設計図・欠片と必要数・最小キャンディは、[トリッカルwiki「装備設計図」](https://wikiwiki.jp/thetrickal/装備設計図)を使用しています。スキル強化の各レベルの費用、周回回数の目安とキャンディの自然回復・定時配布・デイリーショップ・エリーフ購入は[「キャラクター育成」](https://wikiwiki.jp/thetrickal/キャラクター育成)、供物は[「教団本部」](https://wikiwiki.jp/thetrickal/教団本部)、サブスクは[「プレミアムショップ」](https://wikiwiki.jp/thetrickal/プレミアムショップ)を使用します。クレヨン情報は[トリッカル攻略ポータルの使徒・ボードマネージャー](https://trickcal-strategy.pages.dev/board/manager.html)、料理の好みは[トリッカルwiki「宴会場」](https://wikiwiki.jp/thetrickal/宴会場)の「好物早見表」、使徒の英語名と攻撃タイプは[トリッカルwiki「使徒一覧」](https://wikiwiki.jp/thetrickal/使徒一覧)を使用しています。自動更新対象の出典表とハッシュはリポジトリに保存し、スキル強化の費用は出典と手動で照合します。
 
 データと画像はローカルに同梱しています。通常利用時に情報源への接続は発生しません。収録情報と画像の一括更新方法は[更新手順](how-to-update.md)を参照してください。
 
 ## English
 
-Open the [sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/), [Rank-up Planner](https://roflsunriz.github.io/trickcal-tools-clone/rank-up/), [Crayon Board](https://roflsunriz.github.io/trickcal-tools-clone/board/), or [Food Preferences](https://roflsunriz.github.io/trickcal-tools-clone/food/), then switch the language to English. Apostle names, personalities, races, rows, and food names are localized; searches accept both Japanese and English names. The generated data and images are bundled locally. Once the deployment is configured with a Google OAuth Web Client ID, the header sign-in button syncs tool settings to the user's private Drive `appDataFolder`.
+Open the [sweep planner](https://roflsunriz.github.io/trickcal-tools-clone/sweep/), [Rank-up Planner](https://roflsunriz.github.io/trickcal-tools-clone/rank-up/), [Skill Planner](https://roflsunriz.github.io/trickcal-tools-clone/skill-up/), [Crayon Board](https://roflsunriz.github.io/trickcal-tools-clone/board/), or [Food Preferences](https://roflsunriz.github.io/trickcal-tools-clone/food/), then switch the language to English. The Skill Planner shows the cost of one skill from level 1 to a target from 2 through 15, with separate skill types and level 7 and 12 shortcuts. It also totals the costs of all three skills up to level 12 for every included apostle, including a breakdown by role. Apostle names, personalities, races, rows, and food names are localized; searches accept both Japanese and English names. Data and images are bundled locally. Once the deployment is configured with a Google OAuth Web Client ID, the header sign-in button syncs supported tool settings to the user's private Drive `appDataFolder`.
 
 ## 関連文書
 
