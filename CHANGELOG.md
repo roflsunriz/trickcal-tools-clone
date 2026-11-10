@@ -6,6 +6,11 @@ Keep a Changelogに従い、公開前の変更はUnreleasedに集約します。
 
 ## [Unreleased]
 
+### Fixed
+
+- READMEでfindings.mdへの案内に置き換わっていた本文を復元し、構成・開発・検証の説明をREADMEから直接読めるようにした。移動後のREADME更新は保持した。
+
+
 ### Security
 
 - 公開前監査で検出されたメモリ枯渇の脆弱性を解消するため、ESLint経由の間接依存Zodを4.6.6へ更新した。
