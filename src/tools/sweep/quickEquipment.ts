@@ -85,9 +85,18 @@ export const equipmentByRank: Record<number, EquipmentSet> = {
     sparkling: "material-090",
     brilliant: "material-091",
   },
+  10: {
+    physical: "material-092",
+    magic: "material-093",
+    armor: "material-094",
+    hat: "material-095",
+    boots: "material-096",
+    sparkling: "material-097",
+    brilliant: "material-098",
+  },
 };
 
-export const quickRanks = [2, 3, 4, 5, 6, 7, 8, 9];
+export const quickRanks = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const requiredEquipmentRankMap: Record<number, number[]> = {
   2: [1, 2],
@@ -98,6 +107,7 @@ export const requiredEquipmentRankMap: Record<number, number[]> = {
   7: [7],
   8: [7, 8],
   9: [8, 9],
+  10: [10],
 };
 
 export const requiredMaterialCountByTargetRank: Record<number, Record<number, number>> = {
@@ -109,6 +119,7 @@ export const requiredMaterialCountByTargetRank: Record<number, Record<number, nu
   7: { 7: 42 },
   8: { 7: 18, 8: 46 },
   9: { 8: 20, 9: 52 },
+  10: { 10: 64 },
 };
 
 export function requiredEquipmentRanks(rank: number) {

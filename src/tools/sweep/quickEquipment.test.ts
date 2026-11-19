@@ -21,6 +21,7 @@ describe("quick equipment selection", () => {
     expect(requiredEquipmentRanks(7)).toEqual([7]);
     expect(requiredEquipmentRanks(8)).toEqual([7, 8]);
     expect(requiredEquipmentRanks(9)).toEqual([8, 9]);
+    expect(requiredEquipmentRanks(10)).toEqual([10]);
   });
 
   it("selects rank 1 materials plus rank 2 equipment for rank 2", () => {
@@ -64,5 +65,16 @@ describe("quick equipment selection", () => {
     expect(selected).toHaveLength(6);
     expect(selected.every((material) => sweepData[material].rank === 4)).toBe(true);
     expect(selected).toContain("material-051");
+  });
+
+  it("selects six Rank 10 shards at 64 each without earlier-rank materials", () => {
+    for (const weapon of ["physical", "magic"] as const) {
+      const requirements = buildEquipmentRequirements(10, weapon, sweepData);
+      expect(Object.keys(requirements)).toHaveLength(6);
+      expect(Object.keys(requirements).every((id) => sweepData[id].rank === 10)).toBe(true);
+      expect(Object.values(requirements)).toEqual([64, 64, 64, 64, 64, 64]);
+      expect(requirements[weapon === "physical" ? "material-092" : "material-093"]).toBe(64);
+      expect(getDefaultMaterialCount(10)).toBe(64);
+    }
   });
 });

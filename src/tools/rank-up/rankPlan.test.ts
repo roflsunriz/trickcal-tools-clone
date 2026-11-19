@@ -5,8 +5,8 @@ import { buildRankUpRequirements, createRankUpPlan } from "./rankPlan";
 
 const data = rawData as SweepData;
 
-describe("Rank 1 to Rank 9 planner", () => {
-  it("accumulates Rank 3 through Rank 9 recipes and excludes Rank 1 gear", () => {
+describe("Rank 1 to Rank 10 planner", () => {
+  it("accumulates Rank 3 through Rank 10 recipes and excludes Rank 1 gear", () => {
     const requirements = buildRankUpRequirements("physical", data);
 
     expect([...requirements].some(([material]) => data[material].rank === 1)).toBe(false);
@@ -18,6 +18,7 @@ describe("Rank 1 to Rank 9 planner", () => {
     expect(requirements.get("material-071")).toBe(60);
     expect(requirements.get("material-078")).toBe(66);
     expect(requirements.get("material-085")).toBe(52);
+    expect(requirements.get("material-092")).toBe(64);
   });
 
   it("switches only the weapon requirements between physical and magic", () => {
@@ -31,19 +32,19 @@ describe("Rank 1 to Rank 9 planner", () => {
     expect(physical.get("material-087")).toBe(magic.get("material-087"));
 
     const magicPlan = createRankUpPlan("magic", data);
-    expect(magicPlan.totalMinimumRuns).toBe(984);
-    expect(magicPlan.totalRecommendedRuns).toBe(1317);
-    expect(magicPlan.totalRecommendedStamina).toBe(13_170);
+    expect(magicPlan.totalMinimumRuns).toBe(1368);
+    expect(magicPlan.totalRecommendedRuns).toBe(1833);
+    expect(magicPlan.totalRecommendedStamina).toBe(18_330);
   });
 
   it("creates a complete plan using paired drops and the wiki drop-rate estimate", () => {
     const plan = createRankUpPlan("physical", data);
 
-    expect(plan.requirements).toHaveLength(48);
-    expect(plan.stages).toHaveLength(27);
-    expect(plan.totalMinimumRuns).toBe(975);
-    expect(plan.totalRecommendedRuns).toBe(1305);
-    expect(plan.totalRecommendedStamina).toBe(13_050);
+    expect(plan.requirements).toHaveLength(54);
+    expect(plan.stages).toHaveLength(33);
+    expect(plan.totalMinimumRuns).toBe(1359);
+    expect(plan.totalRecommendedRuns).toBe(1821);
+    expect(plan.totalRecommendedStamina).toBe(18_210);
 
     for (const [material, quantity] of plan.requirements) {
       const plannedQuantity = plan.stages
@@ -60,5 +61,33 @@ describe("Rank 1 to Rank 9 planner", () => {
       .sort();
 
     expect(rankNineStages).toEqual(["32-5", "32-8", "32-9"]);
+  });
+
+  it("covers all six Rank 10 shards on the new worlds for both weapons", () => {
+    for (const weapon of ["physical", "magic"] as const) {
+      const plan = createRankUpPlan(weapon, data);
+      const stages = plan.stages.filter((stage) => stage.rank === 10);
+      expect(stages).toHaveLength(6);
+      expect(stages.every((stage) => /^3[34]-/.test(stage.stage))).toBe(true);
+      expect(
+        stages.every(
+          (stage) =>
+            stage.minimumRuns === 64 &&
+            stage.recommendedRuns === 86 &&
+            stage.optimisticRuns === 80 &&
+            stage.conservativeRuns === 92,
+        ),
+      ).toBe(true);
+      const materials = stages.flatMap((stage) => stage.materials);
+      expect(materials).toContain(weapon === "physical" ? "material-092" : "material-093");
+      expect(materials).not.toContain(weapon === "physical" ? "material-093" : "material-092");
+      for (const [id, required] of plan.requirements) {
+        expect(
+          plan.stages
+            .filter((stage) => stage.materials.includes(id))
+            .reduce((total, stage) => total + stage.minimumRuns, 0),
+        ).toBeGreaterThanOrEqual(required);
+      }
+    }
   });
 });

@@ -94,6 +94,13 @@ const materialNames: Record<Locale, Record<MaterialId, string>> = {
     "material-089": "靴の欠片（9段階）",
     "material-090": "きらめく装飾品の欠片（9段階）",
     "material-091": "鮮やかな装飾品の欠片（9段階）",
+    "material-092": "物理武器の欠片（10段階）",
+    "material-093": "魔法武器の欠片（10段階）",
+    "material-094": "鎧の欠片（10段階）",
+    "material-095": "帽子の欠片（10段階）",
+    "material-096": "靴の欠片（10段階）",
+    "material-097": "きらめく装飾品の欠片（10段階）",
+    "material-098": "鮮やかな装飾品の欠片（10段階）",
   },
   en: {
     "material-001": "Loose-neck T-shirt",
@@ -187,6 +194,13 @@ const materialNames: Record<Locale, Record<MaterialId, string>> = {
     "material-089": "Boots Fragment (Tier 9)",
     "material-090": "Sparkling Accessory Fragment (Tier 9)",
     "material-091": "Brilliant Accessory Fragment (Tier 9)",
+    "material-092": "Physical Weapon Fragment (Tier 10)",
+    "material-093": "Magic Weapon Fragment (Tier 10)",
+    "material-094": "Armor Fragment (Tier 10)",
+    "material-095": "Hat Fragment (Tier 10)",
+    "material-096": "Boots Fragment (Tier 10)",
+    "material-097": "Sparkling Accessory Fragment (Tier 10)",
+    "material-098": "Brilliant Accessory Fragment (Tier 10)",
   },
 };
 
@@ -203,5 +217,6 @@ export function getMaterialAssetSlug(material: MaterialId) {
 
 export function getMaterialImagePath(material: MaterialId, rank: number) {
   const basePath = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-  return `${basePath}assets/gears/rank-${rank}/${getMaterialAssetSlug(material)}.webp`;
+  const extension = rank === 10 ? "png" : "webp";
+  return `${basePath}assets/gears/rank-${rank}/${getMaterialAssetSlug(material)}.${extension}`;
 }

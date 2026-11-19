@@ -97,4 +97,18 @@ describe("sweep storage repair", () => {
     expect(restored.selectedQuickRank).toBeNull();
     expect(JSON.parse(localStorage.getItem(sweepStorageKey) ?? "{}").schemaVersion).toBe(3);
   });
+
+  it("restores Rank 10 material quantities, filter, and quick selection", () => {
+    writeSweepStorageState({
+      selectedQuantities: new Map([["material-093", 64]]),
+      selectedRanks: new Set([10]),
+      weaponType: "magic",
+      selectedQuickRank: 10,
+    });
+    const restored = readSweepStorageState(sweepData, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    expect(Object.fromEntries(restored.selectedQuantities)).toEqual({ "material-093": 64 });
+    expect([...restored.selectedRanks]).toEqual([10]);
+    expect(restored.selectedQuickRank).toBe(10);
+    expect(restored.weaponType).toBe("magic");
+  });
 });

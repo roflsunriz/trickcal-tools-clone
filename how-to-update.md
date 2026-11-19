@@ -35,7 +35,9 @@ git diff -- src/tools/sweep/data.json src/tools/community/data.json scripts/fixt
 
 ### 装備ドロップ
 
-更新コマンドは「素材ドロップ場所一覧」を取得し、主な設計図と副産物の両方を既存の素材IDに対応させます。ワールド3以降にあるランク2以上の収録情報を置き換え、ランク1素材とワールド1・2は保持します。取得した表と出典ページの更新日時は `scripts/fixtures/wiki-equipment-drops.html` に保存します。画像や素材IDの変更は発生しません。
+更新コマンドは「素材ドロップ場所一覧」を取得し、主な設計図と副産物の両方を既存の素材IDに対応させます。ワールド3以降にあるランク2以上の収録情報を置き換え、ランク1素材とワールド1・2は保持します。取得した表と出典ページの更新日時は `scripts/fixtures/wiki-equipment-drops.html` に保存します。既存の素材IDは保持します。ランク10は以下の補完元から画像も照合・更新します。
+
+2026-11-20確認時点で装備wikiはワールド32・ランク9までのため、ワールド33・34とランク10は[グローバル版Trickcal Wiki](https://wiki.cheeky.tsuncloud.com/global/stages/133)の公開データを補完元にします。`data:update:sweep` は同サイトのchapter 133・134の通常難易度・通常ドロップと、Aya・ButterのRank 10レシピを取得し、各64個の6部位、既存の素材IDとの対応、20ステージ、PNG画像7枚を検証します。出典URL・抽出データ・レシピHTML・画像SHA-256を `scripts/fixtures/rank-ten-source.json`、画像を `public/assets/gears/rank-10/` に保存します。`--check` でも全取得とファイル照合を行います。既存wikiと補完元の同一ステージが矛盾する場合は停止し、表の古さを理由に既存ステージを削除しません。
 
 通常のページHTMLでは表が遅延読み込みされるため、現在のページ属性から部分取得URLを解決します。wikiの変更で行番号やハッシュが変わっても、固定値を手で更新する必要はありません。2026-10-23にwiki側の属性名が変わったため、現在は `documentStack`、`parentPartPath`、`sourceHash`、`htmlHash` をqueryへ渡します。
 
@@ -45,7 +47,7 @@ git diff -- src/tools/sweep/data.json src/tools/community/data.json scripts/fixt
 
 1. 新ワールドが各10ステージ揃い、設計図と副産物の対応がwikiと一致することを確認する。
 2. 既存ステージの削除・変更も確認する。wiki内に別の逆引き表があれば照合する。
-3. 新ランクが追加された場合は `quickEquipment.ts` の対応表・必要個数、`materialNames.ts` の日英名称、画像、`SweepTool.tsx` のランク選択、`rankPlan.ts` の一括育成対象も確認して追加する。未知の素材IDや数量を推測で作らない。
+3. 現在のランク10は下位素材を使わず、各部位の欠片64個で作成します。新ランクが追加された場合は `quickEquipment.ts` の対応表・必要個数、`materialNames.ts` の日英名称、画像、`SweepTool.tsx` のランク選択、`rankPlan.ts` の一括育成対象、日英の説明、`rank-ten-data.ts` の出典検証も確認して追加する。未知の素材IDや数量を推測で作らない。
 4. 収録範囲が変わった場合はREADME、CHANGELOG、対応するデータ回帰テストも更新する。
 
 ランク一括育成の目安回数は、wiki「進軍」の装備節にある体感ドロップ率70〜80%の中間値75%を使用します。「装備設計図」の必要数・最小キャンディと合わせて確認し、範囲または必要数が変わった場合は `rankPlan.ts`、単体テスト、README、画面上の説明を同時に更新します。体感値を確定ドロップ率として扱わず、画面には範囲と最小回数を残します。

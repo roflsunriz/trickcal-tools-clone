@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import data from "../src/tools/sweep/data.json";
+import rankTenSource from "./fixtures/rank-ten-source.json";
+import { mergeRankTenDrops, parseRankTenSource } from "./rank-ten-data";
 import {
   fetchWikiDropTable,
   getWikiDropTableUrl,
@@ -10,6 +12,7 @@ import {
 } from "./wiki-sweep-data";
 
 const snapshot = readFileSync(new URL("./fixtures/wiki-equipment-drops.html", import.meta.url), "utf8");
+const supplement = parseRankTenSource(rankTenSource).drops;
 // Captured from the public page on 2026-10-23; only the relevant markup is kept.
 const page = `Last-modified: 2026-10-23 (金) 01:30:16
 <div class="lazy-accordion-container" data-page="装備設計図" data-line="7" data-document-stack="装備設計図" data-parent-part-path="main" data-source-hash="5b7d4d5ca9460ed6a6a927e53e8e74d5" data-html-hash="21335fa862ff32cf5319ad5af2f14e9d">
@@ -55,7 +58,7 @@ describe("wiki equipment data import", () => {
     expect(() => parseWikiStageDrops(snapshot.replace(/<tr><td>32-10<\/td>.*?<\/tr>/, ""), data)).toThrow("32-10");
     expect(() => parseWikiStageDrops(snapshot.replace(/<tr><td>31-\d+<\/td>.*?<\/tr>/g, ""), data)).toThrow("欠落");
     expect(() => parseWikiStageDrops(snapshot.replace("32-10</td>", "32-11</td>"), data)).toThrow("不正な行");
-    expect(() => parseWikiStageDrops(snapshot.replace("94_ブーツ9", "104_ブーツ10"), data)).toThrow("対応する");
+    expect(() => parseWikiStageDrops(snapshot.replace("94_ブーツ9", "114_ブーツ11"), data)).toThrow("対応する");
     expect(() => parseWikiStageDrops(snapshot.replace("94_ブーツ9", "94_帽子9"), data)).toThrow("対応する");
     expect(() => parseWikiStageDrops(snapshot.replace("94_ブーツ9", "94_ブーツ8"), data)).toThrow("対応する");
     expect(() => parseWikiStageDrops(snapshot.replace("94_ブーツ9", "調査中"), data)).toThrow("未知の装備コード");
@@ -79,7 +82,7 @@ describe("wiki equipment data import", () => {
     before["material-076"].stages.push("21-1");
     before["material-077"].stages = before["material-077"].stages.filter((stage) => stage !== "21-1");
     const preserved = structuredClone(before);
-    const updated = mergeWikiStageDrops(before, parseWikiStageDrops(snapshot, before));
+    const updated = mergeWikiStageDrops(before, mergeRankTenDrops(parseWikiStageDrops(snapshot, before), supplement));
     expect(before).toEqual(preserved);
     for (const [material, detail] of Object.entries(before)) {
       if (detail.rank === 1) expect(updated[material]).toEqual(detail);
@@ -98,10 +101,16 @@ describe("wiki equipment data import", () => {
       "32-3",
       "32-6",
       "32-9",
+      "33-1",
+      "33-9",
+      "34-6",
     ]);
-    expect(summarizeWikiChanges(updated, mergeWikiStageDrops(updated, parseWikiStageDrops(snapshot, updated)))).toEqual(
-      [],
-    );
+    expect(
+      summarizeWikiChanges(
+        updated,
+        mergeWikiStageDrops(updated, mergeRankTenDrops(parseWikiStageDrops(snapshot, updated), supplement)),
+      ),
+    ).toEqual([]);
   });
 
   it("does not overwrite a newer database with an older wiki snapshot", () => {
@@ -110,7 +119,7 @@ describe("wiki equipment data import", () => {
   });
 
   it("reproduces the checked-in database from the saved source table", () => {
-    expect(mergeWikiStageDrops(data, parseWikiStageDrops(snapshot, data))).toEqual(data);
+    expect(mergeWikiStageDrops(data, mergeRankTenDrops(parseWikiStageDrops(snapshot, data), supplement))).toEqual(data);
   });
 
   it("fetches the lazy table and records its source date without live network requests", async () => {

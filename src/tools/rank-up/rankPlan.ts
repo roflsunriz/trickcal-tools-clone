@@ -1,4 +1,4 @@
-import { buildEquipmentRequirements } from "../sweep/quickEquipment";
+import { buildEquipmentRequirements, quickRanks } from "../sweep/quickEquipment";
 import { buildStageData, compareStages } from "../sweep/sweep";
 import type { MaterialId, StageName, SweepData } from "../sweep/types";
 import type { WeaponType } from "../sweep/quickEquipment";
@@ -32,7 +32,7 @@ type StageCandidate = {
   stage: StageName;
 };
 
-const targetRanks = [3, 4, 5, 6, 7, 8, 9];
+const targetRanks = quickRanks.filter((rank) => rank >= 3);
 
 export function buildRankUpRequirements(weaponType: WeaponType, data: SweepData) {
   const requirements = new Map<MaterialId, number>();
@@ -155,7 +155,7 @@ export function createRankUpPlan(weaponType: WeaponType, data: SweepData): RankU
   const stageData = buildStageData(data);
   const stages: RankPlanStage[] = [];
 
-  for (let rank = 2; rank <= 9; rank += 1) {
+  for (const rank of quickRanks) {
     const materials = [...requirements.keys()].filter((material) => data[material]?.rank === rank);
     if (materials.length === 0) continue;
     const quantities = new Set(materials.map((material) => requirements.get(material)));

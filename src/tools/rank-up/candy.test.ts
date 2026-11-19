@@ -67,9 +67,9 @@ describe("Rank-up candy income", () => {
     );
     expect(counts).toEqual({ physical: 44, magic: 38 });
 
-    const allCandy = totalCandyForApostles(13_050, 13_170, counts.physical, counts.magic);
-    expect(allCandy).toBe(1_074_660);
-    expect(daysForCandy(13_050, 728)).toBeCloseTo(17.9258, 4);
-    expect(daysForCandy(allCandy, 728)).toBeCloseTo(1476.1813, 4);
+    const allCandy = totalCandyForApostles(18_210, 18_330, counts.physical, counts.magic);
+    expect(allCandy).toBe(1_497_780);
+    expect(daysForCandy(18_210, 728)).toBeCloseTo(25.0137, 4);
+    expect(daysForCandy(allCandy, 728)).toBeCloseTo(2057.3901, 4);
   });
 });

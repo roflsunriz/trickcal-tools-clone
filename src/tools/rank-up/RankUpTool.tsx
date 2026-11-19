@@ -126,6 +126,10 @@ export function RankUpTool() {
             {t("rankUp.source")}
             <ExternalLink size={15} aria-hidden="true" />
           </a>
+          <a href="https://wiki.cheeky.tsuncloud.com/global/apostles/aya" target="_blank" rel="noreferrer">
+            {t("rankUp.rankTenSource")}
+            <ExternalLink size={15} aria-hidden="true" />
+          </a>
         </div>
       </section>
 

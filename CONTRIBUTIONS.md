@@ -23,3 +23,5 @@ Apostle images come from the strategy portal's corresponding icon files. Food ar
 - Keep the app deployable as a static Vite site.
 - Keep Bun as the only package manager.
 - Keep CI checks aligned with `AGENTS.md` and `CONTRIBUTING.md`.
+
+Rank 10 recipes and images and World 33–34 normal drops supplement the original wiki using the [Global Trickcal Wiki](https://wiki.cheeky.tsuncloud.com/global/stages/133), which publishes game-derived data. Source URLs, reduced chapter props, captured recipe HTML, and image SHA-256 hashes are recorded in `scripts/fixtures/rank-ten-source.json`. Images retain their original PNG format in `public/assets/gears/rank-10/`. Accessory mappings follow the game icons, since this source uses different English names from the existing material dictionary.

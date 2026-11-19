@@ -16,7 +16,7 @@ import type { WeaponType } from "./quickEquipment";
 
 const data = rawData as SweepData;
 const materials = Object.keys(data);
-const ranks = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const ranks = [1, ...quickRanks];
 
 export function SweepTool() {
   const { locale, t } = useI18n();

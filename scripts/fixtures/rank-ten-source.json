@@ -1,0 +1,493 @@
+{
+  "sources": [
+    "https://wiki.cheeky.tsuncloud.com/global/stages/133",
+    "https://wiki.cheeky.tsuncloud.com/global/stages/134",
+    "https://wiki.cheeky.tsuncloud.com/global/apostles/aya",
+    "https://wiki.cheeky.tsuncloud.com/global/apostles/butter"
+  ],
+  "chapters": [
+    {
+      "chapterId": 133,
+      "worldId": 1,
+      "stages": [
+        {
+          "stageNum": 1,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150036", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140020", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 2,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150041", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140021", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 3,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150042", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140016", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 4,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150037", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140017", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 5,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150038", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140018", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 6,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150039", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140019", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 7,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150040", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140015", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 8,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150041", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140020", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 9,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150036", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140021", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 10,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150042", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140016", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        }
+      ],
+      "items": {
+        "140015": {
+          "name": "Physical Weapon Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1001/Equip_Piece_Icon_Weapon1001.png"
+        },
+        "140016": {
+          "name": "Magical Weapon Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1002/Equip_Piece_Icon_Weapon1002.png"
+        },
+        "140017": {
+          "name": "Armor Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1003/Equip_Piece_Icon_Armor1003.png"
+        },
+        "140018": {
+          "name": "Hat Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1001/Equip_Piece_Icon_Armor1001.png"
+        },
+        "140019": {
+          "name": "Boots Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1002/Equip_Piece_Icon_Armor1002.png"
+        },
+        "140020": {
+          "name": "Brilliant Accessory Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1001/Equip_Piece_Icon_Accessory1001.png"
+        },
+        "140021": {
+          "name": "Shining Accessory Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1002/Equip_Piece_Icon_Accessory1002.png"
+        },
+        "150036": {
+          "name": "Physical Weapon Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Weapon901.png"
+        },
+        "150037": {
+          "name": "Magical Weapon Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Weapon902.png"
+        },
+        "150038": {
+          "name": "Armor Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Armor901.png"
+        },
+        "150039": {
+          "name": "Hat Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Armor902.png"
+        },
+        "150040": {
+          "name": "Boots Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Armor903.png"
+        },
+        "150041": {
+          "name": "Brilliant Accessory Design\\n(Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Accessory901.png"
+        },
+        "150042": {
+          "name": "Shining Accessory Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Accessory902.png"
+        }
+      }
+    },
+    {
+      "chapterId": 134,
+      "worldId": 1,
+      "stages": [
+        {
+          "stageNum": 1,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150037", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140017", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 2,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150038", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140018", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 3,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150039", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140019", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 4,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150040", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140020", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 5,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150041", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140015", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 6,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150036", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140021", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 7,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150042", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140016", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 8,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150037", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140017", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 9,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150041", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140018", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        },
+        {
+          "stageNum": 10,
+          "difficulty": 1,
+          "staminaCost": 10,
+          "pools": [
+            {
+              "kind": "clear",
+              "pickOne": false,
+              "drops": [
+                { "item": "150039", "min": 1, "max": 1, "chance": 0.83 },
+                { "item": "140019", "min": 1, "max": 1, "chance": 0.7263 }
+              ]
+            }
+          ]
+        }
+      ],
+      "items": {
+        "140015": {
+          "name": "Physical Weapon Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1001/Equip_Piece_Icon_Weapon1001.png"
+        },
+        "140016": {
+          "name": "Magical Weapon Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1002/Equip_Piece_Icon_Weapon1002.png"
+        },
+        "140017": {
+          "name": "Armor Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1003/Equip_Piece_Icon_Armor1003.png"
+        },
+        "140018": {
+          "name": "Hat Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1001/Equip_Piece_Icon_Armor1001.png"
+        },
+        "140019": {
+          "name": "Boots Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1002/Equip_Piece_Icon_Armor1002.png"
+        },
+        "140020": {
+          "name": "Brilliant Accessory Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1001/Equip_Piece_Icon_Accessory1001.png"
+        },
+        "140021": {
+          "name": "Shining Accessory Shard (Tier 10)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1002/Equip_Piece_Icon_Accessory1002.png"
+        },
+        "150036": {
+          "name": "Physical Weapon Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Weapon901.png"
+        },
+        "150037": {
+          "name": "Magical Weapon Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Weapon902.png"
+        },
+        "150038": {
+          "name": "Armor Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Armor901.png"
+        },
+        "150039": {
+          "name": "Hat Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Armor902.png"
+        },
+        "150040": {
+          "name": "Boots Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Armor903.png"
+        },
+        "150041": {
+          "name": "Brilliant Accessory Design\\n(Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Accessory901.png"
+        },
+        "150042": {
+          "name": "Shining Accessory Design (Tier 9)",
+          "icon": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Recipe_Icon_Accessory902.png"
+        }
+      }
+    }
+  ],
+  "recipes": [
+    "<details open=\"\" class=\"rounded-lg p-3\" style=\"background:var(--panel);border:1px solid var(--border)\"><summary class=\"cursor-pointer text-sm font-medium\">Rank <!-- -->10</summary><div class=\"mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3\"><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Armor1002.png\" alt=\"Radiant Master&#x27;s Apron\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Radiant Master&#x27;s Apron</div><div style=\"color:var(--muted)\">Armor<!-- --> · <!-- -->HP +97,868</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Armor Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1003/Equip_Piece_Icon_Armor1003.png\" alt=\"Armor Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Weapon1007.png\" alt=\"Wellspring Teacup\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Wellspring Teacup</div><div style=\"color:var(--muted)\">Weapon<!-- --> · <!-- -->ATK +6,037</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Magical Weapon Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1002/Equip_Piece_Icon_Weapon1002.png\" alt=\"Magical Weapon Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Armor1009.png\" alt=\"Lastcon Earsets\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Lastcon Earsets</div><div style=\"color:var(--muted)\">Armor<!-- --> · <!-- -->Physical DEF +11,095</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Hat Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1001/Equip_Piece_Icon_Armor1001.png\" alt=\"Hat Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Armor1015.png\" alt=\"Sunset-Cutting Combat Boots\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Sunset-Cutting Combat Boots</div><div style=\"color:var(--muted)\">Armor<!-- --> · <!-- -->Magical DEF +11,095</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Boots Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1002/Equip_Piece_Icon_Armor1002.png\" alt=\"Boots Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Accessory1002.png\" alt=\"Starbeam Turntable\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Starbeam Turntable</div><div style=\"color:var(--muted)\">Accessory<!-- --> · <!-- -->Crit Hit +9,042, Crit DMG +9,042</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Brilliant Accessory Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1001/Equip_Piece_Icon_Accessory1001.png\" alt=\"Brilliant Accessory Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_icon_accessory1006/Equip_Icon_Accessory1006.png\" alt=\"Clock of Fate\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Clock of Fate</div><div style=\"color:var(--muted)\">Accessory<!-- --> · <!-- -->Crit Resistance +9,789, Crit DMG RES +9,789</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Shining Accessory Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1002/Equip_Piece_Icon_Accessory1002.png\" alt=\"Shining Accessory Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div></div><div class=\"mt-2 space-y-0.5 text-xs\" style=\"color:var(--muted)\"><div>At this rank (own stats): <!-- -->Crit DMG +27,231, Crit DMG RES +29,481, Crit Hit +27,231, Crit Resistance +29,481, HP +294,665, Magical ATK +18,189, Magical DEF +33,407, Physical DEF +33,407</div><div>Account-wide through this rank: <!-- -->Crit DMG +48, Crit DMG RES +48, Crit Hit +48, Crit Resistance +48, HP +468, Magical ATK +32, Magical DEF +66, Physical ATK +32, Physical DEF +66</div></div></details>",
+    "<details open=\"\" class=\"rounded-lg p-3\" style=\"background:var(--panel);border:1px solid var(--border)\"><summary class=\"cursor-pointer text-sm font-medium\">Rank <!-- -->10</summary><div class=\"mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-3\"><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Armor1003.png\" alt=\"Unbreakable Petite Suit\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Unbreakable Petite Suit</div><div style=\"color:var(--muted)\">Armor<!-- --> · <!-- -->HP +79,568</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Armor Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1003/Equip_Piece_Icon_Armor1003.png\" alt=\"Armor Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Weapon1002.png\" alt=\"Respite Barbell\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Respite Barbell</div><div style=\"color:var(--muted)\">Weapon<!-- --> · </div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Physical Weapon Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1001/Equip_Piece_Icon_Weapon1001.png\" alt=\"Physical Weapon Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Armor1009.png\" alt=\"Lastcon Earsets\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Lastcon Earsets</div><div style=\"color:var(--muted)\">Armor<!-- --> · <!-- -->Physical DEF +11,095</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Hat Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1001/Equip_Piece_Icon_Armor1001.png\" alt=\"Hat Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Armor1015.png\" alt=\"Sunset-Cutting Combat Boots\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Sunset-Cutting Combat Boots</div><div style=\"color:var(--muted)\">Armor<!-- --> · <!-- -->Magical DEF +11,095</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Boots Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1002/Equip_Piece_Icon_Armor1002.png\" alt=\"Boots Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Accessory1001.png\" alt=\"Bright Smile Defense\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Bright Smile Defense</div><div style=\"color:var(--muted)\">Accessory<!-- --> · <!-- -->Crit Hit +9,789, Crit DMG +9,789</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Brilliant Accessory Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1001/Equip_Piece_Icon_Accessory1001.png\" alt=\"Brilliant Accessory Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div><div class=\"flex gap-2 rounded p-2\" style=\"background:var(--panel-2)\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/icons/Android/atlases/_low_equipicons/Equip_Icon_Accessory1009.png\" alt=\"Encouragement Cassette Tape\" width=\"40\" height=\"40\" loading=\"lazy\" style=\"width:40px;height:40px;object-fit:contain\" class=\"rounded-md\"/><div class=\"min-w-0 text-xs\"><div class=\"text-sm font-medium\" style=\"color:var(--text)\">Encouragement Cassette Tape</div><div style=\"color:var(--muted)\">Accessory<!-- --> · <!-- -->Crit Resistance +7,549, Crit DMG RES +7,549</div><div class=\"mt-1\"><span class=\"flex flex-wrap items-center gap-x-2 gap-y-1\"><span class=\"flex items-center gap-0.5 text-xs\" title=\"Shining Accessory Shard (Tier 10)\" style=\"color:#f5d27a;font-weight:600\"><img src=\"https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1002/Equip_Piece_Icon_Accessory1002.png\" alt=\"Shining Accessory Shard (Tier 10)\" width=\"16\" height=\"16\" style=\"width:16px;height:16px;object-fit:contain\"/>64</span></span></div></div></div></div><div class=\"mt-2 space-y-0.5 text-xs\" style=\"color:var(--muted)\"><div>At this rank (own stats): <!-- -->Crit DMG +29,481, Crit DMG RES +22,739, Crit Hit +29,481, Crit Resistance +22,739, HP +239,559, Magical DEF +33,407, Physical ATK +18,189, Physical DEF +33,407</div><div>Account-wide through this rank: <!-- -->Crit DMG +48, Crit DMG RES +48, Crit Hit +48, Crit Resistance +48, HP +468, Magical ATK +32, Magical DEF +66, Physical ATK +32, Physical DEF +66</div></div></details>"
+  ],
+  "assets": [
+    {
+      "material": "material-097",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1001/Equip_Piece_Icon_Accessory1001.png",
+      "filename": "sparkling-accessory-fragment-tier-10.png",
+      "sha256": "bf19a755a4819dc4d7a3a4954dbe3024768b49c9034d3e98f2f3e9668c82c0c6",
+      "size": 22323
+    },
+    {
+      "material": "material-098",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_accessory1002/Equip_Piece_Icon_Accessory1002.png",
+      "filename": "brilliant-accessory-fragment-tier-10.png",
+      "sha256": "33f78b88f4dd7d208eb7ee95a5d26f8e0bf51b57c455f2373c3347cf89a3fe84",
+      "size": 23649
+    },
+    {
+      "material": "material-093",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1002/Equip_Piece_Icon_Weapon1002.png",
+      "filename": "magic-weapon-fragment-tier-10.png",
+      "sha256": "38f1805d6c15da905f66e90d9f0fd067bd00c6b3fbd534abe2f69c45bc2596b3",
+      "size": 23428
+    },
+    {
+      "material": "material-094",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1003/Equip_Piece_Icon_Armor1003.png",
+      "filename": "armor-fragment-tier-10.png",
+      "sha256": "842a91df5a40be766c52b6467592d35cbcb2b2a785bfc9079e3e87fe815d29d7",
+      "size": 20468
+    },
+    {
+      "material": "material-095",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1001/Equip_Piece_Icon_Armor1001.png",
+      "filename": "hat-fragment-tier-10.png",
+      "sha256": "0d9bd4a68e0b39cd100ded45dcdd71f41577ead70c7289d36abae600479bd643",
+      "size": 22429
+    },
+    {
+      "material": "material-096",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_armor1002/Equip_Piece_Icon_Armor1002.png",
+      "filename": "boots-fragment-tier-10.png",
+      "sha256": "05e2161218d7e841370523ab802f7022477eb10da4f74b15487021e1480a907b",
+      "size": 22735
+    },
+    {
+      "material": "material-092",
+      "url": "https://cheeky.tsuncloud.com/deploy/com.bilibili.trickcal/sprites/Android/rawsprites/equipicons/equip_piece_icon_weapon1001/Equip_Piece_Icon_Weapon1001.png",
+      "filename": "physical-weapon-fragment-tier-10.png",
+      "sha256": "b42fdb6bcc500d7976f0313b5550c85be9e9d34155dadd64b43979c9733b099a",
+      "size": 23428
+    }
+  ]
+}
